@@ -1,0 +1,114 @@
+[
+  {
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "status_code": 200,
+    "content_type": "application/rss+xml; charset=UTF-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "The Verge",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "status_code": 420,
+    "content_type": "text",
+    "is_rss": false,
+    "ok": false
+  },
+  {
+    "source": "Wired",
+    "url": "https://www.wired.com/feed/rss",
+    "status_code": 200,
+    "content_type": "application/xml",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "Ars Technica",
+    "url": "https://feeds.arstechnica.com/arstechnica/index",
+    "status_code": 200,
+    "content_type": "text/xml; charset=utf-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "Engadget",
+    "url": "https://www.engadget.com/rss.xml",
+    "status_code": 200,
+    "content_type": "text/xml",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "ZDNet",
+    "url": "https://www.zdnet.com/news/rss.xml",
+    "status_code": 200,
+    "content_type": "application/xml",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "CNET",
+    "url": "https://www.cnet.com/rss/news/",
+    "status_code": 200,
+    "content_type": "text/xml; charset=UTF-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "VentureBeat",
+    "url": "https://venturebeat.com/feed/",
+    "status_code": 200,
+    "content_type": "text/xml",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "Hacker News",
+    "url": "https://hacker-news.firebaseio.com/v0/",
+    "status_code": 200,
+    "content_type": "text/html; charset=utf-8",
+    "is_rss": false,
+    "ok": false
+  },
+  {
+    "source": "TechRadar",
+    "url": "https://www.techradar.com/rss",
+    "status_code": 200,
+    "content_type": "application/xml",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "GitHub Blog",
+    "url": "https://github.blog/feed/",
+    "status_code": 200,
+    "content_type": "application/rss+xml; charset=UTF-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "Stack Overflow Blog",
+    "url": "https://stackoverflow.blog/feed/",
+    "status_code": 200,
+    "content_type": "application/rss+xml; charset=UTF-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "Dev.to",
+    "url": "https://dev.to/feed",
+    "status_code": 200,
+    "content_type": "application/xml; charset=utf-8",
+    "is_rss": true,
+    "ok": true
+  },
+  {
+    "source": "The Hacker News",
+    "url": "https://feeds.feedburner.com/TheHackersNews",
+    "status_code": 200,
+    "content_type": "text/xml; charset=utf-8",
+    "is_rss": true,
+    "ok": true
+  }
+]

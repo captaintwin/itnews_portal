@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+
+# Environments
+.env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Data
+data/*.json
+data/*.csv
+data/*.tmp
+
+data/news.json
+data/sent_news.json
+data/images/
+*.part
+*.tmp
+
+# IDE files
+.idea/
+.vscode/
+.DS_Store
