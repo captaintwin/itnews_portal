@@ -7,3 +7,4 @@ python-telegram-bot
 openai
 sqlalchemy
 schedule
+python-telegram-bot==13.15
