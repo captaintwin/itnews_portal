@@ -5,6 +5,9 @@ on:
     - cron: "0 */3 * * *"  # каждые 3 часа
   workflow_dispatch:        # ручной запуск
 
+permissions:
+  contents: write  # 👈 обязательно для возможности push
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
