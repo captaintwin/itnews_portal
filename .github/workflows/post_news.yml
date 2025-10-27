@@ -1,16 +1,14 @@
-name: Run IT News Bot
+name: Post IT News
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # каждые 30 минут
-  workflow_dispatch:         # позволяет запустить вручную
-
+    - cron: "0 */3 * * *"  # каждые 3 часа
+  workflow_dispatch:        # можно запускать вручную
 jobs:
-  run:
+  run-bot:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Python
@@ -23,7 +21,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run script
+      - name: Run news collector and Telegram poster
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
