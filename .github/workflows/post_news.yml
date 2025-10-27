@@ -42,11 +42,11 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          # Подтягиваем последние изменения и разрешаем незначительные расхождения
+          # Подтягиваем последние изменения, не ломая историю
           git fetch origin main
-          git rebase origin/main || git rebase --abort || true
+          git reset --soft origin/main
 
-          # Добавляем только файл с логом отправленных новостей
+          # Добавляем только лог отправленных новостей
           git add -f data/sent_news.json
 
           # Проверяем, есть ли изменения
@@ -54,6 +54,6 @@ jobs:
             echo "No changes in sent_news.json — skip commit"
           else
             git commit -m "update sent log [skip ci]" || echo "Nothing to commit"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠️ Push skipped (no new changes)"
-            echo "✅ Pushed updated sent_news.json"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠️ Push skipped"
+            echo "✅ sent_news.json successfully updated"
           fi
