@@ -27,3 +27,4 @@ jobs:
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
         run: |
           python main.py
+echo "✅ Workflow completed"
