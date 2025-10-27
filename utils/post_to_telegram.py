@@ -6,6 +6,7 @@ from telegram import Bot
 from telegram.error import TelegramError
 from PIL import Image
 from dotenv import load_dotenv
+from datetime import datetime
 load_dotenv()
 
 print("DEBUG TOKEN:", os.getenv("TELEGRAM_TOKEN"))
@@ -123,8 +124,16 @@ def send_post(news_item):
     except Exception as e:
         print(f"[Ошибка публикации {news_id}] {e}")
 
+def cleanup_sent_news():
+    """Очищает лог, если он старше 100 дня"""
+    if SENT_LOG.exists():
+        mtime = datetime.fromtimestamp(SENT_LOG.stat().st_mtime)
+        if (datetime.now() - mtime).days >= 100:
+            SENT_LOG.unlink()
+            print("🧹 Очистка: старый sent_news.json удалён.")
 
 def main():
+    cleanup_sent_news()
     sent_ids = load_sent_ids()
 
     with open(NEWS_FILE, "r", encoding="utf-8") as f:
