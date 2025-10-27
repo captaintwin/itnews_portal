@@ -1,4 +1,4 @@
-PIL
+Pillow
 beautifulsoup4
 requests
 feedparser
