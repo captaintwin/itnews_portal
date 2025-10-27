@@ -6,14 +6,17 @@ on:
   workflow_dispatch:        # ручной запуск
 
 permissions:
-  contents: write  # 👈 обязательно для возможности push
+  contents: write  # разрешает GitHub Actions пушить изменения
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # нужно для корректного rebase
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,6 +41,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Подтягиваем последние изменения из main
+          git pull --rebase https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main
+
+          # Добавляем только файл с логом отправленных новостей
           git add -f data/sent_news.json
-          git commit -m "update sent log [skip ci]" || echo "No changes to commit"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+
+          # Проверяем, есть ли реальные изменения
+          if git diff --cached --quiet; then
+            echo "No changes in sent_news.json — skip commit"
+          else
+            git commit -m "update sent log [skip ci]"
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+            echo "✅ Pushed updated sent_news.json"
+          fi
