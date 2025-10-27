@@ -1,3 +1,4 @@
+PIL
 beautifulsoup4
 requests
 feedparser
