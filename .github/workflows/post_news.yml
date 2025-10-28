@@ -2,7 +2,7 @@ name: Post IT News
 
 on:
   schedule:
-    - cron: "0 */3 * * *"  # каждые 3 часа
+    - cron: "0 5 * * *"  # каждый день в 05:00 UTC
   workflow_dispatch:        # ручной запуск
 
 permissions:

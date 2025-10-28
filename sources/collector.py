@@ -5,14 +5,19 @@ import hashlib
 import requests
 from pathlib import Path
 from urllib.parse import urlparse, urljoin
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 from core.logger import log
 from sources.rss import fetch_rss
 
+
+
 # === Константы ===
-MAX_ITEMS_PER_SOURCE = 3
+MAX_ITEMS_PER_SOURCE = 20
 DATA_FILE = Path("data/news.json")
+# === ПУТИ ===
+DATA_DIR = Path("data")
+IMG_DIR = DATA_DIR / "images"     # ← вот это объявление должно быть ДО использования
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ITNewsBot/1.0)"}
 
 RSS_SOURCES = [
@@ -47,14 +52,23 @@ def is_trusted_source(url: str) -> bool:
 def has_bad_words(text: str) -> bool:
     return any(bad in (text or "").lower() for bad in BAD_KEYWORDS)
 
-def is_recent(published_at, days=3):
+def _is_recent_day(published_at, days=2):
     try:
         if isinstance(published_at, str):
             published_at = datetime.fromisoformat(published_at[:19])
     except Exception:
         return False
     return published_at >= datetime.utcnow() - timedelta(days=days)
-
+def _dedup_by_url(items):
+    """Удаляет дубли по полю url"""
+    seen = set()
+    result = []
+    for it in items:
+        url = it.get("url")
+        if url and url not in seen:
+            seen.add(url)
+            result.append(it)
+    return result
 def is_valid_title(title: str) -> bool:
     wc = len(title.split())
     return 3 <= wc <= 15
@@ -116,46 +130,75 @@ def download_image(image_url: str, folder: Path, news_id: str):
 
 # === Основная функция ===
 def collect_all():
-    """Собирает по 3 свежие статьи из доверенных источников и сохраняет в JSON."""
-    img_root = Path("data/images")
-    img_root.mkdir(parents=True, exist_ok=True)
+    """
+    Собирает свежие статьи из доверенных источников и сохраняет в data/news.json,
+    строго в прежней структуре полей (id, title, url, summary, source, published_at, image_path).
+    """
+    IMG_DIR.mkdir(parents=True, exist_ok=True)
     os.makedirs("data", exist_ok=True)
 
-    all_news = []
+    collected = []
+
     for src in RSS_SOURCES:
         try:
             items = fetch_rss(src, limit=MAX_ITEMS_PER_SOURCE)
+            log.info(f"Fetched {len(items)} from {src}")
         except Exception as e:
             log.error(f"Error fetching {src}: {e}")
             continue
 
-        for news in items[:MAX_ITEMS_PER_SOURCE]:
-            url = news.get("url")
-            title = news.get("title", "")
-            published = news.get("published_at") or datetime.utcnow().isoformat()
+        # если задан лимит — подстрахуемся ещё раз
+        sliced = items if MAX_ITEMS_PER_SOURCE is None else items[:MAX_ITEMS_PER_SOURCE]
 
-            if not is_trusted_source(url): continue
-            if has_bad_words(title): continue
-            if not is_valid_title(title): continue
-            if not is_recent(published): continue
+        for news in sliced:
+            url = news.get("url")
+            title = news.get("title", "").strip()
+            published = (news.get("published_at") or datetime.utcnow().replace(tzinfo=timezone.utc).isoformat())
+
+            # фильтры качества/валидности — как у тебя было
+            if not url:
+                continue
+            if not is_trusted_source(url):
+                continue
+            if has_bad_words(title):
+                continue
+            if not is_valid_title(title):
+                continue
+            if not _is_recent_day(published, days=7):  # допустим, не старше недели
+                continue
 
             news_id = generate_id(url)
-            img_url = fetch_main_image(url)
-            saved_img = download_image(img_url, img_root, news_id) if img_url else None
 
-            all_news.append({
+            # картинка остаётся как было (можно отключить, если не нужно)
+            saved_img = None
+            try:
+                img_url = fetch_main_image(url)
+                if img_url:
+                    saved_img = download_image(img_url, IMG_DIR, news_id)
+            except Exception:
+                saved_img = None
+
+            # ВАЖНО: пишем строго прежние поля
+            collected.append({
                 "id": news_id,
                 "title": title,
                 "url": url,
                 "summary": news.get("summary", ""),
-                "source": news.get("source", src),
+                "source": news.get("source") or src,
                 "published_at": published,
-                "image_path": saved_img
+                "image_path": saved_img  # может быть None
             })
 
-    # сохранить
-    with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(all_news, f, ensure_ascii=False, indent=2)
+    # дедуп по URL и сортировка по дате (новые сверху)
+    collected = _dedup_by_url(collected)
+    try:
+        collected.sort(key=lambda x: x.get("published_at", ""), reverse=True)
+    except Exception:
+        pass
 
-    log.info(f"✅ Saved {len(all_news)} news items to {DATA_FILE.resolve()}")
-    return all_news
+    # сохраняем
+    with open(DATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(collected, f, ensure_ascii=False, indent=2)
+
+    log.info(f"✅ Saved {len(collected)} items to {DATA_FILE.resolve()}")
+    return collected
