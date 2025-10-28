@@ -1,0 +1,24 @@
+The Android-powered Boox Palma 2 Pro fits in your pocket, but it’s not a phone - Ars Technica
+The Android-powered Boox Palma 2 Pro fits in your pocket, but it’s not a phone
+Digital reading devices like the Kindle have existed for almost 20 years, and the standard eReader form factor has hardly changed at all. Amazon, Boox, and a few other companies have offered larger E Ink screens, but how about something smaller? Boox has unveiled its second-generation Palma e-reader, which still fits in your pocket but adds a color screen and mobile data connectivity.
+The first-gen Palma launched last year, earning fans who saw it as a way to read and access some apps without the full spate of distracting smartphone experiences. Boox e-readers are essentially Android tablets with E Ink screens and a few software quirks that arise from their unofficial Google Play implementation. The second-gen Palma might offer more opportunities for distraction because it’s
+The Palma 2 Pro upgrades the 6.1-inch monochrome display from the original to a 6.13-inch color E Ink Kaleido display. That’s the same technology used in Amazon’s
+. The Amazon reader is a bit larger with its 7-inch display and chunkier bezels. Of course, the Kindle isn’t trying to fit in your pocket like the Palma 2 Pro, which is roughly the size and shape of a phone.
+For years, color E Ink was seen as a desirable feature, which would make it easier to read magazines and comics on low-power devices—Boox even has an
+. However, the quality of the displays has been lacking. These screens do show colors, but they’re not as vibrant as what you get on an LCD or OLED. In the case of the Palma 2 Pro, the screen is also less sharp in color mode. The touchscreen display is 824 × 1648 in monochrome, but turning on color cuts that in half to 412 × 824.
+In addition to the new screen, the second-gen Palma adds a SIM card slot. It’s not for phone calls, though. The SIM slot allows the device to get 5G mobile data in addition to Wi-Fi.
+The Palma 2 Pro runs Android 15 out of the box. That’s a solid showing for Boox, which often uses much older builds of Google’s mobile OS. Upgrades aren’t guaranteed, and there’s no official support for Google services. However, Boox has a workaround for its devices so the Play Store can be installed.
+Ryan Whitwam is a senior technology reporter at Ars Technica, covering the ways Google, AI, and mobile technology continue to change the world. Over his 20-year career, he's written for Android Police, ExtremeTech, Wirecutter, NY Times, and more. He has reviewed more phones than most people will ever own. You can
+, where you will see photos of his dozens of mechanical keyboards.
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

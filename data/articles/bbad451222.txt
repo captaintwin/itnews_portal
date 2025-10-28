@@ -1,0 +1,25 @@
+Adobe launches AI assistants for Express and Photoshop | TechCrunch
+Adobe launches AI assistants for Express and Photoshop
+Adobe today released new AI assistants Creative Cloud products, Express and Photoshop, that can help users with image creation and editing.
+Most companies like to put AI assistants into a sidebar in their products to grab on-screen context. But for Express, Adobe has created a new mode that lets you use text prompts to create new images and designs. You can switch on the assistant mode to use AI prompts and then switch back to use editing tools and controls that are available in Express in the current version.
+Meanwhile, the new Photoshop assistant, which is in closed beta testing, lives in the sidebar. Adobe claims the assistant can understand different layers and help you automatically select objects and create masks. Adobe added that users can ask the assistant to complete repetitive tasks such as removing backgrounds or changing colors.
+Adobe’s VP of generative AI, Alexandru Costin, told TechCrunch that the company decided to build a different mode for its AI assistant in Express to target students and professionals who use the app. The company wants to see if users can achieve what they want to do without having to switch back to the traditional interface, he explained.
+“We think this approach of switching between two modes, where you get the best of both worlds, is gonna make the technology both accessible and controllable,” Costin said.
+The company said it is also experimenting with a new type of assistant, dubbed “Project Moonlight,” that can coordinate with different assistants from other Adobe tools, and connect to a creator’s social channels to better understand their style. Adobe said the product is in the early stages of development and is in private beta.
+The company said it is also exploring a way to connect Adobe Express with ChatGPT using OpenAI’s app integrations API to let users create designs directly in ChatGPT.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Adobe also announced a new set of AI features for its Creative Cloud apps. Photoshop users can now choose third-party models, like Google’s Gemini 2.5 flash and Black Forest Labs’ FLUX.1 Kontext, for the
+, which can remove objects or extend images. The company is also adding an AI-powered object mask in its video editing app, Premiere Pro, to let users easily identify and select objects or people to add effects or adjust colors.
+Ivan covers global consumer tech developments at TechCrunch. He is based out of India and has previously worked at publications including Huffington Post and The Next Web.
+You can contact or verify outreach from Ivan by emailing
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

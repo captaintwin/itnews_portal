@@ -1,0 +1,49 @@
+25 years, one website: ISS in Real Time captures quarter-century on space station - Ars Technica
+but with more than 500 times the data from 25 years on board the International Space Station.
+but with more than 500 times the data from 25 years on board the International Space Station.
+With the milestone just days away, you are likely to hear this week that there has now been a continuous human presence on the International Space Station (ISS) for the past 25 years. But what does that quarter of a century actually encompass?
+If only there was a way to see, hear, and experience
+Fortunately, the astronauts and cosmonauts on the space station have devoted some of their work time and a lot of their free time to taking photos, filming videos, and calling down to Earth. Much of that data has been made available to the public, but in separate repositories, with no real way to correlate or connect it with the timeline on which it was all created.
+That is, not until now. Two NASA contractors, working only during their off hours, have built a portal into all of those resources to uniquely represent the 25-year history of ISS occupancy.
+, by Ben Feist and David Charney, went live on Monday (October 27), ahead of the November 2 anniversary. In its own way, the new website may be as impressive a software engineering accomplishment as the station is an aerospace engineering marvel.
+“Everything that is on the website was already public. It’s already on another website somewhere, with some of it tucked away in some format or another. What we did was a lot of scraping of that data, to get it pulled into the context of every day on the space station,” said Feist in an interview with collectSPACE.com.
+tallies, at its debut the site contained mission data for 9,064 days out of the 9,131 (99.32 percent coverage); 4,739 days with full space-to-ground audio coverage; 4,561,987 space-to-ground comm calls in 69 languages; 6,931,369 photos taken in space over 8,525 days; 10,908 articles across 7,711 days; and 930 videos across 712 days.
+Or, to put it another way, particularly appropriate for the history it spans, had this project relied only on the technology that existed
+And they did all this in a period of about 11 months, but only in the hours when they were not at work writing software (Feist) or designing user interfaces (Charney) for Mission Control, the EVA (Extravehicular Activity, or spacewalk) Office, or other communities supporting the ISS and Artemis programs at NASA’s Johnson Space Center in Houston.
+“Being inside NASA actually didn’t help at all,” said Feist. “If you’re inside NASA and you want to use data, you have to make sure that it’s public data. And because there’s this concept in the government of export control, you have to never, ever make the mistake of publishing an image or something else that you found somewhere else without knowing if it’s already public.”
+“So even though we were at NASA, what we had to do was pretend we weren’t there and find the data anywhere we could find it in the public already,” he said.
+As it turned out, that worked fairly well for days beginning in 2008 and onward.
+, however, pre-dates a lot of the multimedia archives we take for granted today.
+“This was the problem,” said Feist. “If stuff was released publicly back then, it was done to media on tape. There was no such thing as streaming video in 2000—YouTube wasn’t invented until 2005. So there’s just no way to go back in time on the Internet and go find the treasure trove that we know exists internally. We know NASA has full days archived on tape, but it just hasn’t been exported yet.”
+Even after the change to digital photography and video, there still remained the challenge of linking each file to the day, hour, minute, and second that it was captured. For example, while the Internet Archive has been a tremendous source for the project, only sometimes do the videos it holds include the unique identifier that is needed to determine when the video was taken.
+creators Ben Feist (at right) and David Charney stand inside the International Space Station control room at NASA’s Johnson Space Center in Houston, Texas.
+In other situations, Feist turned to artificial intelligence to sort through the tens of thousands of files to learn if they were appropriate for inclusion.
+“We know that NASA publishes all of its PAO [public affairs office] photos to Flickr. Right now, there are about 80,000 photos in just the Johnson Space Center collection on Flickr alone. So we scraped those, and then I wrote an AI process as part of the pipeline to figure out which of those photos were flight photos and which of them were ground photos, so that we only show flight photos,” he said.
+As Feist was figuring out how to import all the data, Charney was figuring out how the public would access it all.
+This is not the first project of its type that Feist and Charney have brought online. In 2019, they introduced
+, which did for the 50th anniversary of the first moon landing what
+and Apollo 17 sites followed (and more Apollo missions are still to come, Feist and Charney say).
+, which has been in use internally at the space agency for the past four years.
+Even with all of that as a foundation, designing the user interface for
+required Charney to wrap his head around all of the different ways people would be using the site.
+“The entire site is an experience,” Charney told collectSPACE. “Just the idea that we could visualize 25 years of what went on, or that we even have every day over the past 25 years in here, is something we wanted to explore and feel the data throughout those 25 years.”
+begins 25 years ago on Nov. 2, 2000, with the ISS Expedition 1 crew’s arrival at the space station.
+One of the questions was what users would find if they picked a day when no data is available. How could they still make it interesting and still play as though you were in Mission Control?
+“Some days have all of the media available—video and tons of photos. And then there are other days where there is no data. There are a lot of days that have at least a photo, but for others, we found there are a lot of great articles we could use so that even on a day that doesn’t have a lot of media, there is some interesting information you can access,” said Charney.
+Through Charney’s design, in addition to the data coming from the space station, users can also see where the ISS was in its orbit over Earth, which astronauts were aboard the station, and what spacecraft were docked at any given moment. Visitors can also access transcripts of the space-to-ground comm audio, including translations when the discussion is not in English.
+Feist and Charney plan to continue to build out the site and add more data as it is released by NASA, so it remains as close to as “in real time” as possible. They also have ideas for other data sets they could add, including the archived and live telemetry that provide the status of systems and conditions aboard the ISS.
+“One thing that’s cool about this is you can go to the first day that the Expedition One crew was aboard and let it play. It will then play all the way through that day’s timeline and go to the next day, and then play all the way through that timeline and go to the next day,” said Charney. “So if you start on November 2 and have 25 years to go, the space station, as currently planned, will likely
+“So this might be the longest interactive experience ever built,” said Feist.
+Robert Pearlman is a space historian, journalist and the founder and editor of collectSPACE, a daily news publication and online community focused on where space exploration intersects with pop culture. He is also a contributing writer for Space.com and co-author of "Space Stations: The Art, Science, and Reality of Working in Space” published by Smithsonian Books in 2018. He is on the leadership board for For All Moonkind and  is a member of the American Astronautical Society's history committee.
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

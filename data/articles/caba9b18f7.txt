@@ -1,0 +1,29 @@
+Inside Ring-1T: Ant engineers solve reinforcement learning bottlenecks at trillion scale | VentureBeat
+Inside Ring-1T: Ant engineers solve reinforcement learning bottlenecks at trillion scale
+, an affiliate of Alibaba, detailed technical information around its new model,
+, which the company said is “the first open-source reasoning model with one trillion total parameters.”
+Ring-1T aims to compete with other reasoning models like GPT-5 and the o-series from
+’s Gemini 2.5. With the new release of the latest model, Ant extends the geopolitical debate over who will
+Ant Group said Ring-1T is optimized for mathematical and logical problems, code generation and scientific problem-solving.
+“With approximately 50 billion activated parameters per token, Ring-1T achieves state-of-the-art performance across multiple challenging benchmarks — despite relying solely on natural language reasoning capabilities,” Ant said in
+Ring-1T, which was first released on preview in September, adopts the same architecture as Ling 2.0 and trained on the Ling-1T-base model the company released earlier this month. Ant said this allows the model to support up to 128,000 tokens.
+To train a model as large as Ring-1T, researchers had to develop new methods to scale reinforcement learning (RL).
+Ant Group developed three “interconnected innovations” to support the RL and training of Ring-1T, a challenge given the model's size and the typically large compute requirements it entails. These three are IcePop, C3PO++ and ASystem.
+IcePop removes noisy gradient updates to stabilize training without slowing inference. It helps eliminate catastrophic training-inference misalignment in RL. The researchers noted that when training models, particularly those using a mixture-of-experts (MoE) architecture like Ring-1T, there can often be a discrepancy in probability calculations.
+“This problem is particularly pronounced in the training of MoE models with RL due to the inherent usage of the dynamic routing mechanism. Additionally, in long CoT settings, these discrepancies can gradually accumulate across iterations and become further amplified,” the researchers said.
+IcePop “suppresses unstable training updates through double-sided masking calibration.”
+The next new method the researchers had to develop is C3PO++, an improved version of the C3PO system that Ant previously established. The method manages how Ring-1T and other extra-large parameter models generate and process training examples, or what they call rollouts, so GPUs don’t sit idle.
+The way it works would break work in rollouts into pieces to process in parallel. One group is the inference pool, which generates new data, and the other is the training pool, which collects results to update the model. C3PO++ creates a token budget to control how much data is processed, ensuring GPUs are used efficiently.
+The last new method, ASystem, adopts a SingleController+SPMD (Single Program, Multiple Data) architecture to enable asynchronous operations.
+Ant pointed Ring-1T to benchmarks measuring performance in mathematics, coding, logical reasoning and general tasks. They tested it against models such as DeepSeek-V3.1-Terminus-Thinking, Qwen-35B-A22B-Thinking-2507, Gemini 2.5 Pro and GPT-5 Thinking.
+In benchmark testing, Ring-1T performed strongly, coming in second to OpenAI’s GPT-5 across most benchmarks. Ant said that Ring-1T showed the best performance among all the open-weight models it tested.
+The model posted a 93.4% score on the AIME 25 leaderboard, second only to GPT-5. In coding, Ring-1T outperformed both DeepSeek and Qwen.
+“It indicates that our carefully synthesized dataset shapes Ring-1T’s robust performance on programming applications, which forms a strong foundation for future endeavors on agentic applications,” the company said.
+Ring-1T shows how much Chinese companies are investing in models
+Ring-1T is just the latest model from China aiming to dethrone GPT-5 and Gemini.
+Chinese companies have been releasing impressive models at a quick pace since the surprise launch of DeepSeek in January. Ant's parent company,
+, a multimodal model that natively unifies text, image, audio and video. DeepSeek has also continued to improve its models and earlier this month,
+. This new model reimagines how models process information.
+With Ring-1T and Ant’s development of new methods to train and scale extra-large models, the battle for AI dominance between the US and China continues to heat up.
+Deep insights for enterprise AI, data, and security leaders
+You're in! Our latest news will be hitting your inbox soon.

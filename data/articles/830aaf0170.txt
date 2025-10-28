@@ -1,0 +1,17 @@
+Capture, share, & collaborate on knowledge internally.
+Promote your product or service to developers and technologists.
+Engage the world’s technology talent with your employer brand.
+Learn about what’s new with comments on Stack Overflow.
+We're excited to announce a new comments user interface for posts on Stack Overflow. With this update, all registered users can now comment on questions and answers. Previously, commenting was a privilege that required 50
+to use, but is now a standard feature available to all users.
+Comments enable users to engage with the community and begin sharing their point of view on the platform. They add nuance and perspective to the Q&A pages and improve the quality of responses. With this new user interface, we have introduced threaded comments and the ability to vote on comments for everyone.
+Introducing threading for easy, followable exchanges
+Following a topic being discussed, especially in dense Q&A conversations, can be challenging. With the new commenting UI update, users can now follow a topic and the exchange around a comment more easily. Threading allows follow up comments to be threaded directly below the parent comment, making back-and-forth discussions more cohesive.
+Allowing longer-standing comments to live within threads in the Q&A repository adds historical value to the question and answer past its initial resolution and provides evergreen exchanges to have thorough context for future discussions.
+Imagine trying to navigate a repository without a rating system. That sounds a lot like deciphering the best content by yourself every time. To assist in identifying valuable contributions, we have extended our voting system so that all users can now vote on the comments that provide the most value. When you set out to understand a question or answer completely, you can now upvote the comments that help you and future users grasp the full scope of the topic.
+Additionally, we have enhanced our flagging system to prohibit spamming of the commenting interface with material that does not add value to the Q & A library and to preserve the integrity and value of the repository.
+. To learn more about how to use comments, review the
+AI agents will succeed because one tool is better than ten
+From multilingual semantic search to virtual assistants at Bosch Digital
+Craft and quality beat speed and scale, with or without agents
+Data licensing offering to build and improve AI tools and models.

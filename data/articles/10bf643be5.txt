@@ -1,0 +1,35 @@
+Why imperfection could be key to Turing patterns in nature - Ars Technica
+Why imperfection could be key to Turing patterns in nature
+Many Turing mechanism models yield too-perfect patterns; varying cell sizes vastly improves the results.
+The Birch Aquarium/Scripps Institution of Oceanography
+The Birch Aquarium/Scripps Institution of Oceanography
+A mixture of two types of pigment-producing cells undergoes diffusiophoretic transport to self-assemble into a hexagonal pattern. Credit: Siamak Mirfendereski and Ankur Gupta/CU Boulder
+A mixture of two types of pigment-producing cells undergoes diffusiophoretic transport to self-assemble into a hexagonal pattern. Credit: Siamak Mirfendereski and Ankur Gupta/CU Boulder
+A zebra’s distinctive black-and-white stripes, or a leopard’s spots, are both examples of “
+,” after mathematician and computer scientist Alan Turing, who proposed an intriguing hypothetical mechanism for how such complex, irregular patterns might emerge in nature. But Turing’s original proposal proved too simplified to fully re-create those natural patterns. Scientists at the University of Colorado at Boulder (UCB) have devised a new modeling approach that achieves much more accurate final patterns by introducing deliberate imperfections, according to a new paper published in the journal Matter.
+involving the interaction between an activator chemical that expresses a unique characteristic (like a tiger’s stripe) and an inhibitor chemical that periodically kicks in to shut down the activator’s expression. Both activator and inhibitor diffuse throughout a system, much like gas atoms will do in an enclosed box. It’s a bit like injecting a drop of black ink into a beaker of water. Normally, this would stabilize a system, and the water would gradually turn a uniform gray. But if the inhibitor diffuses at a faster rate than the activator, the process is destabilized. That mechanism will produce spots or stripes.
+to many different kinds of systems. For instance, neurons in the brain could serve as activators and inhibitors, depending on whether they amplify or dampen the firing of other nearby neurons—possibly the reason why we see
+. There is evidence for Turing mechanisms at work in zebra-fish stripes, the spacing between hair follicles in mice, feather buds on a bird’s skin, the
+Certain species of Mediterranean ants will pile the dead bodies of ants into structures that seem to exhibit Turing patterns. There is
+in the movement of Azteca ant colonies on coffee farms in Mexico. And
+in the laboratory so that the colonies exhibited branching Turing patterns.
+In essence, it’s a type of symmetry breaking. Any two processes that act as activator and inhibitor will produce periodic patterns and can be modeled using Turing’s diffusion function. The challenge is moving from Turing’s admittedly simplified model to pinpointing the precise mechanisms serving in the activator and inhibitor roles.
+This is especially challenging in biology. Per the authors of this latest paper, the classical approach to a Turing mechanism balances reaction and diffusion using a single length scale, but biological patterns often incorporate multiscale structures, grain-like textures, or certain inherent imperfections. And the resulting patterns are often much blurrier than those found in nature.
+Simulated hexagon and stripe patterns obtained by diffusiophoretic assembly of two types of cells on top of the chemical patterns.
+In 2023, UCB biochemical engineers Ankur Gupta and Benjamin Alessio developed
+that added diffusiopherosis into the mix. It’s a process by which colloids are transported via differences in solute concentration gradients—the same process by which soap diffuses out of laundry in water, dragging particles of dirt out of the fabric. Gupta and Alessio successfully used their new model to simulate the distinctive hexagon pattern (alternating purple and black) on the ornate boxfish, native to Australia, achieving much sharper outlines than the model originally proposed by Turing.
+The problem was that the simulations produced patterns that were too perfect: hexagons that were all the same size and shape and an identical distance apart. Animal patterns in nature, by contrast, are never perfectly uniform. So Gupta and his UCB co-author on this latest paper, Siamak Mirfendereski, figured out how to tweak the model to get the pattern outputs they desired. All they had to do was define specific sizes for individual cells. For instance, larger cells create thicker outlines, and when they cluster, they produce broader patterns. And sometimes the cells jam up and break up a stripe. Their revised simulations produced patterns and textures very similar to those found in nature.
+. “We proposed a simple idea that can explain how cells assemble to create these variations. We are drawing inspiration from the imperfect beauty of [a] natural system and hope to harness these imperfections for new kinds of functionality in the future.” Possible future applications include “smart” camouflage fabrics that can change color to better blend with the surrounding environment, or more effective targeted drug delivery systems.
+Jennifer is a senior writer at Ars Technica with a particular focus on where science meets culture, covering everything from physics and related interdisciplinary topics to her favorite films and TV series. Jennifer lives in Baltimore with her spouse, physicist Sean M. Carroll, and their two cats, Ariel and Caliban.
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

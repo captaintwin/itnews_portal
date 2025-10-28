@@ -1,0 +1,42 @@
+Microsoft’s Mico heightens the risks of parasocial LLM relationships - Ars Technica
+Microsoft’s Mico heightens the risks of parasocial LLM relationships
+“It looks like you’re trying to find a friend. Would you like help?”
+Microsoft is rolling out a new face for its AI, and its name is Mico. The company announced the new, animated blob-like avatar for Copilot’s voice mode yesterday as part of
+Mico is part of a Microsoft program dedicated to the idea that “technology should work in service of people,” Microsoft wrote. The company insists this effort is “not [about] chasing engagement or optimizing for screen time. We’re building AI that gets you back to your life. That deepens human connection.”
+, the animated paperclip that popped up to offer help with Microsoft Office
+an Easter egg that can transform Mico into an animated Clippy
+“Clippy walked so that we could run,” Microsoft AI Corporate VP Jacob Andreou joked
+An Easter egg transforms Microsoft’s Mico into the old Office assistant Clippy.
+An Easter egg transforms Microsoft’s Mico into the old Office assistant Clippy.
+But while Clippy was an attempt to strengthen our connection to sterile Windows Help menus, Mico seems focused more on strengthening the parasocial relationships many people are already developing with LLMs. The defining interaction with Clippy was along the lines of “It looks like you’re writing a letter, would you like some help?” With Mico, the idea seems to be “It looks like you’re trying to find a friend. Would you like help?”
+to describe the feeling of intimacy that can develop between an audience and a media celebrity. Through repeated exposure, members of the audience can come to feel like they know the celebrity as a friend, even if the celebrity doesn’t know them at all.
+While mass media like radio, movies, and television can all feed into parasocial relationships, the Internet and smartphone revolutions have supercharged the opportunities we all have to feel like an online stranger is a close, personal confidante. From YouTube and podcast personalities to Instagram influencers or even your favorite blogger/journalist (hi), it’s easy to feel like you have a close connection with the people who create the content you see online every day.
+After spending hours watching this TikTok personality, I trust her implicitly to sell me a purse.
+After spending hours watching this TikTok personality, I trust her implicitly to sell me a purse.
+Viewing all this content on a smartphone can flatten all these media and real-life personalities into a kind of undifferentiated media sludge. It can be all too easy to slot an audio message from your romantic partner into the same mental box as a stranger chatting about video games in a podcast. “When my phone does little mating calls of pings and buzzes, it could bring me updates from people I love, or show me alerts I never asked for from corporations hungry for my attention,” Julie Beck writes in
+an excellent Atlantic article about this phenomenon
+. “Picking my loved ones out of the never-ending stream of stuff on my phone requires extra effort.”
+This is the world Mico seems to be trying to slide into, turning Copilot into another not-quite-real relationship mediated through your mobile device. But unlike the Instagram model who never seems to acknowledge your comments, Mico is always there to respond with a friendly smile and a warm, soothing voice.
+in a way that encourages this kind of parasocial relationship,
+. But adding a friendly, Pixar-like face to Copilot’s voice mode may make it much easier to be sucked into feeling like Copilot isn’t just a neural network but a real, caring personality—one you might even start thinking of the same way you’d think of the real loved ones in your life.
+Microsoft even admits that this is the point on some level. Twice in its “human-centered AI” announcement, the company talks about wanting to build an AI that “earns your trust.” Mico in particular “shows up with warmth [and] personality” by “react[ing] like someone who truly listens,” making “voice conversations feel more natural… [and] creating a friendly and engaging experience.” In his Verge interview, Andreou said that with Mico, “all the technology fades into the background, and you just start talking to this cute orb and build this connection with it.”
+That sounds less like technology focused on “deepen[ing] human connection” and more like the kind of technology that’s about “chasing engagement or optimizing for screen time.” After all, an AI that’s easier to talk to is an AI you’ll want to talk to more—and potentially pay more to access. If an AI chatbot with a warm, friendly face “earns your trust,” you’re a lot less likely to listen to the AI skeptics that generate what Microsoft calls “a lot of noise around AI.”
+Say what you want about Clippy, but a text-based Help menu can’t do any of this.
+It’s unclear if Mico will end up being a beloved parasocial friend to millions of Copilot users or more of an ironically remembered annoyance like Clippy. But it won’t be the last attempt to put a cute, trustworthy face on large language models that
+. And we should all be wary of the parasocial psychology these efforts can feed into.
+Kyle Orland has been the Senior Gaming Editor at Ars Technica since 2012, writing primarily about the business, tech, and culture behind video games. He has journalism and computer science degrees from University of Maryland. He once
+The company insists this effort is “not [about] chasing engagement or optimizing for screen time. We’re building AI that gets you back to your life. That deepens human connection.”
+So will Microsoft consider Mico to be a success if it drives people away from the computer and back into real life to build human connections in meatspace? Or would that be considered a disaster due to declining engagement and screen time metrics?
+It awfully reminds me of Lower Decks Badgey before becoming evil...
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

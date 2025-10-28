@@ -1,0 +1,16 @@
+Building AI-ready teams: Why documentation and culture matter more than tools - Stack Overflow
+Capture, share, & collaborate on knowledge internally.
+Promote your product or service to developers and technologists.
+Engage the world’s technology talent with your employer brand.
+Building AI-ready teams: Why documentation and culture matter more than tools
+This episode provides insights and strategies to successfully navigate AI adoption in engineering teams. Learn how to build developer confidence and create environments that drive real results beyond the hype.
+In the second part of this two-part Leaders of Code episode, Peter O'Connor, Director of Platform Engineering, and Ryan J. Salva, Senior Director of Product at Google Developer Experiences, dive beyond AI hype to explore the shifts reshaping how engineering teams operate and scale. From the critical role of documentation quality in AI workflows to the cultural transformations needed for successful adoption, Peter and Ryan discuss the deeper implications of integrating AI into modern software development practices.
+Explores how poor documentation creates problems as AI systems learn and repeat mistakes, making high-quality documentation essential for successful AI integrations.
+Covers how consistent tools and processes become more important when using AI, and why leaders should prioritize helping teams learn and experiment with AI tools instead of just measuring productivity.
+Offers practical advice for leaders on how to create environments where developers can learn and build confidence with AI tools.
+Get The Stack Overflow Podcast at your favorite listening service.
+Stay in the loop with fresh business content delivered straight to your inbox.
+AI agents will succeed because one tool is better than ten
+From multilingual semantic search to virtual assistants at Bosch Digital
+Craft and quality beat speed and scale, with or without agents
+Data licensing offering to build and improve AI tools and models.

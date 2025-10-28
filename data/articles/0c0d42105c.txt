@@ -1,0 +1,18 @@
+What leaders need to know from the 2025 Stack Overflow Developer Survey - Stack Overflow
+Capture, share, & collaborate on knowledge internally.
+Promote your product or service to developers and technologists.
+Engage the world’s technology talent with your employer brand.
+What leaders need to know from the 2025 Stack Overflow Developer Survey
+This episode draws on insights from the 2025 Stack Overflow Developer Survey to equip leaders with ways to navigate the current AI landscape and capture value beyond the hype.
+In this episode of Leaders of Code, Eira May, B2B Editor at Stack Overflow, and Natalie Rotnov, Senior Product Marketing Manager for the Enterprise Product Suite at Stack Overflow, unpack the key takeaways from the 2025 Developer Survey for tech and business leaders. The discussion focuses on the evolving developer relationship with AI, the continued struggle with tool sprawl, and actionable recommendations for leaders looking to deliver value and improve developer experience.
+The discussion covers critical findings for tech leaders:
+The decline in developer trust in AI is linked to two main frustrations: solutions that are "almost right, but not quite" and the time wasted debugging AI-generated code.
+Human connection and community validation remain vital: 80% of developers still visit Stack Overflow regularly, and the number of "advanced questions" on the public platform has doubled since 2023, underscoring AI’s limitations when it comes to complex, context-dependent questions.
+Tool sprawl continues, as most developers use 6–10 tools, suggesting that AI tends to complicate rather than simplify workflows.
+from the 2025 Stack Overflow Developer Survey, consolidated into an executive-ready summary.
+Get The Stack Overflow Podcast at your favorite listening service.
+Stay in the loop with fresh business content delivered straight to your inbox.
+AI agents will succeed because one tool is better than ten
+From multilingual semantic search to virtual assistants at Bosch Digital
+Craft and quality beat speed and scale, with or without agents
+Data licensing offering to build and improve AI tools and models.

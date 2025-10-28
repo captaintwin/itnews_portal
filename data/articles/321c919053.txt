@@ -1,0 +1,30 @@
+Waymo's co-CEO on the challenge of scaling robotaxis safely | TechCrunch
+Waymo’s co-CEO on the challenge of scaling robotaxis safely
+Waymo’s co-CEO, Tekedra Mawakana, had a clear message during her interview on the TechCrunch Disrupt 2025 stage Monday: “It is imperative that we scale.”
+Mawakana was speaking in the context of how Waymo balances fundraising (and burning through that money) with eventually achieving profitability. But she was also clear in the interview that she believes Waymo can increase road safety by reaching that scale.
+All this helps explain why the company has been on an expansion tear this year and expects to launch in many more U.S. cities — D.C., Miami, Denver, Dallas, Seattle, and Nashville — as well as in
+in 2026. It’s a furious pace that has seen the autonomous vehicle company leverage multiple partnerships with companies such as Uber, Lyft, and Avis.
+“By the end of 2026, you should expect us to be offering 1 million trips per week,” she said.
+Mawakana spent a lot of time during the interview with TechCrunch transportation editor Kirsten Korosec talking about the challenges of safely reaching that kind of scale.
+The Waymo co-CEO maintained that the company is operating at a level that is safer than the typical human driver. And while she didn’t name names, she took a shot at competitors, saying they aren’t doing enough to
+prove that their autonomous vehicle technology is truly safe
+“It is incumbent upon [them] to be transparent about what’s happening,” she said. “And if you are not being transparent, then it is my view that you are not doing what is necessary in order to actually earn the right to make the road safer.”
+Her comments come as the company continues to iron out edge cases during its expansion — with one of the most recent incidents coming in Atlanta, Georgia, where a Waymo vehicle pulled out in front of a stopped school bus, leading to
+an investigation from the National Highway Traffic Safety Administration
+Waymo itself recently released a report claiming its vehicles are already five times safer than most human drivers, and 12 times safer with respect to pedestrians.
+Still, Waymo vehicles have been caught making a number of head-scratching decisions.
+“It’s important to recognize, it’s not going to be perfection, but that doesn’t mean you shouldn’t be accountable for transparency,” Mawakana said onstage. “I think … we really worry as a company about those days. You know, we don’t say whether, we say when, and we plan for them.”
+Mawakana also said Waymo doesn’t think in terms of “how many [incidents] are allowable.”
+“We know they’re going to happen because our cars are on the road with humans, and unfortunately, right now, the state of the roads and the state of human driving is there is a lot of deaths, and there are a lot of injuries being caused on the roadways,” she said.
+And when asked whether the public would accept a death caused by a robotaxi in the face of the promise of greater safety, Mawakana said: “I think that society will.”
+Sean O’Kane is a reporter who has spent a decade covering the rapidly-evolving business and technology of the transportation industry, including Tesla and the many startups chasing Elon Musk. Most recently, he was a reporter at Bloomberg News where he helped break stories about some of the most notorious EV SPAC flops. He previously worked at The Verge, where he also covered consumer technology, hosted many short- and long-form videos, performed product and editorial photography, and once nearly passed out in a Red Bull Air Race plane.
+You can contact or verify outreach from Sean by emailing
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

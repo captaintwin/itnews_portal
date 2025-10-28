@@ -1,0 +1,11 @@
+Context is king for secure, AI-generated code - Stack Overflow
+Capture, share, & collaborate on knowledge internally.
+Promote your product or service to developers and technologists.
+Engage the world’s technology talent with your employer brand.
+Ryan sits down with Dimitri Stiliadis, CTO and co-founder of Endor Labs, to talk about how AppSec is evolving to address AI’s use cases. They discuss the implications of AI-generated code on security practices, the importance of human oversight in managing vulnerabilities, and how organizations should be balancing security and efficiency with AI.
+is AppSec for the software development revolution, helping you pinpoint critical risks whether your code is written by a human or AI.
+Get The Stack Overflow Podcast at your favorite listening service.
+AI agents will succeed because one tool is better than ten
+From multilingual semantic search to virtual assistants at Bosch Digital
+Craft and quality beat speed and scale, with or without agents
+Data licensing offering to build and improve AI tools and models.

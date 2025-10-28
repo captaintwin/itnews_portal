@@ -1,0 +1,44 @@
+You can tell Adobe Express’s new AI assistant to edit designs for you | The Verge
+You can tell Adobe Express’s new AI assistant to edit your designs for you
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+You can tell Adobe Express’s new AI assistant to edit your designs for you
+Adobe says its design platform’s AI chatbot can interpret vague prompts to pull off multi-step requests.
+Adobe says its design platform’s AI chatbot can interpret vague prompts to pull off multi-step requests.
+Posts from this author will be added to your daily email digest and your homepage feed.
+The AI Assistant is designed to be used without needing professional design experience.
+Posts from this author will be added to your daily email digest and your homepage feed.
+is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.
+A new generative AI experience is coming to Adobe’s cloud-based Express design platform, enabling you to transform projects by vaguely describing what changes to make. Adobe describes the “AI Assistant in Adobe Express” launching in public beta today as a conversational creative agent that “empowers people of every skill level” to quickly create visual content, without having to understand specific design terms or creative tools.
+The feature is available as a toggle in the top-left corner of the Adobe Express web app. When activated, the usual homepage interface and tool options will be replaced by a chatbot-style text box, with options to make a new design or edit existing images. Users can surface a selection of curated presets by describing what they need to make, such as “fall-themed wedding invitation” or “retro-inspired poster for school science fair,” and edit their selection with natural language prompts.
+For users without professional design experience, the AI assistant is capable of making adjustments based on vague requests like “make this pop” or “give this a jungle theme.” Users can also specify specific parts of the design to change, such as replacing backgrounds, fonts, and individual elements or layers of an asset, leaving the rest of the design unchanged. The tool pulls from a variety of sources, including Adobe’s Font and stock image library, or generates image assets from scratch to match specific requests using Adobe’s Firefly AI models.
+An entire design can be created using the AI assistant, or users can toggle it off at any time to make manual changes using Express tools. It can also fulfill requests that would require a combination of Express tools, like resizing and reformatting completed designs, or converting them into animations.
+“You decide when and how to work with them. The experience is hybrid by design,” Adobe’s chief technology officer, Ely Greenfield, said in the announcement. “They act like capable teammates — taking on the work that distracts you from your craft, so you can accomplish more while staying firmly in creative control.
+This is the latest expansion of Adobe’s plans to integrate conversational AI assistants across its wider product ecosystem, which
+. A similar chatbot-style editor is also launching in private beta for Photoshop, and Adobe says it’s working on making the Express AI assistant available as an integration for third-party apps like ChatGPT. The goal is that these Adobe AI assistants will eventually “work together seamlessly across your apps,” according to Greenfield, allowing them to eventually adapt to your personal style and anticipate the assistance you need in the future.
+from this story to see more like this in your personalized homepage feed and to receive email updates.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+If you can’t afford a vacation, an AI app will sell you pictures of one
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Pluribus’ Vince Gilligan on making shows that ‘attract really smart viewers’
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Here’s what ads on your $2,000 Samsung smart fridge will look like

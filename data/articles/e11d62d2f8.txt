@@ -1,0 +1,51 @@
+New corporate espionage claims emerge, centered on two highly valued 401(k) admin startups | TechCrunch
+New corporate espionage claims emerge, centered on two highly valued 401(k) admin startups
+Another gripping allegation of corporate espionage has emerged from the profoundly boring world of employee onboarding platforms and 401(k) administration.
+between HR software titans Rippling and Deel, which are currently
+featuring accusations of planted moles and systematic data theft. Now, as
+, comes Act Two: the 401(k) management unicorns, Human Interest and Guideline, squaring off in federal court with allegations so brazen that they’re embarrassing.
+, filed this month in Utah federal court: “We are going to tear apart HI. It’s going to be the easiest thing to do.”
+That’s Brandon Sterri texting his brothers on January 29. According to the complaint, Brandon and his brother Brian were, at that moment, still drawing paychecks from Human Interest, still logging into their company-issued laptops every morning beneath reminders that access was “limited to authorized personnel,” and that they’d agreed “to protect confidential data.” Their third brother, Eirik, worked for the competition, Guideline.
+Per the lawsuit, the Sterri brothers didn’t just talk big. They allegedly called their operation the “Sterri Takeover,” a name revealing either remarkable hubris or a serious misunderstanding of how corporate espionage is supposed to work, which is to say, very, very quietly.
+The complaint alleges a months-long scheme in which Brian and Brandon, working as junior inside sales representatives at Human Interest, systematically funneled their employer’s most sensitive intelligence, including partnership leads, customer data, and internal strategy documents, directly to Guideline.
+But not just to anyone at Guideline; Human Interest alleges the brothers were sharing it directly with the company’s chief executive, Kevin Busque, and its chief financial officer, Steven Wu.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Reached for comment, a Guideline spokesperson sent the following statement: “Guideline believes allegations in this lawsuit are false and without merit. We are vigorously defending ourselves and we look forward to presenting the facts and showing that these claims are unfounded.”
+Human Interest did not respond to TechCrunch’s request for comment.
+According to Human Interest’s complaint, two days after Brian Sterri resigned from Human Interest on February 24, he made a request that allegedly exposed the entire operation. “Got a big favor to ask,” he allegedly texted a former colleague named Castro, still employed at Human Interest. Then came the ask: “A screenshot of total lead flow for ISR team this month.”
+Based on the complaint, Castro, perhaps understanding more than she let on, replied: “Am i allowed to ask why.” Brian responded with a grinning emoji.
+The screenshot Brian wanted wasn’t just sensitive; it was, according to Human Interest, the crown jewels. Total lead flow represents the fundamental pool of potential clients, the critical determinant of growth trajectory and market penetration. It is information Human Interest has spent years and millions of dollars cultivating through proprietary business processes and partnerships with payroll providers. The kind of information that, in the wrong hands, creates what the lawsuit calls “a significant informational imbalance” and provides “considerable strategic advantage.”
+Reading the complaint, it appears that Castro grasped the gravity of what Brian was asking and the transactional nature of the betrayal. “I’m down to play dirty for sure but you need to get me a job lol.”
+Brian, the lawsuit alleges, brazenly promised her employment at Guideline in exchange for the data. When Castro didn’t immediately deliver, Brian tried again the next morning: “I still need that favor.”
+“Brian you know I can’t do that,” Castro allegedly replied.
+According to the complaint, Brian didn’t stop there. He allegedly called and texted, and when Castro stopped responding, his wife McKenna reached out on his behalf.
+The complaint paints a picture of systematic infiltration. Before their resignations, the brothers allegedly downloaded documents with titles like “Leads Data” and emailed files from their work accounts to personal Gmail addresses — Brian’s, and his wife’s. By logging into personal email on company laptops, they could bypass Human Interest’s detection systems entirely.
+On February 27, the same day Castro allegedly shut him down, Brian reached out to another Human Interest employee, Chloe Garza, with whom the Sterris had a “close personal and/or familial relationship,” per the complaint. The request: internal metrics from a Slack channel. Garza also refused: “Yea so I cannot send you anything HI related.”
+Brian’s response, as characterized in the complaint, is telling. In the same conversation, he allegedly wrote that “Mitch [another HI sales rep] would be the only person that could really give me the information GDL [Guideline] would want.” The complaint argues that the admission is right there, preserved in text.
+After Human Interest’s leadership held emergency meetings to remind employees of their confidentiality obligations, the complaint alleges, Brian mocked the effort. “lol Horne using fear tactics lmao,” he texted Castro. “Heard today scared a lot of people.”
+What elevates this from garden-variety corporate misbehavior to alleged racketeering is the purported involvement at the top. Human Interest claims this wasn’t rogue employees gone wild but instead a coordinated operation with executive blessing.
+After Human Interest sent cease-and-desist letters in early March, the complaint says, Eirik Sterri texted his brothers with an update. He’d spoken with Andrew Conley, Guideline’s Senior Vice President of Sales. The message: “Andrew is great. Also everyone has your backs for real. Everyone has expressed how fired up they are about the situation. It will blow over and all of us will be so fired up.”
+Then came what Human Interest characterizes as extortion. Guideline has agreed to be acquired by Gusto, the $9.3 billion payroll giant, for what TechCrunch reported earlier this month to be a
+. As part of the transaction, Guideline planned to divest certain assets and accounts associated with rival payroll companies. When Human Interest inquired about purchasing some of those assets, Guideline’s CFO allegedly delivered an ultimatum: drop the lawsuit, or the deal is off.
+TechCrunch’s Marina Temkin reported that Gusto was looking to
+associated with rival payroll companies, per several sources, but Gusto declined to comment on those divestment plans at the time.
+Today Gusto responded to questions from TechCrunch about whether it plans to go through with that acquisition and a spokesperson indicated that it does, writing that the “deal has not yet closed” and that “Gusto and Guideline remain separate companies,” but also that “[j]oining forces with Guideline means that payroll and 401(k) management will become more seamlessly integrated, all in one place, for the small businesses we serve – and we’re excited about that future.”
+Gusto also made clear that it is “not a party to the suit and has no involvement in the allegations.”
+Naturally, much is being made in the startup ecosystem about the HR software space becoming a theater of corporate warfare, with Rippling and Deel battling over allegations that include planted spies, and RICO violations, among other things.
+Absurd as it sounds, this is serious business for Rippling and Deel, and the stakes are equally high, if not higher, for Human Interest, for the three Sterri brothers, and for Guideline and its executive team.
+Human Interest has raised over $700 million at a $1.4 billion valuation from investors, including SoftBank, Baillie Gifford, and TPG. Guideline raised $340 million, hitting a $1.2 billion valuation in 2021 with backing from General Atlantic and Felicis.
+This story has been updated with comments from Gusto.
+Loizos has been reporting on Silicon Valley since the late ’90s, when she joined the original Red Herring magazine. Previously the Silicon Valley Editor of TechCrunch, she was named Editor in Chief and General Manager of TechCrunch in September 2023. She’s also the founder of StrictlyVC, a daily e-newsletter and lecture series acquired by Yahoo in August 2023 and now operated as a sub brand of TechCrunch.
+You can contact or verify outreach from Connie by emailing
+, or via encrypted message at ConnieLoizos.53 on Signal.
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

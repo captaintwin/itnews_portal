@@ -1,0 +1,97 @@
+How to navigate GitHub Universe (or any tech conference) if you’re an introvert - The GitHub Blog
+Learn about artificial intelligence and machine learning across the GitHub ecosystem and the wider industry.
+Explore the capabilities and benefits of AI code generation and how it can improve your developer experience.
+Resources for developers to grow in their skills and careers.
+Learn how to move into your first professional role.
+Learn how to start building, shipping, and maintaining software with GitHub.
+Get an inside look at how we’re building the home for all developers.
+Discover how we deliver a performant and highly available experience across the GitHub platform.
+Explore best practices for building software at scale with a majority remote team.
+Get a glimpse at the technology underlying the world’s leading AI-powered developer platform.
+Learn how we build security into everything we do across the developer lifecycle.
+Find out what goes into making GitHub the home for all developers.
+How we use GitHub to be more productive, collaborative, and secure
+Our engineering and security teams do some incredible work. Let’s take a look at how we use GitHub to be more productive, build collaboratively, and shift security left.
+Explore how to write, build, and deploy enterprise software at scale.
+Automating your way to faster and more secure ships.
+Tips, tools, and tricks to improve developer collaboration.
+GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for AI Code Assistants
+Learn why Gartner positioned GitHub as a Leader for the second year in a row.
+Keep up with what’s new and notable from inside GitHub.
+An inside look at news and product updates from GitHub.
+The latest on GitHub’s platform, products, and tools.
+The latest policy and regulatory changes in software.
+Data-driven insights around the developer ecosystem.
+Learn how to use retrieval-augmented generation (RAG) to capture more insights.
+Organizations worldwide are incorporating open source methodologies into the way they build and ship their own software.
+Learn about core challenges in DevSecOps, and how you can start addressing them with AI and automation.
+Learn about artificial intelligence and machine learning across the GitHub ecosystem and the wider industry.
+Explore the capabilities and benefits of AI code generation and how it can improve your developer experience.
+Resources for developers to grow in their skills and careers.
+Learn how to move into your first professional role.
+Learn how to start building, shipping, and maintaining software with GitHub.
+Get an inside look at how we’re building the home for all developers.
+Discover how we deliver a performant and highly available experience across the GitHub platform.
+Explore best practices for building software at scale with a majority remote team.
+Get a glimpse at the technology underlying the world’s leading AI-powered developer platform.
+Learn how we build security into everything we do across the developer lifecycle.
+Find out what goes into making GitHub the home for all developers.
+How we use GitHub to be more productive, collaborative, and secure
+Our engineering and security teams do some incredible work. Let’s take a look at how we use GitHub to be more productive, build collaboratively, and shift security left.
+Explore how to write, build, and deploy enterprise software at scale.
+Automating your way to faster and more secure ships.
+Tips, tools, and tricks to improve developer collaboration.
+GitHub recognized as a Leader in the Gartner® Magic Quadrant™ for AI Code Assistants
+Learn why Gartner positioned GitHub as a Leader for the second year in a row.
+Keep up with what’s new and notable from inside GitHub.
+An inside look at news and product updates from GitHub.
+The latest on GitHub’s platform, products, and tools.
+The latest policy and regulatory changes in software.
+Data-driven insights around the developer ecosystem.
+Learn how to use retrieval-augmented generation (RAG) to capture more insights.
+Organizations worldwide are incorporating open source methodologies into the way they build and ship their own software.
+Learn about core challenges in DevSecOps, and how you can start addressing them with AI and automation.
+How to navigate GitHub Universe (or any tech conference) if you’re an introvert
+If alone time is your love language—don’t worry, it’s ours too—you can still attend, learn from, and enjoy big events like GitHub Universe. Here are some practical tips on how.
+We know that the idea of big tech conferences can be overwhelming, especially if you’re introverted, anxious, or are used to spending most of your day behind your computer. (Which is most of us.) And that’s okay!
+The good news is that GitHub Universe was designed for folks like you. This isn’t just one long conference in a room with thousands of people and no exit. Universe offers all sorts of opportunities to take breaks, hang in small groups, or watch virtually, so that you can learn and network at whatever pace works for you. We’ve built in events to make the experience extra comfortable, safe, and exciting for all.
+If you’ve already got your pass but are feeling a bit shaky on how it’ll all go, here are some practical tips for how to navigate tech conferences, like GitHub Universe.
+Instead of signing up for the largest, busiest sessions, go for the smaller workshops, niche panels, and breakout sessions. Small-group sessions often foster deeper connections and conversations, and they can help keep you from getting lost in the crowd.
+), where the guest list will be small, and the conversations will be deep. You can also add demo-style
+to your agenda, which include practical exercises, to keep your mind engaged!
+, where two to three facilitators will guide small groups through specific topics of interest, prioritizing active participation and collaboration.
+We all know that introverts recharge alone. So if you need to step away and take some time to reflect, you should!
+, so you don’t have to choose between skipping content and protecting your peace. Need a few minutes to unwind? We’ll have a quiet room for phone-free decompression, meditation, and prayer. We’ll also have plenty of drink options, snacks, and meals available if you need to keep your blood sugar up.
+And don’t forget to step outside and take in the stunning waterfront views at Fort Mason—a quick breath of ocean air can do wonders between sessions.
+If large mixers without a planned topic of conversation feel daunting, you can look for guided or themed activities where the conversation already has a starting point.
+At Universe, you can connect with people who share your passions at
+Meet fellow attendees over your shared interests beyond the code. Whether you’re a Lego enthusiast or a die-hard Swiftie, there’s an opportunity for everyone to connect and simply have fun.
+Create interactive projects, from art to AI and music to robotics. Whether you build or just tinker, this is your playground.
+Connect with contributors and maintainers, explore open source projects, and celebrate the power of community-led software.
+Decide ahead of time what you want to get out of the event. Take a look at the agenda. What are your must-see sessions? Who are the people you want to meet? Build in plenty of breaks—without guilt!
+, so you can figure out the right sessions for your interests and goals? This makes it simple to stick to your plan (and pace yourself!).
+Wearing a T-shirt, pin, or sticker related to your passions makes it easy for someone else to approach
+. It may even give you the confidence to approach someone else, too.
+Universe swag (and plenty of community stickers) are designed to help spark those natural, low-pressure conversations. And if you don’t have any swag before the event, you can always visit
+and grab something day-of. We’ll have a brand new GitHub Universe collection, so you’ll be able to rep our latest and greatest.
+6. Take it online with livestream or on-demand sessions
+If attending in-person still doesn’t feel right, don’t forget that you can attend GitHub Universe virtually or catch keynotes and select session recordings later on-demand. Our goal: Make sure you can still participate and stay connected in a way that works best for you.
+To note: This might not always be an option at other tech conferences or events, but it’s always worth checking to see if there are ways to learn and connect from home if that’s your preferred method.
+We hope you see you at GitHub Universe this year. Don’t forget that however you plan to attend—in-person, virtually, just a few workshops, or somewhere in between—it’s all in your control. Whether you’re introverted (like us) or extroverted, or somewhere in between, we hope you have the best time!
+GitHub is the world's best developer experience and the only AI-powered platform with security incorporated into every step, so you can innovate with confidence.
+6. Take it online with livestream or on-demand sessions
+The developer role is evolving. Here’s how to stay ahead.
+AI is changing how software gets built. Explore the skills you need to keep up and stand out.
+Your guide to GitHub Universe 2025: The schedule just launched!
+Create your own agenda of favorites, sign up for one-on-on mentoring sessions, and register if you haven’t already. We’ll see you there!
+In September, we experienced three incidents that resulted in degraded performance across GitHub services.
+The developer role is evolving. Here’s how to stay ahead.
+AI is changing how software gets built. Explore the skills you need to keep up and stand out.
+How GitHub protects developers from copyright enforcement overreach
+Why the U.S. Supreme Court case Cox v. Sony matters for developers and sharing updates to our Transparency Center and Acceptable Use Policies.
+Everything you need to master GitHub, all in one place.
+Build what’s next on GitHub, the place for anyone from anywhere to build anything.
+Meet the companies and engineering teams that build with GitHub.
+Last chance: Save $700 on your IRL pass to Universe and join us on Oct. 28-29 in San Francisco.
+Discover tips, technical guides, and best practices in our biweekly newsletter just for devs.
+Yes please, I’d like GitHub and affiliates to use my information for personalized communications, targeted advertising and campaign effectiveness. See the

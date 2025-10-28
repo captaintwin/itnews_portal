@@ -1,0 +1,9 @@
+Google is bringing Beam, its 3D video conferencing tech, to deployed service members
+Google is bringing Beam, its 3D video conferencing tech, to deployed service members
+The company is teaming up with United Service Organizations to help keep military families connected.
+Google has teamed up with the United Service Organizations (USO) to help deployed service members stay in touch with their families in a different way. As part of a pilot program, the company is bringing
+, its 3D video communication tech, to USO service centers in the US and other countries starting in 2026.
+Google suggests that Beam can help military families who are separated by many miles feel like they are in the same room. While family members can keep in touch with deployed loved ones through group chats and video calls, chatting via Beam could help them feel closer together, if the tech works as well as promised.
+We got our first look at Beam — then known as Project Starline —
+uses 3D imaging, spatial audio and adaptive lighting to make video chats more immersive. Beam is primarily intended for enterprise clients (the
+), but it's interesting to see Google exploring other applications for the tech.

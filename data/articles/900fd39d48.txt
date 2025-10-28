@@ -1,0 +1,24 @@
+Tesla’s “Mad Max” mode is now under federal scrutiny - Ars Technica
+Tesla’s “Mad Max” mode is now under federal scrutiny
+The new mode added in the latest update will speed and weave through traffic.
+Earlier this month, Tesla rolled out a new firmware update that added a pair of new driving modes for the controversial full self-driving (FSD) feature. One, called “Sloth,” relaxes acceleration and stays in its lane. The other, called “Mad Max,” does the opposite: It speeds and swerves through traffic to get you to your destination faster. And after multiple reports of FSD Teslas doing just that, the National Highway Traffic Safety Administration wants to know more.
+In fact, “Mad Max” mode is not entirely new—Tesla beta-tested the same feature in Autopilot in 2018, before deciding not to roll it out in a production release after widespread outcry.
+These days, the company is evidently feeling less constrained; despite having just lost a federal wrongful death lawsuit that will cost it
+, it described the new mode as being able to drive “through traffic at an incredible pace, all while still being super smooth. It drives your car like a sports car. If you are running late, this is the mode for you.”
+, we learned that the NHTSA had opened a new preliminary investigation into Tesla following dozens of complaints of its EVs running stop signs or crossing into oncoming traffic while operating under FSD. Now,
+, NHTSA is seeking more information from the automaker about “Mad Max” mode.
+“NHTSA is in contact with the manufacturer to gather additional information,” it told Reuters, adding that “[t]he human behind the wheel is fully responsible for driving the vehicle and complying with all traffic safety laws.”
+“Tesla is deliberately programming cars to exceed speed limits and drive aggressively, putting everyone on our roads at risk. This ‘Mad Max’ rollout is the latest iteration of Tesla’s preference for aesthetics and sales over safety, and I urge regulators to take action to prevent this technology from being unleashed,” said Brett Schreiber, founding partner at the firm that won the aforementioned wrongful death lawsuit.
+Jonathan is the Automotive Editor at Ars Technica. He has a BSc and PhD in Pharmacology. In 2014 he decided to indulge his lifelong passion for the car by leaving the National Human Genome Research Institute and launching Ars Technica's automotive coverage. He lives in Washington, DC.
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

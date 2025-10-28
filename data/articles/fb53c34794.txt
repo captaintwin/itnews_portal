@@ -1,0 +1,48 @@
+Adobe’s new AI audio tools add soundtracks and voice-overs to videos | The Verge
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+﻿And unlike many AI music-makers, Adobe says its new Firefly tools are completely safe to use commercially.
+﻿And unlike many AI music-makers, Adobe says its new Firefly tools are completely safe to use commercially.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Generate Soundtrack is like Mad Libs for backing instrumentals.
+Posts from this author will be added to your daily email digest and your homepage feed.
+is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.
+Adobe is giving filmmakers new generative AI audio tools that can quickly add thematically appropriate backing tracks and narration to videos. Generate Soundtrack and Generate Speech are being introduced to a redesigned Adobe Firefly AI app, while Adobe is also developing a new web-based video production tool that combines multiple AI features with a simple editing timeline.
+The Generate Soundtrack tool is launching in public beta in the Firefly app, and works by assessing an uploaded video and then generating a selection of instrumental audio clips that automatically synchronize to the footage. Users can direct the style of the music by selecting from provided presets like lofi, hip-hop, classical, EDM, and more, or describe the desired vibe in the provided text prompt interface — asking it to be more sentimental, aggressive, and so on. The tool will also suggest a prompt based on the uploaded video footage that can be used as a starting point.
+“We wanna help users prompt music. It’s a new muscle we need to develop, so in order to make that easier and more accessible, if you give us your clip, we will predict what type of music goes with that clip,” Adobe’s generative AI head Alexandru Costin told
+. “But we’re also offering you this Mad Libs approach where you can pick the vibe, the style, the objective of your clip.”
+Generate Soundtrack will provide four distinct audio clip variations per prompt, with each clip having a maximum length of five minutes. The Firefly AI model that Generate Soundtrack is built around was trained on licensed content, meaning it won’t place creators at risk of having videos taken down by copyright strikes. “We purchased music and voice from IP owners, that’s why we have the confidence to offer it as commercially safe,” said Costin.
+That promise gives Adobe’s AI music-making efforts a leg up over competing companies like Suno and Udio, which have been targeted with
+their own AI models on protected materials. Generate Soundtrack is only designed for background audio, but Adobe is also working on other tools that could provide a
+— one that aims to save creators the headache of navigating IP laws.
+Firefly’s Generate Speech tool is also launching in public beta, and can be used to create voiceovers for video projects from text. It provides more than 50 voices powered by either Adobe’s Firefly Speech Model or ElevenLabs, with support for more than 20 languages. Users can fine-tune things like speed, pitch, and emotion, and manually correct pronunciation for names or words that may have regional variations.
+We don’t know much about the upcoming Firefly video editor, but the preview images suggest it’ll give users a basic editing timeline that supports various Adobe generative AI features.
+Another in-development filmmaking tool is the Firefly video editor, which Adobe describes as a “multitrack timeline editor for generating, organizing, trimming, and sequencing clips.” It combines Adobe’s various tools for generating voiceovers, soundtracks, and titles into a single web-based app, alongside frame-by-frame editing features and style presets. The Firefly video editor will start rolling out in private beta next month, with prospective users required to sign up to a waitlist for early access.
+from this story to see more like this in your personalized homepage feed and to receive email updates.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+If you can’t afford a vacation, an AI app will sell you pictures of one
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Pluribus’ Vince Gilligan on making shows that ‘attract really smart viewers’
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work

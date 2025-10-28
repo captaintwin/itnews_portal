@@ -1,0 +1,28 @@
+Fitbit’s revamped app, with Gemini-powered health coach, rolls out to Premium users | TechCrunch
+Fitbit’s revamped app, with Gemini-powered health coach, rolls out to Premium users
+to Premium subscribers in the U.S. on Android starting tomorrow. It expands to iOS later this year.
+As the AI race heats up, Google is counting on the Gemini AI assistant to help Fitbit stand out from the crowd. Called “Coach,” this feature is designed to be your all-in-one fitness trainer, sleep coach, and health and wellness advisor.
+At the recent Made by Google event, Google showcased Coach’s various capabilities, like how it can create a custom routine based on your goals, preferences, and available equipment.
+For example, if you want to run longer distances without becoming winded, Coach will create a tailored fitness plan with suggestions and achievable targets. While you work out, it’ll adjust your exercise plan in real time based on feedback to keep you on track. And if you happen to get injured later in the week, the AI will modify the plan accordingly.
+Other capabilities include analyzing your sleep habits and providing insights into how to improve your sleep quality over time.
+While the focus will be on Coach, the Fitbit app also features a makeover with a sleek design that’s easier to navigate, organized around four main tabs: Today, Fitness, Sleep, and Health.
+on its Made by Google channel on YouTube that explains each tab. The Today tab, for instance, serves as the central hub of the app, highlighting key focus metrics, weekly cardio load data, and any other relevant statistics you may want to glance at quickly. You can manually customize which metrics you want to view at any time.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+The Fitness tab, meanwhile, houses your workout plans and key metrics, such as your cardio goal and average weekly step count. However, keep in mind that several features are still unavailable, such as nutrition tracking and cycle logging.
+Additionally, the Sleep tab allows you to track your sleep patterns, with a new feature that provides AI Coach insights to help you enhance your sleep quality. At the bottom of the tab, a Sleep summary aggregates all information from your last night’s sleep, such as whether you experienced prolonged periods of wakefulness during the night.
+The Health tab is dedicated to key metrics, providing quick access to vital signs such as breathing rate, blood oxygen saturation, and resting heart rate, offering a comprehensive overview of your health.
+To check out the Coach preview on Android, you’ll need an active Fitbit Premium subscription and a compatible Fitbit smartwatch, tracker, or Pixel Watch.
+Lauren covers media, streaming, apps and platforms at TechCrunch.
+You can contact or verify outreach from Lauren by emailing
+or via encrypted message at laurenforris22.25 on Signal.
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

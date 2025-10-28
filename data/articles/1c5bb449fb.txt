@@ -1,0 +1,28 @@
+Google Cloud takes aim at CoreWeave and AWS with managed Slurm for enterprise-scale AI training | VentureBeat
+Google Cloud takes aim at CoreWeave and AWS with managed Slurm for enterprise-scale AI training
+Some enterprises are best served by fine-tuning large models to their needs, but a number of companies plan to
+Google Cloud wants to play a bigger role in enterprises’ model-making journey with its new service,
+. The service gives enterprises looking to train their own models access to a managed Slurm environment, data science tooling and any chips capable of large-scale model training.
+With this new service, Google Cloud hopes to turn more enterprises away from other providers and encourage the building of more company-specific AI models.
+While Google Cloud has always offered the ability to customize its Gemini models, the new service allows customers to bring in their own models or customize any open-source model Google Cloud hosts.
+Vertex AI Training positions Google Cloud directly against companies like
+Jaime de Guerre, senior director of product management at Gloogle Cloud, told VentureBeat that the company has been hearing from a lot of organizations of varying sizes that they need a way to better optimize compute but in a more reliable environment.
+“What we're seeing is that there's an increasing number of companies that are building or customizing large gen AI models to introduce a product offering built around those models, or to help power their business in some way,” de Guerre said. “This includes AI startups, technology companies, sovereign organizations building a model for a particular region or culture or language and some large enterprises that might be building it into internal processes.”
+De Guerre noted that while anyone can technically use the service, Google is targeting companies planning large-scale model training rather than simple fine-tuning or LoRA adopters. Vertex AI Services will focus on longer-running training jobs spanning hundreds or even thousands of chips. Pricing will depend on the amount of compute the enterprise will need.
+“Vertex AI Training is not for adding more information to the context or using RAG; this is to train a model where you might start from completely random weights,” he said.
+Enterprises are recognizing the value of building customized models beyond just fine-tuning an LLM via retrieval-augmented generation (RAG). Custom models would know more in-depth company information and respond with answers specific to the organization. Companies like
+recently announced a new service that allows enterprises to
+, often buy GPUs to train them at significant cost.
+Google Cloud said Vertex AI Training differentiates itself by giving access to a larger set of chips, services to monitor and manage training and the expertise it learned from training the Gemini models.
+, a consortium of Singaporean research institutes and startups that built the 27-billion-parameter SEA-LION v4, and
+Enterprises often have to choose between taking an already-built LLM and fine-tuning it or building their own model. But creating an LLM from scratch is usually unattainable for smaller companies, or it simply doesn’t make sense for some use cases. However, for organizations where a fully custom or from-scratch model makes sense, the issue is gaining access to the GPUs needed to run training.
+, especially when organizations compete with several others for GPU space.
+Hyperscalers like AWS and Microsoft — and, yes, Google — have pitched that their massive data centers and racks and racks of high-end chips deliver the most value to enterprises. Not only will they have access to expensive GPUs, but cloud providers often offer full-stack services to help enterprises move to production.
+Services like CoreWeave gained prominence for offering on-demand access to
+H100s, giving customers flexibility in compute power when building models or applications. This has also given rise to a business model in which companies with GPUs rent out server space.
+De Guerre said Vertex AI Training isn’t just about offering access to train models on bare compute, where the enterprise rents a GPU server; they also have to bring their own training software and manage the timing and failures.
+“This is a managed Slurm environment that will help with all the job scheduling and automatic recovery of jobs failing,” de Guerre said. “So if a training job slows down or stops due to a hardware failure, the training will automatically restart very quickly, based on automatic checkpointing that we do in management of the checkpoints to continue with very little downtime.”
+He added that this provides higher throughput and more efficient training for a larger scale of compute clusters.
+Services like Vertex AI Training could make it easier for enterprises to build niche models or completely customize existing models. Still, just because the option exists doesn’t mean it's the right fit for every enterprise.
+Deep insights for enterprise AI, data, and security leaders
+You're in! Our latest news will be hitting your inbox soon.

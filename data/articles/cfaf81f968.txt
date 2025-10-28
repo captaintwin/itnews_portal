@@ -1,0 +1,75 @@
+Microsoft Copilot gets 12 big updates for fall, including new AI assistant character Mico  | VentureBeat
+Microsoft Copilot gets 12 big updates for fall, including new AI assistant character Mico
+AI flat illustration pink blob smiles seated at desk in front of monitor displaying Windows logo in blue office
+, CEO of Microsoft's AI division, and other presenters unveiling a new generation of features that deepen integration across Windows, Edge, and Microsoft 365, positioning the platform as a practical assistant for people during work and off-time, while allowing them  to preserve control and safety of their data.
+also up the ante in terms of capabilities and the accessibility of generative AI assistance from Microsoft to users, so businesses relying on Microsoft products, and those who seek to offer complimentary or competing products, would do well to review them.
+Suleyman emphasized that the updates reflect a shift from hype to usefulness. “Technology should work in service of people, not the other way around,” he said. “Copilot is not just a product—it’s a promise that AI can be helpful, supportive, and deeply personal.”
+Intriguingly, the announcement also sought to shine a greater spotlight on Microsoft's own homegrown AI models, as opposed to those of its partner and investment OpenAI, which previously powered the entire Copilot experience. Instead, Suleyman wrote today in a
+“At the foundation of it all is our strategy to put the best models to work for you – both those we build and those we don’t. Over the past few months, we have released in-house models like MAI-Voice-1, MAI-1-Preview and MAI-Vision-1, and are rapidly iterating.”
+The Fall Release consolidates Copilot’s identity around twelve key capabilities—each with potential to streamline organizational knowledge work, development, or support operations.
+– Shared Copilot sessions where up to 32 participants can brainstorm, co-author, or plan simultaneously. For distributed teams, it effectively merges a meeting chat, task board, and generative workspace. Copilot maintains context, summarizes decisions, and tracks open actions.
+– A collaborative hub for creating and remixing AI-generated content. In an enterprise setting, Imagine enables rapid prototyping of visuals, marketing drafts, or training materials.
+– A new character identity for Copilot that introduces expressive feedback and emotional expression in the form of a cute, amorphous blob. Echoing Microsoft’s historic character interfaces like
+(2014), Mico serves as a unifying UX layer across modalities.
+– A conversational mode that adapts to a user’s communication style and offers calibrated pushback — ending the sycophancy that some users have complained about with other AI models such as
+. For professionals, it allows Socratic problem-solving rather than passive answer generation, making Copilot more credible in technical collaboration.
+– Long-term contextual memory that lets Copilot recall key details—training plans, dates, goals—at the user’s direction.
+– Integration with OneDrive, Outlook, Gmail, Google Drive, and Google Calendar for natural-language search across accounts.
+– Context-based prompts and next-step suggestions derived from recent activity.
+– Health information grounded in credible medical sources such as Harvard Health, with tools allowing users to locate and compare doctors.
+– A Socratic, voice-driven tutoring experience using questions, visuals, and whiteboards.
+– Converts Microsoft Edge into an “AI browser” that summarizes, compares, and executes web actions by voice.
+– Deep integration across Windows 11 PCs with “Hey Copilot” activation, Copilot Vision guidance, and quick access to files and apps.
+– A collaborative file canvas plus a unified search experience combining AI-generated, cited answers with standard web results.
+The Fall Release is immediately available in the United States, with rollout to the UK, Canada, and other markets in progress.
+Some functions—such as Groups, Journeys, and Copilot for Health—remain U.S.-only for now. Proactive Actions requires a Microsoft 365 Personal, Family, or Premium subscription.
+Together these updates illustrate Microsoft’s pivot from static productivity suites to contextual AI infrastructure, with the Copilot brand acting as the connective tissue across user roles.
+From Clippy to Mico: The Return of a Guided Interface
+One of the most notable introductions is Mico, a small animated companion that is available within Copilot’s voice-enabled experiences, including the Copilot app on Windows, iOS, and Android, as well as in Study Mode and other conversational contexts. It serves as an optional visual companion that appears during interactive or voice-based sessions, rather than across all Copilot interfaces.
+Mico listens, reacts with expressions, and changes color to reflect tone and emotion — bringing a visual warmth to an AI assistant experience that has traditionally been text-heavy.
+Mico’s design recalls earlier eras of Microsoft’s history with character-based assistants. In the mid-1990s, Microsoft experimented with Microsoft Bob (1995), a software interface that used cartoon characters like a dog named Rover to guide users through everyday computing tasks. While innovative for its time, Bob was discontinued after a year due to performance and usability issues.
+A few years later came Clippy, the Office Assistant introduced in Microsoft Office 97. Officially known as “Clippit,” the animated paperclip would pop up to offer help and tips within Word and other Office applications. Clippy became widely recognized—sometimes humorously so—for interrupting users with unsolicited advice. Microsoft retired Clippy from Office in 2001, though the character remains a nostalgic symbol of early AI-driven assistance.
+More recently, Cortana, launched in 2014 as Microsoft’s digital voice assistant for Windows and mobile devices, aimed to provide natural-language interaction similar to Apple’s Siri or Amazon’s Alexa. Despite positive early reception, Cortana’s role diminished as Microsoft refocused on enterprise productivity and AI integration. The service was officially discontinued on Windows in 2023.
+Mico, by contrast, represents a modern reimagining of that tradition—combining the personality of early assistants with the intelligence and adaptability of contemporary AI models. Where Clippy offered canned responses, Mico listens, learns, and reflects a user’s mood in real time. The goal, as Suleyman framed it, is to create an AI that feels “helpful, supportive, and deeply personal.”
+Groups Are Microsoft's Version of Claude and ChatGPT Projects
+During Microsoft’s launch video, product researcher Wendy described Groups as a transformative shift: “You can finally bring in other people directly to the conversation that you’re having with Copilot,” she said. “It’s the only place you can do this.”
+Up to 32 users can join a shared Copilot session, brainstorming, editing, or planning together while the AI manages logistics such as summarizing discussion threads, tallying votes, and splitting tasks. Participants can enter or exit sessions using a link, maintaining full visibility into ongoing work.
+Instead of a single user prompting an AI and later sharing results, Groups lets teams prompt and iterate together in one unified conversation.
+In some ways, it's an answer to Anthropic’s Claude Projects and OpenAI’s ChatGPT Projects, both launched within the last year as tools to centralize team workspaces and shared AI context.
+Where Claude and ChatGPT Projects allow users to aggregate files, prompts, and conversations into a single container, Groups extends that model into real-time, multi-participant collaboration.
+Unlike Anthropic’s and OpenAI’s implementations, Groups is deeply embedded within Microsoft’s productivity environment.
+Like other Copilot experiences connected to Outlook and OneDrive, Groups operates within Microsoft’s enterprise identity framework, governed by Microsoft 365 and Entra ID (formerly Azure Active Directory) authentication and consent models
+This means conversations, shared artifacts, and generated summaries are governed under the same compliance policies that already protect Outlook, Teams, and SharePoint data.
+Hours after the unveiling, OpenAI hit back against its own investor in the escalating AI competition between the "frenemies" by expanding its Shared Projects feature beyond its current Enterprise, Team, and Edu subscriber availability to
+users of its free, Plus, and Pro subscription tiers.
+Memory & Personalization and Connectors effectively extend a lightweight orchestration layer across Microsoft’s ecosystem.
+Instead of building separate context-stores or retrieval APIs, teams can leverage Copilot’s secure integration with OneDrive or SharePoint as a governed data backbone.
+A presenter explained that Copilot’s memory “naturally picks up on important details and remembers them long after you’ve had the conversation,” yet remains editable.
+For data engineers, Copilot Search and Connectors reduce friction in data discovery across multiple systems. Natural-language retrieval from internal and cloud repositories may lower the cost of knowledge management initiatives by consolidating search endpoints.
+For security directors, Copilot’s explicit consent requirements and on/off toggles in Edge and Windows help maintain data residency standards. The company reiterated during the livestream that Copilot “acts only with user permission and within organizational privacy controls.”
+Copilot Mode in Edge: The AI Browser for Research and Automation
+Copilot Mode in Edge stands out for offering AI-assisted information workflows.
+The browser can now parse open tabs, summarize differences, and perform transactional steps.
+“Historically, browsers have been static—just endless clicking and tab-hopping,” said a presenter during Microsoft’s livestream. “We asked not how browsers should work, but how people work.”
+In practice, an analyst could prompt Edge to compare supplier documentation, extract structured data, and auto-fill procurement forms—all with consistent citation.
+Voice-only navigation enables accessibility and multitasking, while Journeys, a companion feature, organizes browsing sessions into storylines for later review.
+Copilot on Windows: The Operating System as an AI Surface
+In Windows 11, Copilot now functions as an embedded assistant. With the wake-word “Hey Copilot,” users can initiate context-aware commands without leaving the desktop—drafting documentation, troubleshooting configuration issues, or summarizing system logs.
+A presenter described it as a “super assistant plugged into all your files and applications.” For enterprises standardizing on Windows 11, this positions Copilot as a native productivity layer rather than an add-on, reducing training friction and promoting secure, on-device reasoning.
+Copilot Vision, now in early deployment, adds visual comprehension. IT staff can capture a screen region and ask Copilot to interpret error messages, explain configuration options, or generate support tickets automatically.
+Combined with Copilot Pages, which supports up to twenty concurrent file uploads, this enables more efficient cross-document analysis for audits, RFPs, or code reviews.
+At the foundation of these capabilities are Microsoft’s proprietary
+models—trained in-house to handle text, voice, and visual inputs cohesively.
+For engineering teams managing LLM orchestration, this architecture introduces several potential efficiencies:
+– Reduces the need for separate ASR (speech-to-text) and image-parsing services.
+– Because Microsoft owns the model stack, updates propagate across Copilot experiences without re-integration.
+– In-house hosting under Azure compliance frameworks simplifies security certification for regulated industries.
+A presenter described the new stack as “the foundation for immersive, creative, and dynamic experiences that still respect enterprise boundaries.”
+For years, Microsoft positioned Copilot primarily as a productivity companion. With the Fall 2025 release, it crosses into operational AI infrastructure—a set of extensible services for reasoning over data and processes.
+Suleyman described this evolution succinctly: “Judge an AI by how much it elevates human potential, not just by its own smarts.” For CIOs and technical leads, the elevation comes from efficiency and interoperability.
+A connective interface linking files, communications, and cloud data.
+A reasoning agent capable of understanding context across sessions and modalities.
+A secure orchestration layer compatible with Microsoft’s compliance and identity framework.
+Suleyman’s insistence that “technology should work in service of people” now extends to organizations as well: technology that serves teams, not workloads; systems that adapt to enterprise context rather than demand it.
+Deep insights for enterprise AI, data, and security leaders
+You're in! Our latest news will be hitting your inbox soon.

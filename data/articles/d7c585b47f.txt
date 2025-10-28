@@ -1,0 +1,21 @@
+PayPal’s Agentic Commerce Play Shows Why Flexibility, Not Standards, Will Define the Next E-Commerce Wave | VentureBeat
+PayPal’s Agentic Commerce Play Shows Why Flexibility, Not Standards, Will Define the Next E-Commerce Wave
+While enterprises looking to sell goods and services online wait for the
+The payments company is launching a discoverability solution that allows enterprises to make its product available on any chat platform, regardless of the model or agent payment protocol.
+, found that it can leverage its relationship with merchants and enterprises to help pave the way for an easier transition into agentic commerce and offer the kind of flexibility they learned will benefit the ecosystem.
+Michelle Gill, PayPal general manager for small business and financial services, told VentureBeat that AI-powered shopping will continue to grow, so enterprises and brands need to start laying the groundwork early.
+“We think that merchants who've historically sold through web stores, particularly in the e-commerce space, are really going to need a way to get active on all of these large language models,” Gill said. “The challenge is that no one really knows how fast all of this is going to move. The issue that we’re trying to help merchants think through is how to do all of this as low-touch as possible while using the infrastructure you already have without doing a bazillion integrations.”
+She added AI shopping would also bring about “a resurgence from consumers trying to ensure their investment is protected.”
+PayPal’s Agentic Commerce Services include two features. The first is Agent Ready, which would allow existing PayPal merchants to accept payments on AI platforms. The second is called Shop Sync, which will enable companies’ product data to be discoverable through different AI chat interfaces. It takes a company’s catalog information and plug its inventory and fulfillment data to chat platforms.
+Gill said the data goes into a central repository where AI models can ingest the information.
+Right now, companies can access shop sync with Agent Ready coming in 2026.
+Gill said Agentic Commerce Services is a one-to-many solution, that would be helpful right now, as different LLMs scrape different data sources to surface information.
+More product discovery over the traditional search, browse and cart experiences
+Preserved customer insights and relationships where the brand continues to have control over their records and communications with customers.
+Right now, the service is only available through Perplexity, but Gill said more platforms will be added soon.
+Agentic commerce is still very much in the early stages. AI agents are just beginning to get better at reading a browser. while platforms like ChatGPT, Gemini and Perplexity can now surface products and services based on user queries, people cannot technically buy things from chat yet.
+There’s a race right now to create a standard to enable agents to transact on behalf of users and pay for items. Other than Google’s AP2,
+Other than enabling a trust layer for agents to transact, another issue enterprises face with agentic commerce is fragmentation. Different chat platforms use different models which also interpret information in slightly different ways. Gill said PayPal learned that when it comes to working with merchants, flexibility is important.
+“How do you decide if you're going to spend your time integrating with Google, Microsoft, ChatGPT or Perplexity? And each one of them right now has a different protocol, a different catalog, config, a different everything. That is a lot of time to make a bet as to like where you should spend your time,” Gill said.
+Deep insights for enterprise AI, data, and security leaders
+You're in! Our latest news will be hitting your inbox soon.

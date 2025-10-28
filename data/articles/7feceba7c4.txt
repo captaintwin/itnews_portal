@@ -1,0 +1,26 @@
+Adobe Firefly Image 5 brings support for layers, will let creators make custom models | TechCrunch
+Adobe Firefly Image 5 brings support for layers, will let creators make custom models
+Adobe said on Tuesday that it is launching the latest iteration of its image generation model, Firefly Image 5. The company is also adding more features to the Firefly website, support for more third-party models, the ability to generate speech and soundtracks. Notably, the update allows artists to come up with their own image models using their existing art.
+Image 5 model can now work at native resolutions of up to 4 megapixels, a massive increase from the previous gen model, which could natively generate images at 1 megapixels but then would upscale them to 4 megapixels. The new model is also better at rendering humans, the company said.
+Image 5 also enables layered and prompt-based editing — the model treats different objects as layers and allows you to edit them using prompts, or use tools like resize and rotate. The company said it makes sure that when you edit these layers, the image’s details and integrity are not compromised.
+Adobe’s Firefly site has supported third-party models from AI labs like OpenAI, Google, Runway, Topaz, and Flu to augment its appeal to its creative customer base, and now the company is taking that a step further by letting users  create custom models based on their art style. Currently in a closed beta, this feature lets users drag and drop assets, such as images, illustrations and sketches, to create a custom image model based on their style.
+The company is also adding some new features to its Firefly website, which was
+. The site now lets you use the prompt box to switch between generating images or videos, choose which AI model you want to work with, change aspect ratios, and more. The site’s home page now features your files and recent generation history, and you also get shortcuts to other Adobe apps (these were previously housed in a menu).
+Adobe has also redesigned the video generation and editing tool to support layers and timeline-based editing. This design change is currently only available in a private beta, and will be rolled out to users eventually.
+Firefly is also getting two new audio features: Users can now employ AI prompts to generate entire soundtracks and speech — using models from ElevenLabs — for videos. There’s also a new way to easily come up with prompts: just add keywords and sections by selecting words from a word cloud.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+, Adobe is trying to cater to new-age creators who are increasingly using AI in their workflows. “We’re thinking of the target audience for Firefly as what we call creators or next-generation creative professionals. I think there are these emergent creatives that are GenAI-oriented. They love to use GenAI in all their workloads,” Alexandru Costin, the company’s VP of generative AI, told TechCrunch over a call.
+He added that with Firefly, the company now has more freedom to add new features and play around with the interface as it doesn’t have to adhere to the muscle memory of creative professionals who might be used to certain workflows in Adobe’s existing Creative Cloud tools.
+Ivan covers global consumer tech developments at TechCrunch. He is based out of India and has previously worked at publications including Huffington Post and The Next Web.
+You can contact or verify outreach from Ivan by emailing
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

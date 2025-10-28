@@ -1,0 +1,13 @@
+=== План публикаций на 2025-10-28 ===
+Всего статей: 36
+
+• WIRED: Why Nicholas Thompson Made a Custom GPT to Run Faster (42860 знаков)
+• Stack Overflow Blog: Open source is giving you choices with your agent systems (34513 знаков)
+• Stack Overflow Blog: Craft and quality beat speed and scale, with or without agents (31349 знаков)
+• Stack Overflow Blog: As your AI gets smarter, so must your API (30932 знаков)
+• Stack Overflow Blog: AI agents for your digital chores (29595 знаков)
+• Stack Overflow Blog: Your runbooks are obsolete in the age of agents (28058 знаков)
+• Stack Overflow Blog: Vite is like the United Nations of JavaScript (26909 знаков)
+• Stack Overflow Blog: Why rent a cloud when you can build one? (26756 знаков)
+• Stack Overflow Blog: One is not the loneliest number for API calls (26409 знаков)
+• WIRED: 7 Best Sunrise Alarm Clocks to Snag Before the Fall 2025 Time Change (23377 знаков)

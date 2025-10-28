@@ -1,0 +1,32 @@
+EU accuses Meta of violating content rules in move that could anger Trump - Ars Technica
+EU accuses Meta of violating content rules in move that could anger Trump
+EU alleges Facebook and Instagram make it too hard to report illegal content.
+Meta violated the Digital Services Act (DSA) by failing to give Facebook and Instagram users simple mechanisms to report illegal content, the European Commission said in a
+announced yesterday. Meta also failed to give users an effective way to challenge content moderation decisions, the EC said.
+“When it comes to Meta, neither Facebook nor Instagram appear to provide a user-friendly and easily accessible ‘Notice and Action’ mechanism for users to flag illegal content, such as child sexual abuse material and terrorist content,” the EC press release said. The EC said that Meta mechanisms seem to “impose several unnecessary steps and additional demands on users. In addition, both Facebook and Instagram appear to use so-called ‘dark patterns,’ or deceptive interface designs, when it comes to the ‘Notice and Action’ mechanisms.”
+The EC also found that the content moderation appeal mechanisms used by Facebook and Instagram do not “allow users to provide explanations or supporting evidence to substantiate their appeals. This makes it difficult for users in the EU to further explain why they disagree with Meta’s content decision, limiting the effectiveness of the appeals mechanism.”
+The preliminary findings can be challenged by Meta before the commission makes a final decision. “If the Commission’s views are ultimately confirmed, the Commission may issue a non-compliance decision, which can trigger a fine of up to 6% of the total worldwide annual turnover of the provider,” the announcement said. “The Commission can also impose periodic penalty payments to compel a platform to comply.”
+Punishing Meta could draw blowback from the Trump administration, which has objected to European regulation of US tech companies. President Trump has
+big tariffs on countries that enforce digital services rules on US companies. “The EU reached a
+in the summer that officials hope will limit further duties, but talks are continuing over the deal’s implementation,” The Wall Street Journal
+Meta and a dozen social media and technology companies that “censoring Americans to comply with a foreign power’s laws, demands, or expected demands” may violate US law. Ferguson’s letters said the EU’s Digital Services Act and other laws “incentivize tech companies to censor worldwide speech.”
+that “we disagree with any suggestion that we have breached the DSA, and we continue to negotiate with the European Commission on these matters.” Meta also said it made changes to comply with the DSA.
+“In the European Union, we have introduced changes to our content reporting options, appeals process, and data access tools since the DSA came into force and are confident that these solutions match what is required under the law in the EU,” Meta said.
+The EC also said it preliminarily found that both Meta and TikTok violated their DSA obligation to grant researchers adequate access to public data.
+“The Commission’s preliminary findings show that Facebook, Instagram and TikTok may have put in place burdensome procedures and tools for researchers to request access to public data. This often leaves them with partial or unreliable data, impacting their ability to conduct research, such as whether users, including minors, are exposed to illegal or harmful content,” the announcement said.
+The data-access requirement “is an essential transparency obligation under the DSA, as it provides public scrutiny into the potential impact of platforms on our physical and mental health,” the EC said.
+In a statement provided to Ars, TikTok said it is committed to transparency and has made data available to nearly 1,000 research teams. TikTok said it may be impossible to comply with both the DSA and the General Data Protection Regulation (GDPR).
+“We are reviewing the European Commission’s findings, but requirements to ease data safeguards place the DSA and GDPR in direct tension. If it is not possible to fully comply with both, we urge regulators to provide clarity on how these obligations should be reconciled,” TikTok said.
+Jon is a Senior IT Reporter for Ars Technica. He covers the telecom industry, Federal Communications Commission rulemakings, broadband consumer affairs, court cases, and government regulation of the tech industry.
+10M people watched a YouTuber shim a lock; the lock company sued him. Bad idea.
+New image-generating AIs are being used for fake expense reports
+AT&T ad congratulating itself for its ethics violated an ad-industry rule
+A single point of failure triggered the Amazon outage affecting millions
+Tesla’s “Mad Max” mode is now under federal scrutiny
+the noise for over 25 years. With our unique combination of
+technical savvy and wide-ranging interest in the technological arts
+and sciences, Ars is the trusted source in a sea of information. After
+all, you don’t need to know everything, only what’s important.
+© 2025 Condé Nast. All rights reserved. Use of and/or
+registration on any portion of this site constitutes acceptance of our
+reproduced, distributed, transmitted, cached or otherwise used, except

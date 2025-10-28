@@ -1,0 +1,33 @@
+MacroCycle found a shortcut for plastic recycling — catch it at TechCrunch Disrupt 2025 | TechCrunch
+MacroCycle found a shortcut for plastic recycling — catch it at TechCrunch Disrupt 2025
+of all plastic is recycled globally, which sounds pretty bad until you compare it with textiles. Only
+One of the biggest challenges is that textiles are seldom one material. Buttons and zippers complicate matters, but spandex is even worse. Novel synthetic blends have made for clothing that’s a dream to wear but a nightmare to recycle.
+“The challenge to recycling is that you can never predict your waste,” Stwart Peña Feliz, co-founder and CEO of
+, told TechCrunch. “Your waste has infinite number of contaminants.”
+MacroCycle has developed a shortcut, of sorts, that promises to make recycled plastic as inexpensive as virgin material. The startup has devised a way to pluck desirable synthetic fibers from waste textiles, leaving everything else behind. MacroCycle is a Top 20 finalist in
+Peña Feliz knows the potential pitfalls of plastic recycling well. Earlier in his career, he helped run ExxonMobil’s chemical recycling plant, which uses heat to break down plastic into simpler hydrocarbons. It works, but the process is energy intensive and spews a lot of carbon dioxide.
+“I saw that firsthand and knew something had to be done,” he said.
+Soon after he left Exxon, Peña Feliz decided to pursue an MBA at MIT. There, he met Jan-Georg Rosenboom, who as a postdoc had developed a novel way of recycling plastics. “When I saw his technology, I thought it was too good to be true,” Peña Feliz said.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+The pair started turning that technology into a business in the fall of 2022. The following spring, they were selected for a Breakthrough Energy Fellowship to develop it further. “We kind of looked at each other and said, ‘I guess we’re doing this full time,’” Peña Feliz said. MacroCycle raised a $6.5 million seed round earlier this year.
+To understand plastic recycling, it helps to know a bit about the material’s chemistry. Plastics are polymers, which are long chains of monomers, or repeating chemical building blocks. Most chemical recycling processes break plastic polymers down into smaller components, including monomers, so they can then rebuild them into something indistinguishable from virgin plastic.
+MacroCycle differs because it doesn’t break down polymers. Instead, it loops the polymer chains back on themselves, forcing them into rings called macrocycles. Those macrocycles remain behind as different solvents wash away contaminants, which themselves could be recycled. Later, the rings are reopened to reform the polymer chain. “As they open up the rings want to combine with each other, and in polyester, the longer the polymer, the higher the quality,” Peña Feliz said.
+“By not having to retrace all those steps all over again, we’re able to take a significantly more energy efficient approach,” he added. MacroCycle’s process uses 80% less energy than is needed to make virgin polyester, while other chemical recycling processes use 20% to 30% less, he said.
+The startup is in the process of setting up a larger reactor, one that’s 2,000 times larger than the one they were using two and a half years ago, Peña Feliz said. It’s large enough to produce 100 kilogram (220 pound) batches of material for customers to sample. MacroCycle is generating revenue from fashion brands interested in the technology, he said.
+“We’re comfortable being one of the few, if not the only, public chemical recyclers that can claim that we can provide this material at price parity once we build our first industrial facility,” Feliz Peña said.
+He’s convinced it’s the only way for recycled plastic to replace fossil fuels in the industry. “The bottom line drives a lot of innovation, and if you want to have players like ExxonMobil change the way they do things, it will not happen from the inside,” he said. “I want to be able to create a technology so economically attractive that the opportunity cost is really high for them to not adopt this new type of solution.”
+If you want to hear from MacroCycle firsthand, and see dozens of additional pitches, attend valuable workshops, and make the connections that drive business results,
+Tim De Chant is a senior climate reporter at TechCrunch. He has written for a wide range of publications, including Wired magazine, the Chicago Tribune, Ars Technica, The Wire China, and NOVA Next, where he was founding editor.
+De Chant is also a lecturer in MIT’s Graduate Program in Science Writing, and he was awarded a Knight Science Journalism Fellowship at MIT in 2018, during which time he studied climate technologies and explored new business models for journalism. He received his PhD in environmental science, policy, and management from the University of California, Berkeley, and his BA degree in environmental studies, English, and biology from St. Olaf College.
+You can contact or verify outreach from Tim by emailing
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500

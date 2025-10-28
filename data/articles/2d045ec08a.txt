@@ -1,0 +1,57 @@
+Elon Musk’s Grokipedia contains copied Wikipedia pages | The Verge
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+﻿Some of Grokipedia’s pages say that content is ‘adapted’ from Wikipedia.
+﻿Some of Grokipedia’s pages say that content is ‘adapted’ from Wikipedia.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this author will be added to your daily email digest and your homepage feed.
+is a senior reporter covering technology, gaming, and more. He joined The Verge in 2019 after nearly two years at Techmeme.
+xAI’s Grokipedia, its Wikipedia-like online encyclopedia, is
+Grokipedia’s design is pretty basic right now; like Wikipedia, the homepage is mostly just a big search bar, and entries resemble very basic Wikipedia entries, with headings, subheadings, and citations. I haven’t seen any photos on the site yet. Wikipedia lets users edit pages, but it doesn’t appear that users can currently do that on Grokipedia; a big edit button at the top only appeared on a few pages for me, and when I clicked the button, it only showed edits that had already been completed without specifying who is actually suggested or made the changes, and I wasn’t able to suggest changes of my own.
+Entries also claim that Grok has fact-checked them — a controversial idea, given
+how large language models tend to make up false “facts”
+However, despite Elon Musk promising that Grokipedia would be a “massive improvement” over Wikipedia, some articles appear to be cribbing information
+, for example, you can see this message: “The content is adapted from
+, licensed under Creative Commons Attribution-ShareAlike 4.0 License.” In some cases, the cribbing goes farther than a rewrite: I’ve also seen that message on pages for the
+, and both of those pages are almost identical — word-for-word, line-for-line — to their
+“Even Grokipedia needs Wikipedia to exist,” Lauren Dickinson, a spokesperson for the Wikimedia Foundation, the non-profit that operates Wikipedia tells
+. You can read Dickinson’s full statement in full at the end of this article.
+It’s not the first time xAI’s AI has been caught pointing to Wikipedia; last month, in response to an X user pointing out that Grok cites Wikipedia pages,
+Not all Grokipedia articles are based directly on Wikipedia ones, and some will be controversial.
+While both sites have articles on climate change, for example, Wikipedia’s page
+“There is a nearly unanimous scientific consensus that the climate is warming and that this is caused by human activities. No scientific body of national or international standing disagrees with this view.”
+, meanwhile, the word “unanimous” only appears in one paragraph: “Critics contend that claims of near-unanimous scientific consensus on anthropogenic causes dominating recent climate change overstate agreement due to selective categorization in literature reviews.” It suggests that the media and advocacy organizations like Greenpeace are “contributing to heightened public alarm,” and are part of “coordinated efforts to frame the issue as an existential imperative, influencing public discourse and policy without always grounding in proportionate empirical evidence.”
+According to a ticker at the bottom of the homepage, Grokipedia has over 885,000 articles; Wikipedia currently maintains around 7 million English pages. However, this is an early version of Grokipedia — it has a v0.1 version number on the homepage.
+We’re still in the process of understanding how Grokipedia works.
+Since 2001, Wikipedia has been the backbone of knowledge on the internet. Hosted by the Wikimedia Foundation, it remains the only top website in the world run by a nonprofit. Unlike newer projects, Wikipedia’s strengths are clear: it has transparent policies, rigorous volunteer oversight, and a strong culture of continuous improvement. Wikipedia is an encyclopedia, written to inform billions of readers without promoting a particular point of view.
+Wikipedia’s knowledge is – and always will be – human. Through open collaboration and consensus, people from all backgrounds build a neutral, living record of human understanding – one that reflects our diversity and collective curiosity. This human-created knowledge is what AI companies rely on to generate content; even Grokipedia needs Wikipedia to exist.
+Wikipedia’s nonprofit independence — with no ads and no data-selling — also sets it apart from for-profit alternatives. All of these strengths have kept Wikipedia a top trusted resource for more than two decades.
+Many experiments to create alternative versions of Wikipedia have happened before; it doesn’t interfere with our work or mission. As we approach Wikipedia’s 25th anniversary, Wikipedia will continue focusing on providing free, trustworthy knowledge built by its dedicated volunteer community. For more information about how Wikipedia works, visit our
+from this story to see more like this in your personalized homepage feed and to receive email updates.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+If you can’t afford a vacation, an AI app will sell you pictures of one
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+GM isn’t ready to rip off the CarPlay/Android Auto band-aid quite yet
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+Tesla rehashing old threats to get shareholders to approve Musk’s $1 trillion pay day
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+GM isn’t ready to rip off the CarPlay/Android Auto band-aid quite yet
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+Tesla rehashing old threats to get shareholders to approve Musk’s $1 trillion pay day
+Pluribus’ Vince Gilligan on making shows that ‘attract really smart viewers’
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Sora is showing us how broken deepfake detection is

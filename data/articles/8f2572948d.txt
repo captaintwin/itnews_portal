@@ -1,0 +1,30 @@
+Turning investments into impact: Stack Overflow for Teams 2025.7 - Stack Overflow
+Capture, share, & collaborate on knowledge internally.
+Promote your product or service to developers and technologists.
+Engage the world’s technology talent with your employer brand.
+Turning investments into impact: Stack Overflow for Teams 2025.7
+Over the past few releases, we’ve been investing in the foundation of Stack Overflow for Teams—strengthening infrastructure, modernizing integrations, and preparing for bigger shifts to come.
+Over the past few releases, we’ve been investing in the foundation of Stack Overflow for Teams—strengthening infrastructure, modernizing integrations, and preparing for bigger shifts to come. With the 2025.7 release, those investments translate into visible wins throughout Stack Overflow for Teams.
+Stack Overflow for Teams SDK: Build with confidence
+Developers now have an official way to extend and integrate Stack Overflow for Teams. The new Teams SDK goes beyond API endpoints to provide a higher-level developer experience, complete with official support and TypeScript definitions for all endpoints.
+Build internal tools and extensions to tailor Teams to their workflows
+Integrate Teams with CI/CD pipelines, project management tools, or custom dashboards
+Manage knowledge more effectively by connecting Teams with existing systems
+Create custom applications that activate and distribute knowledge across the enterprise
+By removing friction and providing a supported foundation, the SDK empowers teams to innovate on top of Stack Overflow for Teams.
+Commenting improvements: structured, intuitive, and @ mention ready
+Collaboration works best when it’s easy to follow the conversation. That’s why we’ve redesigned commenting to bring more structure, clarity, and engagement to discussions.
+Threaded replies keep conversations organized and easier to follow.
+Redesigned interface makes replying and upvoting feel intuitive and clutter-free.
+@ mentions let you pull in the right teammate at the right moment.
+Originally developed for the public Stack Overflow platform, these features are now available to enterprise customers—making it easier than ever to capture knowledge, connect with colleagues, and spark meaningful dialogue.
+What once looked like behind-the-scenes platform work is now delivering visible value—helping end users collaborate more effectively and giving IT admins the tools they need to manage Teams with confidence.
+All features in the 2025.7 release will be live in Enterprise environments by
+, or reach out to your Customer Success partner with any questions.
+The 2025.7 release is just one example of how ongoing investments in Stack Overflow for Teams are unlocking better experiences for everyone. Want a deeper glimpse into the future of Stack Overflow for Teams? Join us at Microsoft Ignite, November 18–21, where we’ll share more about how Teams continues to evolve to meet the needs of enterprise organizations.
+Where developers & technologists share private knowledge with coworkers.
+Turning investments into impact: Stack Overflow for Teams 2025.7
+Strengthening the core: Stack Overflow for Teams 2025.6
+Better performance, smarter workflows: What’s new in Stack Overflow for Teams
+Smarter teams, brighter insights: Stack Overflow for Teams Business summer bundle
+Data licensing offering to build and improve AI tools and models.

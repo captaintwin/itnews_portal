@@ -1,0 +1,80 @@
+MiniMax-M2 is the new king of open source LLMs (especially for agentic tool calling) | VentureBeat
+MiniMax-M2 is the new king of open source LLMs (especially for agentic tool calling)
+AI vector art flat illustration in dark blue, teal and orange yellow tones of giant humanoid robot with crown raising fist in front of computer monitor on desk surrounded by diverse office worker humans
+Watch out, DeepSeek and Qwen! There's a new king of open source large language models (LLMs), especially when it comes to something enterprises are increasingly valuing: agentic tool use — that is, the ability to go off and use other software capabilities like web search or bespoke applications — without much human guidance.
+, the latest LLM from the Chinese startup of the same name. And in a big win for enterprises globally, the model is available under a permissive, enterprise-friendly MIT License, meaning it is made available freely for developers to take, deploy, retrain, and use how they see fit — even for commercial purposes. It can be found on
+It supports OpenAI and Anthropic API standards, as well, making it easy for customers of said proprietary AI startups to shift out their models to MiniMax's API, if they want.
+, a third-party generative AI model benchmarking and research organization, M2 now ranks first among all open-weight systems worldwide on the Intelligence Index—a composite measure of reasoning, coding, and task-execution performance.
+In agentic benchmarks that measure how well a model can plan, execute, and use external tools—skills that power coding assistants and autonomous agents—MiniMax’s own reported results, following the Artificial Analysis methodology, show τ²-Bench 77.2, BrowseComp 44.0, and FinSearchComp-global 65.5.
+These scores place it at or near the level of top proprietary systems like GPT-5 (thinking) and Claude Sonnet 4.5, making
+MiniMax-M2 the highest-performing open model yet released for real-world agentic and tool-calling tasks.
+Built around an efficient Mixture-of-Experts (MoE) architecture, MiniMax-M2 delivers high-end capability for agentic and developer workflows while remaining practical for enterprise deployment.
+For technical decision-makers, the release marks an important turning point for open models in business settings. MiniMax-M2 combines frontier-level reasoning with a manageable activation footprint—just 10 billion active parameters out of 230 billion total.
+This design enables enterprises to operate advanced reasoning and automation workloads on fewer GPUs, achieving near-state-of-the-art results without the infrastructure demands or licensing costs associated with proprietary frontier systems.
+Artificial Analysis’ data show that MiniMax-M2’s strengths go beyond raw intelligence scores. The model leads or closely trails top proprietary systems such as GPT-5 (thinking) and Claude Sonnet 4.5 across benchmarks for end-to-end coding, reasoning, and agentic tool use.
+Its performance in τ²-Bench, SWE-Bench, and BrowseComp indicates particular advantages for organizations that depend on AI systems capable of planning, executing, and verifying complex workflows—key functions for agentic and developer tools inside enterprise environments.
+: "MiniMax [is] making a case for mastering the technology end-to-end to get actual agentic automation."
+MiniMax-M2’s technical architecture is a sparse Mixture-of-Experts model with 230 billion total parameters and 10 billion active per inference.
+This configuration significantly reduces latency and compute requirements while maintaining broad general intelligence.
+The design allows for responsive agent loops—compile–run–test or browse–retrieve–cite cycles—that execute faster and more predictably than denser models.
+For enterprise technology teams, this means easier scaling, lower cloud costs, and reduced deployment friction.
+the model can be served efficiently on as few as four NVIDIA H100 GPUs at FP8 precision
+, a setup well within reach for mid-size organizations or departmental AI clusters.
+Benchmark Leadership Across Agentic and Coding Workflows
+MiniMax’s benchmark suite highlights strong real-world performance across developer and agent environments. The figure below, released with the model, compares MiniMax-M2 (in red) with several leading proprietary and open models, including GPT-5 (thinking), Claude Sonnet 4.5, Gemini 2.5 Pro, and DeepSeek-V3.2.
+MiniMaxAI benchmark comparison across coding and agentic tasks, October 2025. Credit: MiniMax
+MiniMax-M2 achieves top or near-top performance in many categories:
+ArtifactsBench: 66.8 — above Claude Sonnet 4.5 and DeepSeek-V3.2
+BrowseComp: 44.0 — notably stronger than other open models
+FinSearchComp-global: 65.5 — best among tested open-weight systems
+These results show MiniMax-M2’s capability in executing complex, tool-augmented tasks across multiple languages and environments—skills increasingly relevant for automated support, R&D, and data analysis inside enterprises.
+Strong Showing in Artificial Analysis’ Intelligence Index
+The model’s overall intelligence profile is confirmed in the latest
+, which aggregates performance across ten reasoning benchmarks including MMLU-Pro, GPQA Diamond, AIME 2025, IFBench, and τ²-Bench Telecom.
+Artificial Analysis Intelligence Index v3.0, October 2025. Credit: Artificial Analysis
+, ranking as the highest open-weight model globally and following closely behind GPT-5 (high) and Grok 4.
+Artificial Analysis highlighted the model’s balance between technical accuracy, reasoning depth, and applied intelligence across domains. For enterprise users, this consistency indicates a reliable model foundation suitable for integration into software engineering, customer support, or knowledge automation systems.
+MiniMax engineered M2 for end-to-end developer workflows, enabling multi-file code edits, automated testing, and regression repair directly within integrated development environments or CI/CD pipelines.
+The model also excels in agentic planning—handling tasks that combine web search, command execution, and API calls while maintaining reasoning traceability.
+These capabilities make MiniMax-M2 especially valuable for enterprises exploring autonomous developer agents, data analysis assistants, or AI-augmented operational tools.
+Benchmarks such as Terminal-Bench and BrowseComp demonstrate the model’s ability to adapt to incomplete data and recover gracefully from intermediate errors, improving reliability in production settings.
+A distinctive aspect of MiniMax-M2 is its interleaved thinking format, which maintains visible reasoning traces between <think>...</think> tags.
+This enables the model to plan and verify steps across multiple exchanges, a critical feature for agentic reasoning. MiniMax advises retaining these segments when passing conversation history to preserve the model’s logic and continuity.
+on Hugging Face, detailing how developers can connect external tools and APIs via structured XML-style calls.
+This functionality allows MiniMax-M2 to serve as the reasoning core for larger agent frameworks, executing dynamic tasks such as search, retrieval, and computation through external functions.
+Open Source Access and Enterprise Deployment Options
+(a web chat similar to ChatGPT), both currently free for a limited time.
+MiniMax recommends SGLang and vLLM for efficient serving, each offering day-one support for the model’s unique interleaved reasoning and tool-calling structure.
+Deployment guides and parameter configurations are available through MiniMax’s documentation.
+, among the most competitive in the open-model ecosystem.
+Flagship model pricing on OpenAI’s API pricing page.
+Anthropic’s current per-MTok list; long-context (>200K input) uses a premium tier.
+Prices include “thinking tokens”; page also lists cheaper Flash-Lite and 2.0 tiers.
+Cache-hit input is $0.028; table shows per-model details.
+Tiered by input size (≤128K, ≤256K, ≤1M tokens); listed “Input price / Output price per 1M”.
+First-party pricing page also lists Command R ($0.50 / $1.50) and others.
+tokens and can change; check linked pages for updates and region/endpoint nuances (e.g., Anthropic long-context >200K input, Google Live API variants, cache discounts).
+Vendors may bill extra for server-side tools (web search, code execution) or offer batch/context-cache discounts.
+While the model produces longer, more explicit reasoning traces, its sparse activation and optimized compute design help maintain a favorable cost-performance balance—an advantage for teams deploying interactive agents or high-volume automation systems.
+Background on MiniMax — an Emerging Chinese Powerhouse
+MiniMax has quickly become one of the most closely watched names in China’s fast-rising AI sector.
+Backed by Alibaba and Tencent, the company moved from relative obscurity to international recognition within a year—first through breakthroughs in AI video generation, then through a series of open-weight large language models (LLMs) aimed squarely at developers and enterprises.
+global attention in late 2024 with its AI video generation tool
+, “video-01,” which demonstrated the ability to create dynamic, cinematic scenes in seconds. VentureBeat described how the model’s launch sparked widespread interest after online creators began sharing lifelike, AI-generated footage—most memorably, a viral clip of a
+lightsaber duel that drew millions of views in under two days.
+CEO Yan Junjie emphasized that the system outperformed leading Western tools in generating human movement and expression, an area where video AIs often struggle. The product, later commercialized through MiniMax’s
+platform, showcased the startup’s technical confidence and creative reach, helping to establish China as a serious contender in generative video technology.
+By early 2025, MiniMax had turned its attention to long-context language modeling, unveiling the
+MiniMax-01 series, including MiniMax-Text-01 and MiniMax-VL-01
+. These open-weight models introduced an unprecedented 4-million-token context window, doubling the reach of Google’s Gemini 1.5 Pro and dwarfing OpenAI’s GPT-4o by more than twentyfold.
+, a model focused on long-context reasoning and reinforcement learning efficiency. M1 extended context capacity to 1 million tokens and introduced a hybrid Mixture-of-Experts design trained using a custom reinforcement-learning algorithm known as CISPO. Remarkably, VentureBeat reported that MiniMax trained M1 at a total cost of about $534,700, roughly one-tenth of DeepSeek’s R1 and far below the multimillion-dollar budgets typical for frontier-scale models.
+For enterprises and technical teams, MiniMax’s trajectory signals the arrival of a new generation of cost-efficient, open-weight models designed for real-world deployment. Its open licensing—ranging from Apache 2.0 to MIT—gives businesses freedom to customize, self-host, and fine-tune without vendor lock-in or compliance restrictions.
+Features such as structured function calling, long-context retention, and high-efficiency attention architectures directly address the needs of engineering groups managing multi-step reasoning systems and data-intensive pipelines.
+As MiniMax continues to expand its lineup, the company has emerged as a key global innovator in open-weight AI, combining ambitious research with pragmatic engineering.
+The release of MiniMax-M2 reinforces the growing leadership of Chinese AI research groups in open-weight model development.
+Following earlier contributions from DeepSeek, Alibaba’s Qwen series, and Moonshot AI, MiniMax’s entry continues the trend toward open, efficient systems designed for real-world use.
+Artificial Analysis observed that MiniMax-M2 exemplifies a broader shift in focus toward agentic capability and reinforcement-learning refinement, prioritizing controllable reasoning and real utility over raw model size.
+For enterprises, this means access to a state-of-the-art open model that can be audited, fine-tuned, and deployed internally with full transparency.
+By pairing strong benchmark performance with open licensing and efficient scaling, MiniMaxAI positions MiniMax-M2 as a practical foundation for intelligent systems that think, act, and assist with traceable logic—making it one of the most enterprise-ready open AI models available today.
+Deep insights for enterprise AI, data, and security leaders
+You're in! Our latest news will be hitting your inbox soon.

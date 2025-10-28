@@ -1,0 +1,45 @@
+Photoshop and Premiere Pro’s new AI tools can instantly edit your work | The Verge
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work
+﻿Adobe’s Creative Cloud and Firefly apps are adding new ways to do labor-intensive photo and video editing tasks for you.
+﻿Adobe’s Creative Cloud and Firefly apps are adding new ways to do labor-intensive photo and video editing tasks for you.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Photoshop’s Generative Fill tool can now use third-party AI models.
+Posts from this author will be added to your daily email digest and your homepage feed.
+is a news writer focused on creative industries, computing, and internet culture. Jess started her career at TechRadar, covering news and hardware reviews.
+Adobe has kicked off its annual Max event, giving us a first look at new and upcoming generative AI tools launching for the company’s Photoshop, Premiere Pro, and Lightroom Creative Cloud apps. These include updates to Photoshop’s Generative Fill feature that aim to give creators more control over adding, removing or modifying content, and tools that can automate some of the more time-consuming elements of editing photos and videos.
+To start, Adobe is allowing Photoshop users to power Generative Fill capabilities using Google and Black Forest Labs’ third-party AI models. After selecting their image and giving Generative Fill a prompt — such as describing an object to insert, or replacing an existing object or person with something else — users can switch between Google’s Gemini 2.5 Flash, Black Forest’s Flux.1 Kontext, and Adobe’s Firefly image model, providing a wider variety of results to choose from.
+Photoshop for web is also introducing an AI Assistant in private beta. This is a chatbot-like interface that can be given descriptive instructions like “increase the saturation” to automatically edit files, effectively using Photoshop’s vast selection of tools for you. This capability
+, and a similar feature is launching for Adobe Express in public beta.
+The Photoshop AI Assistant supports both vague and detailed instructions, allowing it to adjust specific features like layers when requested.
+Another beta feature called “Assisted Culling” is launching for Adobe Lightroom that can filter large collections of photographs for different focus, angles and degrees of sharpness, and recommends the best snaps for photographers to edit.
+that powers these editing tools is getting a model upgrade. Adobe says that Firefly Image 5 can generate images in a native four-megapixel resolution without upscaling, and has been optimized to improve its ability to render realistic humans. The model also powers Adobe’s new prompt-based editing features that make specific adjustments based on descriptions, and a new Layered Image Editing tool coming to Photoshop that makes precise, contextual changes, such as ensuring shadows are automatically corrected when moving objects around an image.
+For video editors, Adobe also has a new tool for its Premiere Pro software that automatically stencils out people and objects in video frames. AI Object Mask is available in public beta, and aims to make it easier to quickly color grade, blur, and add visual effects to moving backgrounds by removing the need to manually mask subjects using the pen tool.
+from this story to see more like this in your personalized homepage feed and to receive email updates.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+If you can’t afford a vacation, an AI app will sell you pictures of one
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Elon Musk’s Grokipedia contains copied Wikipedia pages
+ExxonMobil accuses California of violating its free speech
+Trump’s DHS is recruiting ICE officers with a Halo meme
+AMD, Department of Energy announce $1 billion AI supercomputer partnership
+Spotify finally brings video podcasts and music videos to its Apple TV app
+Pluribus’ Vince Gilligan on making shows that ‘attract really smart viewers’
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Here’s what ads on your $2,000 Samsung smart fridge will look like
