@@ -2,13 +2,16 @@
 import json
 import time
 from datetime import datetime, timedelta
+from pathlib import Path
+
 import pytz
 from apscheduler.schedulers.background import BackgroundScheduler
-from utils.post_to_telegram import send_post
 from telegram import Bot
-from core.config import TELEGRAM_TOKEN, REPORT_TELEGRAM_TOKEN, TELEGRAM_CHAT # <-- централизованно
+
+from utils.post_to_telegram import send_post
+from core.config import TELEGRAM_CHAT, REPORT_TELEGRAM_TOKEN
 from core.logger import log
-from pathlib import Path
+
 
 # === Конфигурация ===
 tz = pytz.timezone("Europe/Belgrade")
@@ -16,37 +19,38 @@ SELECTED_FILE = Path("data/selected.json")
 
 
 def schedule_posts():
-    """Равномерно планирует публикации на следующий день и отправляет отчёт в техчат."""
+    """Планирует публикации на текущий день и отправляет отчёт в техчат."""
     if not SELECTED_FILE.exists():
-        log.warning("⚠️ Файл data/selected.json не найден — нечего постить.")
+        log.warning("⚠️ data/selected.json не найден — нечего постить.")
         return
 
-    with open(SELECTED_FILE, "r", encoding="utf-8") as f:
+    with SELECTED_FILE.open("r", encoding="utf-8") as f:
         selected = json.load(f)
 
     if not selected:
         log.warning("⚠️ Список статей для публикации пуст.")
         return
 
-    # === Расчёт времени ===
+    # === Расчёт временного диапазона ===
     scheduler = BackgroundScheduler(timezone=tz)
-    interval = 12 * 60 / len(selected)  # равномерно на 12 часов (09:00–21:00)
-
     now = datetime.now(tz)
-    start_time = now.replace(hour=9, minute=0, second=0, microsecond=0)
-    if now.hour >= 9:
-        start_time += timedelta(days=1)
+    start_time = now + timedelta(minutes=10)  # старт через 10 минут после сбора
+    end_time = now.replace(hour=23, minute=0, second=0, microsecond=0)
+
+    total_minutes = max(1, (end_time - start_time).total_seconds() / 60)
+    interval = total_minutes / len(selected)
 
     schedule_plan = []
     for i, item in enumerate(selected):
         post_time = start_time + timedelta(minutes=i * interval)
         scheduler.add_job(send_post, "date", run_date=post_time, args=[item])
+
         schedule_plan.append({
-            "title": item["title"],
+            "title": item.get("title", "Без названия")[:180],
             "source": item.get("source", ""),
             "time": post_time.strftime("%Y-%m-%d %H:%M"),
         })
-        log.info(f"📅 Запланировано: {item['title']} — {post_time.strftime('%Y-%m-%d %H:%M')}")
+        log.info(f"📅 Запланировано: {item.get('title', '')[:60]} — {post_time.strftime('%H:%M')}")
 
     # === Отправляем отчёт в техчат ===
     send_schedule_report(schedule_plan)
@@ -63,19 +67,21 @@ def schedule_posts():
         log.info("🛑 Планировщик остановлен.")
 
 
-def send_schedule_report(plan):
+def send_schedule_report(plan: list[dict]):
     """Отправляет отчёт с планом постов в техчат."""
-    if not REPORT_TELEGRAM_TOKEN or not TELEGRAM_CHAT:
-        print("⚠️ Ошибка: отсутствует BOT_TOKEN или TECH_CHAT в конфигурации.")
+    if not TELEGRAM_CHAT or not REPORT_TELEGRAM_TOKEN:
+        log.error("❌ Нет REPORT_TELEGRAM_TOKEN или TELEGRAM_CHAT в конфигурации. Отчёт не отправлен.")
         return
 
-    bot = Bot(token=REPORT_TELEGRAM_TOKEN)
-    text = "<b>🗓 План публикаций на день</b>\n\n"
+    bot = Bot(token=TELEGRAM_CHAT)
+
+    lines = ["<b>🗓 План публикаций на сегодня</b>", ""]
     for item in plan:
-        text += f"🕒 {item['time']}\n<b>{item['title']}</b>\n<i>{item['source']}</i>\n\n"
+        lines.append(f"🕒 {item['time']}\n<b>{item['title']}</b>\n<i>{item['source']}</i>\n")
+    text = "\n".join(lines).strip()
 
     try:
-        bot.send_message(chat_id=TELEGRAM_CHAT, text=text.strip(), parse_mode="HTML")
+        bot.send_message(chat_id=REPORT_TELEGRAM_TOKEN, text=text, parse_mode="HTML")
         log.info("📨 Отчёт с планом публикаций отправлен в техчат.")
     except Exception as e:
         log.error(f"⚠️ Ошибка при отправке отчёта в техчат: {e}")
