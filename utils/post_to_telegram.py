@@ -3,7 +3,9 @@ from telegram.error import TelegramError
 import os
 from html import unescape
 import re
+from dotenv import load_dotenv
 
+load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT")
 bot = Bot(token=BOT_TOKEN)

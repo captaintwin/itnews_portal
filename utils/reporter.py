@@ -1,11 +1,16 @@
 import json
 from datetime import datetime
+from dotenv import load_dotenv
 from pathlib import Path
 from telegram import Bot
+import os
+
+env_path = Path(__file__).resolve().parents[1] / ".env"
+load_dotenv(dotenv_path=env_path)
 
 REPORT_FILE = Path("data/report.txt")
-TECH_CHAT = "YOUR_TECH_CHAT_ID"
-BOT_TOKEN = "YOUR_BOT_TOKEN"
+TECH_CHAT = os.getenv("TELEGRAM_CHAT")
+BOT_TOKEN = os.getenv("REPORT_TELEGRAM_TOKEN")
 
 def send_report(selected):
     report_lines = [
