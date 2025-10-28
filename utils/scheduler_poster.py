@@ -69,11 +69,11 @@ def schedule_posts():
 
 def send_schedule_report(plan: list[dict]):
     """Отправляет отчёт с планом постов в техчат."""
-    if not TELEGRAM_CHAT or not REPORT_TELEGRAM_TOKEN:
+    if not REPORT_TELEGRAM_TOKEN or not TELEGRAM_CHAT:
         log.error("❌ Нет REPORT_TELEGRAM_TOKEN или TELEGRAM_CHAT в конфигурации. Отчёт не отправлен.")
         return
 
-    bot = Bot(token=TELEGRAM_CHAT)
+    bot = Bot(token=REPORT_TELEGRAM_TOKEN)
 
     lines = ["<b>🗓 План публикаций на сегодня</b>", ""]
     for item in plan:
@@ -81,7 +81,7 @@ def send_schedule_report(plan: list[dict]):
     text = "\n".join(lines).strip()
 
     try:
-        bot.send_message(chat_id=REPORT_TELEGRAM_TOKEN, text=text, parse_mode="HTML")
+        bot.send_message(chat_id=TELEGRAM_CHAT, text=text, parse_mode="HTML")
         log.info("📨 Отчёт с планом публикаций отправлен в техчат.")
     except Exception as e:
         log.error(f"⚠️ Ошибка при отправке отчёта в техчат: {e}")
