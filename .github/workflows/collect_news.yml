@@ -38,9 +38,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git main
-          git add -f data/selected.json
-          git commit -m "update daily selected.json [skip ci]" || echo "No changes"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            
+            # Откатываем любые незакоммиченные изменения (чистая копия репо)
+            git reset --hard
+            git clean -fd
+            
+            # Подтягиваем main без конфликтов
+            git fetch origin main
+            git checkout main
+            git pull origin main
+            
+            # Добавляем обновлённый файл
+            git add -f data/selected.json
+            
+            # Проверяем, есть ли реальные изменения
+            if git diff --cached --quiet; then
+              echo "No changes in selected.json — skipping commit"
+            else
+              git commit -m "update daily selected.json [skip ci]"
+              git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main
+              echo "✅ selected.json pushed successfully"
+            fi
