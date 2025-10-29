@@ -1,0 +1,30 @@
+Adobe Max 2025: all the latest creative tools and AI announcements | The Verge
+Adobe Max 2025: all the latest creative tools and AI announcements
+Adobe Max 2025: all the latest creative tools and AI announcements
+Adobe has kicked off its annual Max design conference, where it’ll be giving us a first glimpse at the latest updates coming to its Creative Cloud apps and Firefly AI models. The creative software giant is launching new generative AI tools that make
+to Express and Photoshop for web that edit entire projects using descriptive prompts. And that’s just the start, because Adobe is planning to eventually bring AI assistants to all of its design apps.
+We should also see some experimental tech showcased during Adobe’s “Sneaks” preview, too. These are in-development projects that could make their way into Adobe’s software products, like the Project Perfect Blend demo from Max 2024 that became
+We’re collecting all of the biggest announcements below so you can easily follow along.
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work
+Photoshop’s Generative Fill tool can now use third-party AI models.
+Adobe has kicked off its annual Max event, giving us a first look at new and upcoming generative AI tools launching for the company’s Photoshop, Premiere Pro, and Lightroom Creative Cloud apps. These include updates to Photoshop’s Generative Fill feature that aim to give creators more control over adding, removing or modifying content, and tools that can automate some of the more time-consuming elements of editing photos and videos.
+To start, Adobe is allowing Photoshop users to power Generative Fill capabilities using Google and Black Forest Labs’ third-party AI models. After selecting their image and giving Generative Fill a prompt — such as describing an object to insert, or replacing an existing object or person with something else — users can switch between Google’s Gemini 2.5 Flash, Black Forest’s Flux.1 Kontext, and Adobe’s Firefly image model, providing a wider variety of results to choose from.
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Generate Soundtrack is like Mad Libs for backing instrumentals.
+Adobe is giving filmmakers new generative AI audio tools that can quickly add thematically appropriate backing tracks and narration to videos. Generate Soundtrack and Generate Speech are being introduced to a redesigned Adobe Firefly AI app, while Adobe is also developing a new web-based video production tool that combines multiple AI features with a simple editing timeline.
+The Generate Soundtrack tool is launching in public beta in the Firefly app, and works by assessing an uploaded video and then generating a selection of instrumental audio clips that automatically synchronize to the footage. Users can direct the style of the music by selecting from provided presets like lofi, hip-hop, classical, EDM, and more, or describe the desired vibe in the provided text prompt interface — asking it to be more sentimental, aggressive, and so on. The tool will also suggest a prompt based on the uploaded video footage that can be used as a starting point.
+You can tell Adobe Express’s new AI assistant to edit your designs for you
+The AI Assistant is designed to be used without needing professional design experience.
+A new generative AI experience is coming to Adobe’s cloud-based Express design platform, enabling you to transform projects by vaguely describing what changes to make. Adobe describes the “AI Assistant in Adobe Express” launching in public beta today as a conversational creative agent that “empowers people of every skill level” to quickly create visual content, without having to understand specific design terms or creative tools.
+The feature is available as a toggle in the top-left corner of the Adobe Express web app. When activated, the usual homepage interface and tool options will be replaced by a chatbot-style text box, with options to make a new design or edit existing images. Users can surface a selection of curated presets by describing what they need to make, such as “fall-themed wedding invitation” or “retro-inspired poster for school science fair,” and edit their selection with natural language prompts.
+YouTubers will be soon be able to make use of Adobe Premiere editing tools through a new hub, Create for YouTube shorts. It’s launching soon, both inside the
+Expect “exclusive effects, transitions, templates and more.”
+Adobe’s AI social media admin is here with ‘Project Moonlight’
+As Adobe builds AI assistants into each of its applications, the company is also building an AI agent on its Firefly platform to act as a centralized creative director for social media campaigns. Project Moonlight’s chatbot integrates with Adobe’s creative software apps and pulls from your existing social media channels to brainstorm and edit content that’s consistent with your personal style and voice.
+As seen in the above sample image, users describe their vision to the bot in text, and the AI assistant processes those ideas through Adobe’s other AI-enabled editing tools to create personalized images, videos, and social posts. Adobe says of the new AI agent:
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+If you can’t afford a vacation, an AI app will sell you pictures of one
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off

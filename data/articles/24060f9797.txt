@@ -1,0 +1,15 @@
+OpenAI completes corporate reorganization with support from Microsoft
+OpenAI completes corporate reorganization with support from Microsoft
+The new OpenAI Foundation will retain control of the non-profit division.
+Tech leaders, including Sam Altman (C), CEO of OpenAI, and Tim Cook (2nd L), CEO of Apple, attend a dinner hosted by US President Donald Trump with tech leaders in the State Dining Room of the White House in Washington, DC, on September 4, 2025. (Photo by SAUL LOEB / AFP) (Photo by SAUL LOEB/AFP via Getty Images)
+OpenAI has completed its long, drawn-out reorganization into a public benefit corporation, the company announced today in a
+attributed to board of directors chair Bret Taylor. As part of the reorg, OpenAI's nonprofit, now called the OpenAI Foundation, will retain control of OpenAI's for-profit division and hold an equity stake in the company valued at approximately $130 billion. According to Taylor, the Foundation will gain additional control over the for-profit once it reaches an unspecified "valuation milestone."
+Today's announcement wouldn't have been possible without acquiescence from Microsoft, which before OpenAI recently raised more startup capital, held a 32 percent stake in the company's for-profit unit. In
+it published alongside OpenAI, the tech giant said it would have a 27 percent stake in the new PBC, valued at approximately $135 billion.
+, with Microsoft showing signs it was drifting away from OpenAI by working more closely with Anthropic to integrate its
+. Now that there's an agreement in place, it appears both sides made some notable compromises.
+Microsoft, for instance, will continue to hold IP rights to OpenAI's models and products through 2032, with those rights covering systems the company develops after declaring artificial general intelligence. On the subject of AGI, the two companies will hire an independent panel of experts to verify any claim OpenAI makes there, when and if it reaches that milestone.
+However, Microsoft has agreed to waive any IP rights as they relate to OpenAI's upcoming consumer hardware — that is, the devices the company is
+. In exchange, OpenAI has pledged to spend  $250 billion on Azure cloud computing services — though Microsoft also agreed it would no longer have a "right of first refusal" to be OpenAI's cloud provider. Notably, Microsoft's blog post makes no mention of the revenue-sharing agreement that was at the center of their investment deal.
+In the end, the most important part of today’s announcement is that it clears the way for OpenAI to become a publicly traded company. Much of the company’s financial future depended on it successfully completing this transition, and now at least it doesn’t have that burden resting on its shoulders.
+If you buy something through a link in this article, we may earn commission.

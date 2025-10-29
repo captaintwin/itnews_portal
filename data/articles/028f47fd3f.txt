@@ -1,0 +1,77 @@
+Privacy laws can’t keep up with ‘luxury surveillance’ | The Verge
+Privacy laws can’t keep up with ‘luxury surveillance’
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Privacy laws can’t keep up with ‘luxury surveillance’
+﻿With Meta’s new smart glasses, social shaming is still more powerful than the law.
+﻿With Meta’s new smart glasses, social shaming is still more powerful than the law.
+Posts from this author will be added to your daily email digest and your homepage feed.
+If you buy something from a Verge link, Vox Media may earn a commission.
+With Meta’s new range of smart glasses, Mark Zuckerberg is pitching a vision of the future that sci-fi authors have been warning about for decades — one where privacy is truly dead, and everyone is recording everyone else at all times.
+This in itself is nothing new. Introduced at the company’s recent Meta Connect event, the glasses represent the tech industry’s second major attempt at normalizing ubiquitous wearable surveillance devices, more than a decade after Google’s failed entry into the space with Google Glass. Back then, people wearing the experimental (and stupid-looking) tech were mocked as “Glassholes” — reminiscent of characters from Neal Stephenson’s
+, where despicable high-tech busybodies called “gargoyles” make a living by scanning and snitching on everyone around them for a Google-esque company called the Central Intelligence Corporation.
+But unlike Google in 2012, Meta’s wearable ambitions seem to be on better footing — at least in terms of making products that don’t immediately compel people to shove you into a locker. The new devices have major brand partnerships and are far less conspicuous than previous iterations. Tiny cameras are located on either the nose bridge or the outer rim of the glasses frames, and a small pulsing LED serves as the only hint that the device is recording. The Meta Ray-Ban Display glasses also include a built-in display, a voice-controlled “Live AI” feature that
+, and a wearable wristband that operates the device with hand gestures, meaning a quick flick of the wrist is all it takes for someone to start livestreaming their surroundings to the company’s servers.
+Of course, it didn’t take long for the inevitable to happen. Photos have already emerged showing
+wearing Meta smart glasses during immigration raids in Los Angeles and Chicago. And last week, the University of San Francisco’s Department of Public Safety sent an alert to students after a man wearing Ray-Ban Meta glasses was
+. Given everything else going on right now — like the Trump administration
+— you’d be forgiven for thinking that people walking around with AI-powered cameras on their faces is an absolute nightmare.
+Which raises the same question that comes up every time tech companies move fast and break things: How is any of this even legal — let alone ethical? Legal experts say that Meta’s smart glasses exist in the ever-widening chasm between what the law says and how it actually works in practice.
+“Most [privacy] laws are inadequate to address this new technology,” Fred Jennings, an independent data privacy attorney based in New York, told
+. “The [legal] damages are too small, the enforcement process is too cumbersome, and they weren’t written with anything like this kind of ubiquitous private recording in mind.”
+When it comes to internet-connected devices that capture audio and video, the conventional wisdom of the smartphone era has been that everything in public is “fair game.” But while this has proven mostly true for activists
+, legal experts say this idea that private citizens have absolutely no reasonable expectation of privacy in public has been distorted to extremes over the years. Today, many people have a kind of “privacy nihilism” driven by the ubiquitous presence of cameras and internet-connected devices. The assumption is that everyone is being recorded in public anyway, so what’s the big deal? This gets further complicated by body-worn devices that can instantly and surreptitiously record a person’s surroundings.
+Historically, the rules around public recording and surveillance come from a patchwork of different laws and legal principles. One of them is something called the “plain view doctrine,” which was established in the 2001 case
+. The case involved a police raid on an indoor cannabis farm in California that took place after cops had used thermal cameras to detect warmer temperatures inside the building. The Supreme Court eventually ruled that this violated the Fourth Amendment, because the thermal cameras augmented regular vision and allowed police to “explore details of the home that would previously have been unknowable without physical intrusion.” This meant that the evidence used to justify a search had to be in “plain view” — something that could be easily seen by the casual observer without enhancement tools.
+Of course, none of this anticipated that internet-connected cameras would soon be on every street corner, let alone that average citizens would have wearable, AI-powered personal devices that can record and upload everything around them.
+-level understanding of this doctrine, and took it to assume everything is fair game and therefore there’s no reasonable expectation of privacy in public,” said Jennings. “A lot of technology, these Meta glasses being a perfect example, get built off of this public mentality.”
+Kendra Albert, a technology lawyer and partner at Albert Sellars LLP, said that just because there is less expectation of privacy in public versus in private doesn’t mean that anything goes. Especially when things like facial recognition and live speech transcription can use an image or audio recording to unlock previously inaccessible troves of data about a person. Facial recognition on Meta Ray-Ban glasses is currently only possible using
+“The Meta glasses clash with folks’ normal assumptions regarding public space because we don’t expect people around us to be surveilling us, or able to tie our legal name or the rest of our identity to us without some effort,” Albert told
+. “If I’m at the coffee shop and I’m complaining about something, I might not expect that other people in the coffee shop can just attribute those comments to me with my real name as they could if I was making them online on an account that’s under my name.”
+In the US, the laws governing recording in public spaces vary from state to state and depend on whether you’re recording video, audio, or both. For audio recordings, states have one of two types of restrictions: “single-party” consent or “all-party” consent (also known as “two-party” consent). Most states have single-party consent laws, meaning there’s nothing legally stopping you from secretly recording a conversation as long as you’re one of the parties involved. Only
+require everyone involved to consent to the recording, hence “all-party.”
+For commercial recordings — like a film crew shooting a busy street corner — other rules can apply. Some states have laws that protect commercial recording as long as visible notices are posted letting people know that a recording is taking place in the area. States also have “rights of publicity” protecting individuals from having their likeness used in a commercial recording without their consent.
+Obviously, the reality of this is way more complicated now that we are surrounded by internet-connected cameras that send data to tech companies. So does the law protect us when a consumer device captures our voice and likeness without consent and then transmits that data to Meta’s servers, where the company can use it for all sorts of purposes?
+“That’s the million dollar question, essentially,” said Jennings. “If I record someone and that gets uploaded to Meta’s cloud storage, I have captured that person’s likeness and transmitted it to a third party.” Users have plenty of good reasons to be concerned, given Meta’s history. The company has
+by turning over their chat histories, and more recently joined other tech companies in very publicly
+But whether or not consent violations with Meta glasses could actually result in any legal action depends heavily on the situation, including what the user and the company does with the recording, said Jennings. In many cases, individual damages are extremely small and often handled by class-action lawsuits, like the
+earlier this year that saw Apple pay out a paltry $95 million — hardly a disincentive for massive companies that produce the privacy-invasive technologies in question.
+“Even if a state hypothetically passed a law that held companies responsible and gave people individual right to sue, it would still be backwards-looking. You would only be able to do that after someone had already had their privacy violated,” said Jennings.
+Proving harm in individual cases would be difficult and time-consuming, too, legal experts say. One potential factor could be whether or not the person gave enough notification to bystanders that the devices are recording. On
+, the company advises users of the Meta glasses to “use your voice or a clear gesture when controlling your glasses to let them know you’re about to capture, particularly before going Live,” and to “stop recording if anyone expresses that they would rather opt out.”
+The devices also have a security feature that prevents recording if the indicator light is covered by something, like a piece of tape. But some people have
+, and lawyers aren’t sure whether it would actually stand up in court.
+“It’s not clear to me that a small red light would be sufficient notification in some states for someone to consent to being recorded,” said Albert, noting how someone having a camera on their face is visually a lot different from someone holding up their phone to record. “The fact that when you’re recording on a cameraphone you have to have your [device] out, and people know that, changes how people behave.”
+In private spaces, however, the rules become a lot less ambiguous.
+Recording people without consent in a home or office is an obvious no-no, and in many states violators can be
+. On the other hand, a private business that’s open to the public — like a coffee shop — may allow some forms of recording, but also has the discretion to kick someone out for violating the privacy of customers and staff. Laws governing these spaces vary from state to state, but the enforcement is left mostly up to the owners. In either case, a pulsing recording light on a pair of glasses is probably too legally ambiguous to allow for proper consent. Jennings says one thing business owners and semi-public spaces can do to make things clearer is hang up signs telling people to remove the devices while inside. But ultimately, true privacy would mean getting the law, the tech, and the written / unwritten social rules to align.
+“To really protect people, what we’d need is more akin to the recreational camera-drone ‘no-fly zones’ — proactive restrictions baked into the technology as well as encoded in law that punish both the end users and manufacturers alike for their violations of recording consent boundaries.”
+Failing that, good old-fashioned shame is still the most powerful check we have on nonconsensual recording, privacy advocates say.
+“We saw this with Google Glass. People made clear that people weren’t welcome in an area if they were wearing these things,” Chris Gilliard, a privacy scholar and co-director of the Critical Internet Studies Institute, told
+The Ray-Ban Meta glasses and other wearable smart devices are what Gilliard calls “
+,” a class of consumer product that attempts to redefine social norms around consent by making surveillance into a chic fashion accessory. Companies like Meta invest in these devices believing they can create conditions where the tech is normalized and accepted, or at least very difficult for people to reject. But regardless of what other hypothetical use cases the companies pitch to justify these products, Gilliard said, they are still ultimately surveillance tools designed to violate consent.
+“I think they are a profoundly antisocial technology that should be rejected in every way possible,” said Gilliard. “Their very existence is toxic to the social fabric.”
+It’s still up in the air whether Meta’s gamble on glasses will pay off. Beyond their horrifying privacy implications,
+. But one thing many privacy experts agree on is that even if we can’t change the law, we can change peoples’ attitudes around consent.
+“One way to think about it is protecting your community and the people you care about,” said Gilliard. “When you’re wearing these glasses, when you use your video doorbell, when you record everyone’s conversations, you’re not just surveilling yourself. And there’s no consistent and foolproof way to guarantee that information won’t be used against people you care about — to hurt trans and queer people, or hurt immigrant communities. I wish people would think about it in those terms instead of ‘did my package get delivered.’”
+from this story to see more like this in your personalized homepage feed and to receive email updates.
+Posts from this author will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Posts from this topic will be added to your daily email digest and your homepage feed.
+Here’s what ads on your $2,000 Samsung smart fridge will look like
+If you can’t afford a vacation, an AI app will sell you pictures of one
+Nike says its first ‘powered footwear’ is like an e-bike for your feet
+‘There isn’t really another choice:’ Signal chief explains why the encrypted messenger relies on AWS
+The PS5 bundle that includes two years of PS Plus Premium is $170 off
+Zillow adds DMs so you can chat about homes you’ll never buy
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Zillow adds DMs so you can chat about homes you’ll never buy
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work
+Adobe’s new AI audio tools can add soundtracks and voice-overs to videos
+Pluribus’ Vince Gilligan on making shows that ‘attract really smart viewers’
+Photoshop and Premiere Pro’s new AI tools can instantly edit more of your work

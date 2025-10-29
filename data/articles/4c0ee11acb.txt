@@ -1,0 +1,30 @@
+OpenAI completes its for-profit recapitalization | TechCrunch
+Kim Jae-Hwan/SOPA Images/LightRocket / Getty Images
+OpenAI on Tuesday said it had completed its recapitalization, splitting the AI lab into a for-profit corporation nested inside a non-profit foundation. It’s the end result of a complex legal process that had been strenuously resisted by its estranged co-founder, Elon Musk.
+Under the new structure, the non-profit OpenAI Foundation will have legal control over a public benefit corporation called OpenAI Group, which is free to raise funding or acquire companies without legal restraint. The Foundation will hold a significant stake in OpenAI Group, and will appoint its board of directors.
+“We believe that the world’s most powerful technology must be developed in a way that reflects the world’s collective interests,” OpenAI chairman Brett Taylor wrote in a
+. “The close of our recapitalization gives us the ability to keep pushing the frontier of AI, and an updated corporate structure to ensure progress serves everyone.”
+, the OpenAI Foundation will own 26% of the for-profit, with a warrant for additional shares to be granted if the company continues to grow. Microsoft, an early investor in OpenAI, will hold a roughly 27% stake, valued at about $135 billion, with the remaining 47% held by investors and employees.
+, the deal will also extend Microsoft’s IP rights to OpenAI models through 2032. If OpenAI ever declares that it has achieved its long-held goal of artificial general intelligence, the deal will also require it to submit to an independent expert panel for verification.
+Prior to this recapitalization, OpenAI was operating as a non-profit under strict equity restrictions — a position that became increasingly untenable as the company’s fundraising became more ambitious. In April, Softbank announced
+an unprecedented $30 billion investment into OpenAI
+, contingent on the company’s successful conversion into a for-profit. On Saturday,
+that the final installment of the funding had been sent, signaling a possible breakthrough in the restructuring.
+There have been a number of legal efforts to block or otherwise influence the restructuring, most notably from Elon Musk, who at one point
+. State attorneys general from California and Delaware also made inquiries into the process, and Taylor cited them specifically as a positive influence on the discussions.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors.
+Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+Google Cloud, Netflix, Microsoft, Box, Phia, a16z, ElevenLabs, Wayve, Hugging Face, Elad Gil, Vinod Khosla — some of the 250+ heavy hitters leading 200+ sessions designed to deliver the insights that fuel startup growth and sharpen your edge. And don’t miss 300+ showcasing startups in all sectors. Bring a +1 and save 60% on their pass, or get your pass by Oct 27 to save up to $444.
+“We made several changes as a result of those discussions and we believe OpenAI—and as a result, the public we serve—are better for them,” Taylor wrote.
+with chief scientist Jakub Pachocki to answer questions from the public. The event will begin at 10:30 a.m. Pacific Time.
+Russell Brandom has been covering the tech industry since 2012, with a focus on platform policy and emerging technologies. He previously worked at The Verge and Rest of World, and has written for Wired, The Awl and MIT’s Technology Review.
+He can be reached at russell.brandom@techcrunch.com or on Signal at 412-401-5489.
+Have a +1 you’d like to bring to Disrupt? Bring them along and save 60% on their pass. Or get up to 30% off on group passes.
+Join 10,000 founders, investors, and tech leaders — and save when you come together to the tech epicenter of the year.
+India, the market BlaBlaCar once walked away from, is now its biggest
+Rivian will pay $250M to settle lawsuit over R1 price hike
+20-year-old dropouts built AI notetaker Turbo AI and grew it to 5 million users
+Instagram users can now use Meta AI editing tools directly in IG Stories
+Two days after OpenAI’s Atlas, Microsoft relaunches a nearly identical AI browser
+Amazon will buy thousands of pedal-assist cargo vehicles from Rivian spinoff Also
+Rivian spinoff Also reveals a high-end modular e-bike for $4,500
