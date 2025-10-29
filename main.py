@@ -1,31 +1,39 @@
-# main.py
+import sys
 from sources.collector import collect_all
 from utils.article_extractor import extract_all_articles
 from utils.analyzer import analyze_articles
 from utils.reporter import send_report
 from utils.scheduler_poster import schedule_posts
+from utils.half_poster import post_half
 from core.logger import log
 
-
 def main():
-    log.info("=== СБОР НОВОСТЕЙ ===")
-    collect_all()  # 1. Собираем RSS и сохраняем data/news.json
+    args = sys.argv[1:]
 
-    log.info("=== ЗАГРУЗКА И ОЧИСТКА СТАТЕЙ ===")
-    extract_all_articles()  # 2. Парсим текст со страниц и сохраняем *.txt
+    # Только сбор новостей и анализ (без постинга)
+    if "--collect-only" in args:
+        log.info("=== Сбор и анализ новостей ===")
+        collect_all()
+        extract_all_articles()
+        selected = analyze_articles()
+        send_report(selected)
+        log.info("✅ Новости собраны и сохранены в data/selected.json")
+        return
 
-    log.info("=== АНАЛИЗ КОНТЕНТА ===")
-    selected = analyze_articles()  # 3. Выбираем 20–30% самых длинных статей
-    # (результат сохраняется в data/selected.json)
+    # Постим половину списка (для GitHub Actions)
+    if "--half-post" in args:
+        log.info("=== Постинг половины списка ===")
+        post_half()
+        return
 
-    log.info("=== ФОРМИРУЕМ ОТЧЁТ ===")
-    send_report(selected)  # 4. Отправляем отчёт в техчат
-
-    log.info("=== ЗАПУСК ПЛАНИРОВЩИКА ===")
-    schedule_posts()  # 5. Расписание постинга (текущий день)
-
-    log.info("=== ГОТОВО ===")
-
+    # Полный запуск (локально)
+    log.info("=== Полный режим запуска ===")
+    collect_all()
+    extract_all_articles()
+    selected = analyze_articles()
+    send_report(selected)
+    schedule_posts()
+    log.info("=== Готово ===")
 
 if __name__ == "__main__":
     main()

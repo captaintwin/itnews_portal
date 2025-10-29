@@ -1,22 +1,20 @@
-name: Post IT News
+name: 📢 Post IT News (Half)
 
 on:
   schedule:
-    - cron: "0 5 * * *"  # каждый день в 05:00 UTC
-  workflow_dispatch:        # ручной запуск
+    - cron: "0 6 * * *"   # первая половина утром (07:00 по Белграду)
+    - cron: "0 12 * * *"  # вторая половина днём (13:00 по Белграду)
+  workflow_dispatch:
 
 permissions:
-  contents: write  # разрешает GitHub Actions пушить изменения
+  contents: write
 
 jobs:
-  run-bot:
+  post:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # нужно для корректного rebase
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -28,32 +26,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run news collector and Telegram poster
+      - name: Post half of the news
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          REPORT_TELEGRAM_TOKEN: ${{ secrets.REPORT_TELEGRAM_TOKEN }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
         run: |
-          python main.py
-
-      - name: Commit and push sent_news.json
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Подтягиваем последние изменения, не ломая историю
-          git fetch origin main
-          git reset --soft origin/main
-
-          # Добавляем только лог отправленных новостей
-          git add -f data/sent_news.json
-
-          # Проверяем, есть ли изменения
-          if git diff --cached --quiet; then
-            echo "No changes in sent_news.json — skip commit"
-          else
-            git commit -m "update sent log [skip ci]" || echo "Nothing to commit"
-            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:main || echo "⚠️ Push skipped"
-            echo "✅ sent_news.json successfully updated"
-          fi
+          python main.py --half-post
