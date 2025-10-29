@@ -9,69 +9,57 @@ from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 from core.logger import log
 from sources.rss import fetch_rss
+import random
+from utils.helpers import generate_id, fetch_main_image, download_image
 
+MAX_PER_SOURCE = 5  # максимум статей с одного источника
 
+def collect_all():
+    """Собирает новости (до 5 на источник), перемешивает и сохраняет в JSON."""
+    img_root = Path("data/images")
+    img_root.mkdir(parents=True, exist_ok=True)
+    os.makedirs("data", exist_ok=True)
 
-# === Константы ===
-MAX_ITEMS_PER_SOURCE = 20
-DATA_FILE = Path("data/news.json")
-# === ПУТИ ===
-DATA_DIR = Path("data")
-IMG_DIR = DATA_DIR / "images"     # ← вот это объявление должно быть ДО использования
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; ITNewsBot/1.0)"}
+    all_news = []
+    for src in RSS_SOURCES:
+        try:
+            items = fetch_rss(src, limit=MAX_PER_SOURCE)
+        except Exception as e:
+            log.error(f"Error fetching {src}: {e}")
+            continue
 
-RSS_SOURCES = [
-    "https://www.theverge.com/rss/index.xml",
-    "https://www.wired.com/feed/rss",
-    "https://techcrunch.com/feed/",
-    "https://feeds.arstechnica.com/arstechnica/index",
-    "https://www.engadget.com/rss.xml",
-    "https://venturebeat.com/feed/",
-    "https://github.blog/feed/",
-    "https://stackoverflow.blog/feed/",
-    "https://feeds.feedburner.com/TheHackersNews",
-]
+        clean_items = []
+        for news in items[:MAX_PER_SOURCE]:
+            url = news.get("url")
+            title = news.get("title", "")
+            published = news.get("published_at") or datetime.utcnow().isoformat()
+            news_id = generate_id(url)
+            img_url = fetch_main_image(url)
+            saved_img = download_image(img_url, img_root, news_id) if img_url else None
 
-WHITE_DOMAINS = [
-    "theverge.com", "techcrunch.com", "wired.com", "arstechnica.com",
-    "venturebeat.com", "github.blog", "engadget.com", "stackoverflow.blog",
-    "feeds.feedburner.com"
-]
+            clean_items.append({
+                "id": news_id,
+                "title": title,
+                "url": url,
+                "summary": news.get("summary", ""),
+                "source": news.get("source", src),
+                "published_at": published,
+                "image_path": saved_img
+            })
 
-BAD_KEYWORDS = [
-    "discount", "sale", "offer", "affiliate", "casino", "bet", "token",
-    "crypto", "sponsored", "vpn", "deal", "price"
-]
+        all_news.extend(clean_items)
 
+    # 🔄 Перемешиваем, чтобы не шли блоками по источникам
+    random.shuffle(all_news)
 
-# === Фильтры ===
-def is_trusted_source(url: str) -> bool:
-    domain = urlparse(url).netloc.lower()
-    return any(d in domain for d in WHITE_DOMAINS)
+    log.info(f"Total collected: {len(all_news)} (max {MAX_PER_SOURCE} per source)")
 
-def has_bad_words(text: str) -> bool:
-    return any(bad in (text or "").lower() for bad in BAD_KEYWORDS)
+    # Сохраняем в JSON
+    with open("data/news.json", "w", encoding="utf-8") as f:
+        json.dump(all_news, f, ensure_ascii=False, indent=2)
 
-def _is_recent_day(published_at, days=2):
-    try:
-        if isinstance(published_at, str):
-            published_at = datetime.fromisoformat(published_at[:19])
-    except Exception:
-        return False
-    return published_at >= datetime.utcnow() - timedelta(days=days)
-def _dedup_by_url(items):
-    """Удаляет дубли по полю url"""
-    seen = set()
-    result = []
-    for it in items:
-        url = it.get("url")
-        if url and url not in seen:
-            seen.add(url)
-            result.append(it)
-    return result
-def is_valid_title(title: str) -> bool:
-    wc = len(title.split())
-    return 3 <= wc <= 15
+    return all_news
+
 
 
 # === Утилиты ===
