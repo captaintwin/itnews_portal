@@ -30,5 +30,5 @@ if __name__ == "__main__":
     send_report(selected)
 
     # ⚙️ Раскомментируй, если хочешь публиковать сразу:
-    post_next()
+    #post_next()
 
