@@ -1,13 +1,8 @@
-=== План публикаций на 2025-10-28 ===
-Всего статей: 35
+🗓 План публикаций на 30.10.2025 12:27
+Всего статей: 2
 
-• WIRED: Why Nicholas Thompson Made a Custom GPT to Run Faster (42860 знаков)
-• Stack Overflow Blog: Open source is giving you choices with your agent systems (34513 знаков)
-• Stack Overflow Blog: Craft and quality beat speed and scale, with or without agents (31349 знаков)
-• Stack Overflow Blog: As your AI gets smarter, so must your API (30932 знаков)
-• Stack Overflow Blog: AI agents for your digital chores (29595 знаков)
-• Stack Overflow Blog: Your runbooks are obsolete in the age of agents (28058 знаков)
-• Stack Overflow Blog: Vite is like the United Nations of JavaScript (26909 знаков)
-• Stack Overflow Blog: Why rent a cloud when you can build one? (26756 знаков)
-• Stack Overflow Blog: One is not the loneliest number for API calls (26409 знаков)
-• Stack Overflow Blog: Getting Backstage in front of a shifting dev experience (21623 знаков)
+📚 The Hacker News — 2 статей
+ • ThreatsDay Bulletin: DNS Poisoning Flaw, Supply-Chain Heist, Rust Malware Trick and New RATs Rising
+   ⏰ 05:00 — 20518 знаков
+ • PhantomRaven Malware Found in 126 npm Packages Stealing GitHub Tokens From Devs
+   ⏰ 13:30 — 5745 знаков

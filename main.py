@@ -8,46 +8,27 @@ from utils.analyzer import analyze_articles  # выбирает топовые �
 from utils.reporter import send_report         # формирует отчёт и отправляет в техчат
 from utils.scheduler import build_schedule   # рассчитывает расписание постов
 
+# main.py
+from sources.collector import collect_all
+from utils.article_extractor import extract_all_articles
+from utils.analyzer import analyze_articles
+from utils.reporter import send_report
+from utils.post_next import post_next  # если хочешь сразу постить
 
-# === Пути данных ===
-DATA_DIR = Path("data")
-NEWS_FILE = DATA_DIR / "news.json"
-SELECTED_FILE = DATA_DIR / "selected.json"
-SCHEDULE_FILE = DATA_DIR / "schedule.json"
-STATE_FILE = DATA_DIR / "state.json"
+from core.logger import log
 
-
-def main():
+if __name__ == "__main__":
     log.info("🚀 Запуск утреннего пайплайна сбора и анализа новостей")
 
-    # 1️⃣ Сбор всех новостей из RSS
     news = collect_all()
     if not news:
         log.warning("⚠️ Новости не собраны, выход.")
-        return
+        exit()
 
-    # 2️⃣ Формирование расписания (с 05:00 до 22:00)
-    build_schedule(len(news))
-
-    # 3️⃣ Анализ статей — выбираем по 3 самых длинных с каждого источника
+    extract_all_articles()
     selected = analyze_articles(top_n=3)
-    if not selected:
-        log.warning("⚠️ Не выбрано ни одной статьи.")
-        return
-
-    # 4️⃣ Сохраняем список выбранных статей
-    SELECTED_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(SELECTED_FILE, "w", encoding="utf-8") as f:
-        json.dump(selected, f, ensure_ascii=False, indent=2)
-
-    # 5️⃣ Генерируем и отправляем отчёт
     send_report(selected)
 
-    # 6️⃣ Сбрасываем state.json для постинга заново
-    STATE_FILE.write_text(json.dumps({"last_index": -1}, indent=2), encoding="utf-8")
+    # ⚙️ Раскомментируй, если хочешь публиковать сразу:
+    post_next()
 
-    log.info("✅ Утренний сбор новостей завершён успешно.")
-
-
-if __name__ == "__main__":
-    main()
