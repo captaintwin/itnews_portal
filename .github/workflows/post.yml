@@ -1,0 +1,24 @@
+name: Post News All Day
+
+on:
+  schedule:
+    - cron: '*/15 5-22 * * *'  # каждые 15 мин с 05:00 до 22:00 UTC
+  workflow_dispatch:
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Telegram library
+        run: pip install python-telegram-bot==13.15
+
+      - name: Post next scheduled news
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT }}
+        run: python utils/post_next.py

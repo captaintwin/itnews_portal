@@ -1,0 +1,21 @@
+name: Collect Daily News
+
+on:
+  schedule:
+    - cron: '0 5 * * *'  # каждый день в 05:00 UTC
+  workflow_dispatch:
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect news and build schedule
+        run: python collector.py
