@@ -27,8 +27,9 @@ data/images/
 *.tmp
 
 # IDE files
-.idea/
-.vscode/
 .DS_Store
-
+*.json
+data/
 !data/sent_news.json
+
+

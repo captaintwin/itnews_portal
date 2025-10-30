@@ -1,10 +1,5 @@
-Pillow
-beautifulsoup4
-requests
 feedparser
+requests
 python-dotenv
 python-telegram-bot
-openai
-sqlalchemy
-schedule
-python-telegram-bot==13.15
+beautifulsoup4
