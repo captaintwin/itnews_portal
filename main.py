@@ -1,34 +1,30 @@
-import json
-from datetime import datetime
-from pathlib import Path
 
 from core.logger import log
-from sources.collector import collect_all
-from utils.analyzer import analyze_articles  # выбирает топовые статьи
-from utils.reporter import send_report         # формирует отчёт и отправляет в техчат
-from utils.scheduler import build_schedule   # рассчитывает расписание постов
-
-# main.py
 from sources.collector import collect_all
 from utils.article_extractor import extract_all_articles
-from utils.analyzer import analyze_articles
 from utils.reporter import send_report
-from utils.post_next import post_next  # если хочешь сразу постить
+from utils.analyzer import analyze_articles
 
-from core.logger import log
 
 if __name__ == "__main__":
-    log.info("🚀 Запуск утреннего пайплайна сбора и анализа новостей")
+    log.info("🚀 Запуск пайплайна сбора и анализа новостей")
 
+    # 1️⃣ Сбор новостей
     news = collect_all()
     if not news:
-        log.warning("⚠️ Новости не собраны, выход.")
+        log.warning("⚠️ Новости не собраны — выходим.")
         exit()
 
+    # 2️⃣ Извлечение текстов статей
     extract_all_articles()
+
+    # 3️⃣ Анализ (выбор топ-3 по каждому источнику)
     selected = analyze_articles(top_n=3)
+
+    # 4️⃣ Отправка отчёта в Telegram
     send_report(selected)
 
-    # ⚙️ Раскомментируй, если хочешь публиковать сразу:
-    #post_next()
+    # 5️⃣ (опционально) Публикация следующей статьи
+    # post_next()
 
+    log.info("✅ Все шаги успешно выполнены.")
