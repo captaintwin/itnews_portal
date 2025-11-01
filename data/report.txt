@@ -1,8 +1,62 @@
-🗓 План публикаций на 30.10.2025 12:27
-Всего статей: 2
+🗓 План публикаций на 31.10.2025 13:36
+Всего статей: 20
 
-📚 The Hacker News — 2 статей
- • ThreatsDay Bulletin: DNS Poisoning Flaw, Supply-Chain Heist, Rust Malware Trick and New RATs Rising
-   ⏰ 05:00 — 20518 знаков
- • PhantomRaven Malware Found in 126 npm Packages Stealing GitHub Tokens From Devs
-   ⏰ 13:30 — 5745 знаков
+📚 WIRED — 3 статей
+ • How to Hack a Poker Game
+   ⏰ 05:00 — 34261 знаков
+ • The Best Mattresses for Stomach Sleepers, According to a Sleep Science Coach (2025)
+   ⏰ 05:30 — 19856 знаков
+ • 20+ Gifts for Women Who’ve Checked Out of Planet Earth (2025)
+   ⏰ 06:00 — 16867 знаков
+
+📚 Ars Technica - All content — 2 статей
+ • “Unexpectedly, a deer briefly entered the family room”: Living with Gemini Home
+   ⏰ 06:30 — 12333 знаков
+ • Rocket Report: SpaceX surpasses shuttle launch total; Skyroot has big ambitions
+   ⏰ 07:00 — 11459 знаков
+
+📚 The Verge — 3 статей
+ • Microsoft&#8217;s agent platform play
+   ⏰ 07:30 — 6807 знаков
+ • Sora now lets you pay extra to make more AI videos
+   ⏰ 08:00 — 4482 знаков
+ • A bizarre Windows 11 bug duplicates Task Manager instead of closing it
+   ⏰ 08:30 — 4068 знаков
+
+📚 MarkTechPost — 2 статей
+ • How to Design an Autonomous Multi-Agent Data and Infrastructure Strategy System Using Lightweight Qwen Models for Efficient Pipeline Intelligence?
+   ⏰ 09:00 — 13097 знаков
+ • OpenAI Releases Research Preview of ‘gpt-oss-safeguard’: Two Open-Weight Reasoning Models for Safety Classification Tasks
+   ⏰ 09:30 — 9678 знаков
+
+📚 Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics — 3 статей
+ • The best free VPNs in 2025
+   ⏰ 10:00 — 14595 знаков
+ • The best projector for a home theater in 2025
+   ⏰ 10:30 — 11408 знаков
+ • Dodgers vs. Blue Jays, Game 6 tonight: How to watch the 2025 MLB World Series without cable
+   ⏰ 11:00 — 3956 знаков
+
+📚 The Hacker News — 3 статей
+ • The MSP Cybersecurity Readiness Guide: Turning Security into Growth
+   ⏰ 11:30 — 8567 знаков
+ • CISA and NSA Issue Urgent Guidance to Secure WSUS and Microsoft Exchange Servers
+   ⏰ 12:00 — 7591 знаков
+ • A New Security Layer for macOS Takes Aim at Admin Errors Before Hackers Do
+   ⏰ 12:30 — 6110 знаков
+
+📚 Stack Overflow Blog — 1 статей
+ • Vibe coding needs a spec, too
+   ⏰ 13:00 — 29887 знаков
+
+📚 The New Stack — 1 статей
+ • How Cover Whale Scaled Its Developer Platform Beyond an MVP
+   ⏰ 13:30 — 20993 знаков
+
+📚 Towards Data Science — 1 статей
+ • RF-DETR Under the Hood: The Insights of a Real-Time Transformer Detection
+   ⏰ 14:00 — 9069 знаков
+
+📚 TechCrunch — 1 статей
+ • Scenes from TechCrunch Disrupt 2025
+   ⏰ 14:30 — 7874 знаков

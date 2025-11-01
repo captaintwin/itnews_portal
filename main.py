@@ -4,7 +4,8 @@ from sources.collector import collect_all
 from utils.article_extractor import extract_all_articles
 from utils.reporter import send_report
 from utils.analyzer import analyze_articles
-
+from utils.post_next import post_next
+from utils.scheduler import build_schedule
 
 if __name__ == "__main__":
     log.info("🚀 Запуск пайплайна сбора и анализа новостей")
@@ -25,6 +26,7 @@ if __name__ == "__main__":
     send_report(selected)
 
     # 5️⃣ (опционально) Публикация следующей статьи
-    # post_next()
+    #post_next()
+    build_schedule()
 
     log.info("✅ Все шаги успешно выполнены.")
