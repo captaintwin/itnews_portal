@@ -1,202 +1,92 @@
 [
   {
-    "id": "2fdfb7e042",
-    "title": "How to Hack a Poker Game",
-    "url": "https://www.wired.com/story/uncanny-valley-podcast-how-to-hack-a-poker-game/",
-    "summary": "This week on Uncanny Valley, we break down how one of the most common card shufflers could be altered to cheat, and why that matters—even for those who don’t frequent the poker table.",
-    "source": "WIRED",
-    "published_at": "2025-10-31T09:00:00+00:00",
-    "image_path": null,
-    "char_count": 34261
-  },
-  {
-    "id": "c6d30bec9d",
-    "title": "The Best Mattresses for Stomach Sleepers, According to a Sleep Science Coach (2025)",
-    "url": "https://www.wired.com/gallery/best-mattress-for-stomach-sleepers/",
-    "summary": "The best mattresses for stomach sleepers have spinal alignment in mind. These are my recommendations as a certified sleep science coach.",
-    "source": "WIRED",
-    "published_at": "2025-10-31T10:06:00+00:00",
-    "image_path": null,
-    "char_count": 19856
-  },
-  {
-    "id": "b1cc3257bd",
-    "title": "20+ Gifts for Women Who’ve Checked Out of Planet Earth (2025)",
-    "url": "https://www.wired.com/gallery/gifts-for-women-who-are-over-this-planet/",
-    "summary": "She’s seen enough. She’s had enough. She can’t fly through a portal to a different reality, but these gifts will help her transcend this world.",
-    "source": "WIRED",
-    "published_at": "2025-10-31T11:30:00+00:00",
-    "image_path": null,
-    "char_count": 16867
-  },
-  {
-    "id": "4cf308dc12",
-    "title": "“Unexpectedly, a deer briefly entered the family room”: Living with Gemini Home",
-    "url": "https://arstechnica.com/google/2025/10/unexpectedly-a-deer-briefly-entered-the-family-room-living-with-gemini-home/",
-    "summary": "Gemini for Home unleashes gen AI on your Nest camera footage, but it gets a lot wrong.",
-    "source": "Ars Technica - All content",
-    "published_at": "2025-10-31T11:30:22+00:00",
-    "image_path": null,
-    "char_count": 12333
-  },
-  {
-    "id": "da2fcea62f",
-    "title": "Rocket Report: SpaceX surpasses shuttle launch total; Skyroot has big ambitions",
-    "url": "https://arstechnica.com/space/2025/10/rocket-report-chinas-moon-rocket-to-debut-soon-arcaspace-is-back-sort-of/",
-    "summary": "“I do think we’re rapidly approaching the point where it will be a significant impact.\"",
-    "source": "Ars Technica - All content",
-    "published_at": "2025-10-31T11:00:58+00:00",
-    "image_path": null,
-    "char_count": 11459
-  },
-  {
-    "id": "3e94b25c50",
-    "title": "Microsoft&#8217;s agent platform play",
-    "url": "https://www.theverge.com/tech/809889/github-agent-hq-platform-play-microsoft-jared-palmer-jay-parikh",
-    "summary": "This is an excerpt of Sources by Alex Heath, a newsletter about AI and the tech industry, syndicated just for The Verge subscribers once a week. To understand how Microsoft sees its role in the AI race, look at what was announced at the company's GitHub Universe developer conference on Tuesday in San Francisco. The [&#8230;]",
-    "source": "The Verge",
-    "published_at": "2025-10-31T00:30:00+00:00",
-    "image_path": null,
-    "char_count": 6807
-  },
-  {
-    "id": "24d117e892",
-    "title": "Sora now lets you pay extra to make more AI videos",
-    "url": "https://www.theverge.com/news/811241/sora-pay-for-extra-video-gens",
-    "summary": "Keep burning through your video generation allowance on Sora? No problem, OpenAI now lets you buy extra credits to make even more AI videos. That&#8217;s good, because the company says it expects to reduce free allowances at some point in the future. Bill Peebles, who leads the Sora team at OpenAI, said the video platform’s [&#8230;]",
-    "source": "The Verge",
-    "published_at": "2025-10-31T11:16:01+00:00",
-    "image_path": null,
-    "char_count": 4482
-  },
-  {
-    "id": "cafb6b6afe",
-    "title": "A bizarre Windows 11 bug duplicates Task Manager instead of closing it",
-    "url": "https://www.theverge.com/news/811233/microsoft-windows-11-task-manager-duplicate-bug",
-    "summary": "If you’re a Windows 11 user who frequently uses the Task Manager tool, you should probably avoid Microsoft’s latest OS update. Reddit users and my colleague Tom Warren are reporting that a bug in the optional Windows 11 KB5067036 update is causing Task Manager to duplicate itself when they attempt to close the app, impacting [&#8230;]",
-    "source": "The Verge",
-    "published_at": "2025-10-31T10:37:10+00:00",
-    "image_path": null,
-    "char_count": 4068
-  },
-  {
-    "id": "eb3ef2c4bb",
-    "title": "How to Design an Autonomous Multi-Agent Data and Infrastructure Strategy System Using Lightweight Qwen Models for Efficient Pipeline Intelligence?",
-    "url": "https://www.marktechpost.com/2025/10/30/how-to-design-an-autonomous-multi-agent-data-and-infrastructure-strategy-system-using-lightweight-qwen-models-for-efficient-pipeline-intelligence/",
-    "summary": "<p>In this tutorial, we build an Agentic Data and Infrastructure Strategy system using the lightweight Qwen2.5-0.5B-Instruct model for efficient execution. We begin by creating a flexible LLM agent framework and then develop specialized agents that handle different layers of data management, from ingestion and quality analysis to infrastructure optimization. We integrate these agents into an [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/10/30/how-to-design-an-autonomous-mu",
+    "id": "3f1797652c",
+    "title": "How to Build an End-to-End Data Engineering and Machine Learning Pipeline with Apache Spark and PySpark",
+    "url": "https://www.marktechpost.com/2025/11/01/how-to-build-an-end-to-end-data-engineering-and-machine-learning-pipeline-with-apache-spark-and-pyspark/",
+    "summary": "<p>In this tutorial, we explore how to harness Apache Spark&#8217;s techniques using PySpark directly in Google Colab. We begin by setting up a local Spark session, then progressively move through transformations, SQL queries, joins, and window functions. We also build and evaluate a simple machine-learning model to predict user subscription types and finally demonstrate how [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/11/01/how-to-build-an-end-to-end-data-engineering-and",
     "source": "MarkTechPost",
-    "published_at": "2025-10-31T04:27:43+00:00",
+    "published_at": "2025-11-01T07:11:01+00:00",
     "image_path": null,
-    "char_count": 13097
+    "char_count": 10177
   },
   {
-    "id": "c4fd3c6015",
-    "title": "OpenAI Releases Research Preview of ‘gpt-oss-safeguard’: Two Open-Weight Reasoning Models for Safety Classification Tasks",
-    "url": "https://www.marktechpost.com/2025/10/31/openai-releases-research-preview-of-gpt-oss-safeguard-two-open-weight-reasoning-models-for-safety-classification-tasks/",
-    "summary": "<p>OpenAI has released a research preview of gpt-oss-safeguard, two open weight safety reasoning models that let developers apply custom safety policies at inference time. The models come in two sizes, gpt-oss-safeguard-120b and gpt-oss-safeguard-20b, both fine tuned from gpt-oss, both licensed under Apache 2.0, and both available on Hugging Face for local use. Why Policy-Conditioned Safety [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/10/31/openai-releases-research-previe",
+    "id": "615eef303c",
+    "title": "Google AI Unveils Supervised Reinforcement Learning (SRL): A Step Wise Framework with Expert Trajectories to Teach Small Language Models to Reason through Hard Problems",
+    "url": "https://www.marktechpost.com/2025/10/31/google-ai-unveils-supervised-reinforcement-learning-srl-a-step-wise-framework-with-expert-trajectories-to-teach-small-language-models-to-reason-through-hard-problems/",
+    "summary": "<p>How can a small model learn to solve tasks it currently fails at, without rote imitation or relying on a correct rollout? A team of researchers from Google Cloud AI Research and UCLA have released a training framework, &#8216;Supervised Reinforcement Learning&#8217; (SRL), that makes 7B scale models actually learn from very hard math and agent [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/10/31/google-ai-unveils-supervised-reinforcement-learning-srl-a-step-wise-framewor",
     "source": "MarkTechPost",
-    "published_at": "2025-10-31T08:08:18+00:00",
+    "published_at": "2025-11-01T02:58:55+00:00",
     "image_path": null,
-    "char_count": 9678
+    "char_count": 9939
   },
   {
-    "id": "41c949873f",
-    "title": "The best free VPNs in 2025",
-    "url": "https://www.engadget.com/cybersecurity/vpn/best-free-vpn-120032818.html?src=rss",
-    "summary": "<p>A good VPN is worth paying for. Almost every service I'll recommend as one of the <a href=\"https://www.engadget.com/cybersecurity/vpn/best-vpn-130004396.html\">best VPNs</a> is either subscription-only or supported by paid plans. Free VPNs do have their place, though, as not everybody can afford yet another subscription in the software-as-a-service hellscape we live in. Since everyone deserves privacy and flexibility online, I wanted to put together a definitive list of the best free VPNs.<br",
+    "id": "85a9025329",
+    "title": "Anthropic’s New Research Shows Claude can Detect Injected Concepts, but only in Controlled Layers",
+    "url": "https://www.marktechpost.com/2025/11/01/anthropics-new-research-shows-claude-can-detect-injected-concepts-but-only-in-controlled-layers/",
+    "summary": "<p>How do you tell whether a model is actually noticing its own internal state instead of just repeating what training data said about thinking? In a latest Anthropic’s research study &#8216;Emergent Introspective Awareness in Large Language Models&#8216; asks whether current Claude models can do more than talk about their abilities, it asks whether they can [&#8230;]</p>\n<p>The post <a href=\"https://www.marktechpost.com/2025/11/01/anthropics-new-research-shows-claude-can-detect-injected-concept",
+    "source": "MarkTechPost",
+    "published_at": "2025-11-01T09:10:11+00:00",
+    "image_path": null,
+    "char_count": 9858
+  },
+  {
+    "id": "773575c03c",
+    "title": "The best live TV streaming services to cut cable in 2025",
+    "url": "https://www.engadget.com/entertainment/streaming/best-live-tv-streaming-service-133000410.html?src=rss",
+    "summary": "<p>If you’re looking for a live TV streaming service, you probably want to watch live sports, catch local news or get access to your favorite linear channels — perhaps you want all three. Cable was once the only way to get all that content in one place, but for a decade or so now, live TV streaming services have provided an alternative that’s less confusing, easier to cancel and somewhat less expensive, though price hikes from every major streamer have brought the starting price to over $80 mont",
     "source": "Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics",
-    "published_at": "2025-10-31T12:00:32+00:00",
+    "published_at": "2025-11-01T07:00:36+00:00",
     "image_path": null,
-    "char_count": 14595
+    "char_count": 47092
   },
   {
-    "id": "88d5d69f80",
-    "title": "The best projector for a home theater in 2025",
-    "url": "https://www.engadget.com/home/home-theater/best-projectors-123004354.html?src=rss",
-    "summary": "<p>Projectors have come a long way from bulky, noisy boxes that only belonged in a dedicated home theater. Today’s models are brighter, sharper and more flexible, making them a practical upgrade for movie nights, gaming sessions or backyard screenings. Whether you want a compact projector that fits in a backpack or a full 4K setup for your living room, there’s something to match nearly every space and budget.<br /><br />Modern projectors handle far more than films. Some are tuned for low-latency",
+    "id": "5ac53e572f",
+    "title": "How to cancel Private Internet Access and get a refund",
+    "url": "https://www.engadget.com/cybersecurity/vpn/how-to-cancel-private-internet-access-and-get-a-refund-030034510.html?src=rss",
+    "summary": "<p><a href=\"https://www.engadget.com/cybersecurity/vpn/private-internet-access-vpn-review-both-more-and-less-than-a-budget-vpn-120033882.html\">Private Internet Access (PIA) </a>comes with some of the best pricing of any VPN, and often doesn't feel like a budget service. I say &quot;often&quot; because, sadly, it does sometimes feel like you get what you pay for with PIA. While I'm working on seeing what settings iron out the kinks, the fact is that PIA doesn't always leave you with the internet",
     "source": "Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics",
-    "published_at": "2025-10-31T09:01:26+00:00",
+    "published_at": "2025-11-01T03:00:34+00:00",
     "image_path": null,
-    "char_count": 11408
+    "char_count": 3603
   },
   {
-    "id": "5716cbcfd6",
-    "title": "Dodgers vs. Blue Jays, Game 6 tonight: How to watch the 2025 MLB World Series without cable",
-    "url": "https://www.engadget.com/entertainment/streaming/dodgers-vs-blue-jays-game-6-tonight-how-to-watch-the-2025-mlb-world-series-without-cable-102530438.html?src=rss",
-    "summary": "<p>The Toronto Blue Jays have taken the lead in the 2025 World Series against the Los Angeles Dodgers. The Fall Classic returns to Toronto's home turf for Game 6 tonight — Friday, Oct. 31 — at 8PM ET/5PM PT. The World Series <a href=\"https://sports.yahoo.com/mlb/los-angeles-dodgers-toronto-blue-jays-451031114/?section=odds\">odds still favor the Dodgers </a>ahead of tonight's game, meaning we may very well make it to a Game 7. Every 2025 MLB World Series game will air on Fox and Fox Deportes.&nbs",
-    "source": "Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics",
-    "published_at": "2025-10-31T10:25:30+00:00",
-    "image_path": null,
-    "char_count": 3956
-  },
-  {
-    "id": "ac825680e3",
-    "title": "The MSP Cybersecurity Readiness Guide: Turning Security into Growth",
-    "url": "https://thehackernews.com/2025/10/the-msp-cybersecurity-readiness-guide.html",
-    "summary": "MSPs are facing rising client expectations for strong cybersecurity and compliance outcomes, while threats grow more complex and regulatory demands evolve. Meanwhile, clients are increasingly seeking comprehensive protection without taking on the burden of managing security themselves.\nThis shift represents a major growth opportunity. By delivering advanced cybersecurity and compliance",
-    "source": "The Hacker News",
-    "published_at": "2025-10-31T11:30:00+00:00",
-    "image_path": null,
-    "char_count": 8567
-  },
-  {
-    "id": "0b3554f64a",
-    "title": "CISA and NSA Issue Urgent Guidance to Secure WSUS and Microsoft Exchange Servers",
-    "url": "https://thehackernews.com/2025/10/cisa-and-nsa-issue-urgent-guidance-to.html",
-    "summary": "The U.S. Cybersecurity and Infrastructure Security Agency (CISA) and National Security Agency (NSA), along with international partners from Australia and Canada, have released guidance to harden on-premise Microsoft Exchange Server instances from potential exploitation.\n\"By restricting administrative access, implementing multi-factor authentication, enforcing strict transport security",
-    "source": "The Hacker News",
-    "published_at": "2025-10-31T08:46:00+00:00",
-    "image_path": null,
-    "char_count": 7591
-  },
-  {
-    "id": "2680c6294e",
-    "title": "A New Security Layer for macOS Takes Aim at Admin Errors Before Hackers Do",
-    "url": "https://thehackernews.com/2025/10/a-new-security-layer-for-macos-takes.html",
-    "summary": "A design firm is editing a new campaign video on a MacBook Pro. The creative director opens a collaboration app that quietly requests microphone and camera permissions. MacOS is supposed to flag that, but in this case, the checks are loose. The app gets access anyway.\nOn another Mac in the same office, file sharing is enabled through an old protocol called SMB version one. It’s fast and",
-    "source": "The Hacker News",
-    "published_at": "2025-10-31T03:37:00+00:00",
-    "image_path": null,
-    "char_count": 6110
-  },
-  {
-    "id": "42c8284cfe",
-    "title": "Vibe coding needs a spec, too",
-    "url": "https://stackoverflow.blog/2025/10/31/vibe-coding-needs-a-spec-too/",
-    "summary": "Ryan talks with Deepak Singh, VP of Developer Agents and Experiences at AWS and lead at Kiro, about spec-driven development in a vibe coding world. They explore how AI tools have evolved from autocomplete to sophisticated agents that can write code based off of just specs, and how AWS has pioneered spec-driven development through their Kiro agent.",
-    "source": "Stack Overflow Blog",
-    "published_at": "2025-10-31T07:40:00+00:00",
-    "image_path": null,
-    "char_count": 29887
-  },
-  {
-    "id": "2250f01a4a",
-    "title": "How Cover Whale Scaled Its Developer Platform Beyond an MVP",
-    "url": "https://thenewstack.io/how-cover-whale-scaled-its-developer-platform-beyond-an-mvp/",
-    "summary": "<img alt=\"Red truck leaving port..\" class=\"webfeedsFeaturedVisual wp-post-image wp-stateless-item\" height=\"682\" src=\"https://cdn.thenewstack.io/media/2025/10/f2b841b9-trucks-1024x682.jpeg\" style=\"display: block; margin: auto; margin-bottom: 20px;\" width=\"1024\" /><p>Platform engineering is gaining traction across industries as organizations grapple with the complexity of cloud native development. Teams want to</p>\n<p>The post <a href=\"https://thenewstack.io/how-cover-whale-scaled-its-developer-pl",
-    "source": "The New Stack",
-    "published_at": "2025-10-31T12:00:42+00:00",
-    "image_path": null,
-    "char_count": 20993
-  },
-  {
-    "id": "44a7c6a687",
-    "title": "RF-DETR Under the Hood: The Insights of a Real-Time Transformer Detection",
-    "url": "https://towardsdatascience.com/rf-detr-under-the-hood-the-insights-of-a-real-time-transformer-detection/",
-    "summary": "<p>From rigid grids to adaptive attention, this is the evolutionary path that made detection transformers fast, flexible, and formidable.</p>\n<p>The post <a href=\"https://towardsdatascience.com/rf-detr-under-the-hood-the-insights-of-a-real-time-transformer-detection/\">RF-DETR Under the Hood: The Insights of a Real-Time Transformer Detection</a> appeared first on <a href=\"https://towardsdatascience.com\">Towards Data Science</a>.</p>",
-    "source": "Towards Data Science",
-    "published_at": "2025-10-31T12:30:00+00:00",
-    "image_path": "data/images/preview_44a7c6a687.jpg",
-    "char_count": 9069
-  },
-  {
-    "id": "f82f637383",
-    "title": "Scenes from TechCrunch Disrupt 2025",
-    "url": "https://techcrunch.com/2025/10/30/scenes-from-techcrunch-disrupt/",
-    "summary": "Thanks to everyone who made this year's San Francisco event what it was -- and to the 10,000 of you who filled the halls, made the connections, and left with more than you came with. Couldn't make it? These images tell part of the story.",
+    "id": "1a18f59b3d",
+    "title": "What is Bending Spoons? Everything to know about AOL’s acquirer",
+    "url": "https://techcrunch.com/2025/10/31/what-is-bending-spoons-everything-to-know-about-aols-acquirer/",
+    "summary": "Bending Spoons remains largely unknown, even as its portfolio of products has served more than a billion people.",
     "source": "TechCrunch",
-    "published_at": "2025-10-31T04:02:33+00:00",
+    "published_at": "2025-11-01T01:11:34+00:00",
     "image_path": null,
-    "char_count": 7874
+    "char_count": 9350
+  },
+  {
+    "id": "5409075c73",
+    "title": "YouTube denies AI was involved with odd removals of tech tutorials",
+    "url": "https://arstechnica.com/tech-policy/2025/10/youtube-denies-ai-was-involved-with-odd-removals-of-tech-tutorials/",
+    "summary": "YouTubers suspect AI is bizarrely removing popular video explainers.",
+    "source": "Ars Technica - All content",
+    "published_at": "2025-11-01T00:32:01+00:00",
+    "image_path": null,
+    "char_count": 9627
+  },
+  {
+    "id": "40c6ff02f2",
+    "title": "CrowdStrike & NVIDIA’s open source AI gives enterprises the edge against machine-speed attacks",
+    "url": "https://venturebeat.com/security/crowdstrike-nvidia-open-source-ai-soc-machine-speed-attacks",
+    "summary": "<p>Every SOC leader knows the feeling: drowning in alerts, blind to the real threat, stuck playing defense in a war waged at the speed of AI. </p><p>Now <a href=\"https://www.crowdstrike.com/en-us/platform/charlotte-ai/\">CrowdStrike</a> and <a href=\"https://www.nvidia.com/en-us/\">NVIDIA</a> are flipping the script. Armed with autonomous agents powered by Charlotte AI and NVIDIA Nemotron models, security teams aren&#x27;t just reacting; they&#x27;re striking back at attackers before their next mov",
+    "source": "VentureBeat",
+    "published_at": "2025-11-01T01:10:00+00:00",
+    "image_path": null,
+    "char_count": 7965
+  },
+  {
+    "id": "36ac6c38f8",
+    "title": "Wireless Charging a 2026 Porsche Cayenne Electric",
+    "url": "https://www.wired.com/story/porsche-cayenne-ev-wireless-charging-wont-fry-your-cat/",
+    "summary": "Porsche’s much-anticipated 2026 EV has charging tech akin to a giant Qi puck. But what happens when Mittens or Fido gets in the way of 11 kilowatts invisibly flying through the air?",
+    "source": "WIRED",
+    "published_at": "2025-11-01T09:00:00+00:00",
+    "image_path": null,
+    "char_count": 8699
   }
 ]

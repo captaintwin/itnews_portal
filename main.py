@@ -1,32 +1,42 @@
-
+# main.py
+from datetime import datetime
+import pytz
 from core.logger import log
 from sources.collector import collect_all
 from utils.article_extractor import extract_all_articles
-from utils.reporter import send_report
 from utils.analyzer import analyze_articles
-from utils.post_next import post_next
 from utils.scheduler import build_schedule
+from utils.reporter import send_report
+from utils.post_next import post_next
 
-if __name__ == "__main__":
-    log.info("🚀 Запуск пайплайна сбора и анализа новостей")
+tz = pytz.timezone("Europe/Belgrade")
 
-    # 1️⃣ Сбор новостей
-    news = collect_all()
-    if not news:
-        log.warning("⚠️ Новости не собраны — выходим.")
-        exit()
 
-    # 2️⃣ Извлечение текстов статей
+def main():
+    log.info("=== Сбор и анализ новостей ===")
+
+    # 1️⃣ Сбор и анализ
+    collect_all()
     extract_all_articles()
+    selected = analyze_articles()
 
-    # 3️⃣ Анализ (выбор топ-3 по каждому источнику)
-    selected = analyze_articles(top_n=3)
+    if not selected:
+        log.warning("⚠️ Нет статей для публикации.")
+        return
 
-    # 4️⃣ Отправка отчёта в Telegram
+    # 2️⃣ Планирование публикаций
+    build_schedule()
     send_report(selected)
 
-    # 5️⃣ (опционально) Публикация следующей статьи
-    #post_next()
-    build_schedule()
+    # 3️⃣ Определяем режим постинга
+    now = datetime.now(tz)
+    if now.hour < 9:
+        log.info("🕒 Сейчас до 9:00 — запускаем постинг по расписанию.")
+        post_next(instant=False)
+    else:
+        log.info("⚡ Уже после 9:00 — включаем instant постинг (для теста).")
+        post_next(instant=True)
 
-    log.info("✅ Все шаги успешно выполнены.")
+
+if __name__ == "__main__":
+    main()
