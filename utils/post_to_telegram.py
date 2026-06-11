@@ -4,6 +4,7 @@ from pathlib import Path
 import os
 from html import unescape
 import re
+from urllib.parse import urlparse
 from dotenv import load_dotenv
 
 # === Настройки окружения ===
@@ -18,6 +19,19 @@ bot = Bot(token=BOT_TOKEN)
 def clean_html(text: str) -> str:
     text = re.sub(r"<[^>]+>", "", text)  # удаляем HTML-теги
     return unescape(text).strip()
+
+
+def source_link(news_item: dict) -> str:
+    """Имя источника со ссылкой на его сайт (домен берём из URL статьи)."""
+    url = news_item.get("url", "")
+    netloc = urlparse(url).netloc
+    # «Engadget - Technology News & Expert Reviews» → «Engadget»
+    name = re.split(r"\s+[-|–]\s+", news_item.get("source", ""))[0].strip()
+    if not name:
+        name = netloc.removeprefix("www.")
+    if not netloc:
+        return name
+    return f'<a href="https://{netloc}">{name}</a>'
 
 # === Основная функция отправки поста ===
 def send_post(news_item: dict):
@@ -34,7 +48,8 @@ def send_post(news_item: dict):
     text = (
         f"<b>{title}</b>\n\n"
         f"{clean_html(summary)}\n\n"
-        f"<a href='{url}'>Читать далее →</a>"
+        f"<a href='{url}'>Читать далее →</a>\n"
+        f"📰 {source_link(news_item)}"
     )
 
     try:
