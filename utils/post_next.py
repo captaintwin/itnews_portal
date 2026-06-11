@@ -1,109 +1,128 @@
 # utils/post_next.py
 import json
 import time
-import argparse
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
+
 import pytz
 from core.logger import log
 from utils.post_to_telegram import send_post
 
-# === Пути ===
 DATA_DIR = Path("data")
-SCHEDULE_FILE = DATA_DIR / "schedule.json"
 SELECTED_FILE = DATA_DIR / "selected.json"
+SCHEDULE_FILE = DATA_DIR / "schedule.json"
 SENT_FILE = DATA_DIR / "sent_news.json"
 
-# === Часовой пояс ===
 tz = pytz.timezone("Europe/Belgrade")
 
+# как часто проверять (сек)
+TICK_SECONDS = 60
+# если пост «просрочен» больше чем на столько — пропускаем
+GRACE_SKIP_MIN = 180  # 3 часа
 
-def load_json(path, default):
-    if path.exists():
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                return json.load(f)
-        except Exception as e:
-            log.warning(f"⚠️ Ошибка чтения {path.name}: {e}")
-    return default
+def _load_json(path: Path, default):
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:
+        log.error(f"⚠️ Ошибка чтения {path}: {e}")
+        return default
 
+def _save_json(path: Path, obj):
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
+    except Exception as e:
+        log.error(f"⚠️ Ошибка записи {path}: {e}")
 
-def save_json(path, data):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+def post_next():
+    selected = _load_json(SELECTED_FILE, [])
+    schedule = _load_json(SCHEDULE_FILE, [])
+    sent = set(_load_json(SENT_FILE, []))
 
-
-def post_next(instant=False):
-    """Фоновая публикация новостей по расписанию или мгновенно при instant=True."""
-    log.info("🚀 Запуск постинга по расписанию")
-
-    schedule = load_json(SCHEDULE_FILE, [])
-    selected = load_json(SELECTED_FILE, [])
-    sent = set(load_json(SENT_FILE, []))
-
-    if not schedule or not selected:
-        log.warning("⚠️ Нет расписания или списка статей — постинг невозможен.")
+    if not selected:
+        log.warning("⚠️ selected.json пуст — нечего постить.")
+        return
+    if not schedule:
+        log.warning("⚠️ schedule.json пуст — нет расписания.")
         return
 
-    # === Сопоставление расписания и статей ===
-    schedule_map = {}
-    for i, s in enumerate(schedule):
-        try:
-            t = s["time"] if isinstance(s, dict) else s
-            news_id = s.get("id") if isinstance(s, dict) else selected[i].get("id")
-            schedule_map[news_id] = datetime.strptime(t, "%Y-%m-%d %H:%M")
-        except Exception:
-            continue
+    # Быстрый доступ: id -> news и id -> schedule
+    by_id_news = {n["id"]: n for n in selected if "id" in n}
+    by_id_sched = {s["id"]: s for s in schedule if "id" in s and "time" in s}
 
-    log.info(f"📋 Загружено расписание на {len(schedule_map)} постов.")
+    # Контрольная метка
+    log.info(f"📚 Загружено статей: {len(by_id_news)}, расписание: {len(by_id_sched)}, уже отправлено: {len(sent)}")
 
-    if instant:
-        log.info("⚡ Режим instant: публикуем все посты сразу.")
-        for item in selected:
-            news_id = item.get("id")
-            if news_id in sent:
-                continue
-            try:
-                send_post(item)
-                sent.add(news_id)
-                save_json(SENT_FILE, list(sent))
-                log.info(f"✅ Опубликовано: {item['title']}")
-                time.sleep(2)  # небольшая пауза между постами
-            except Exception as e:
-                log.error(f"❌ Ошибка при публикации {item.get('title')}: {e}")
-        return
-
-    # === Обычный режим (фон, проверка по времени) ===
     while True:
         now = datetime.now(tz)
-        for item in selected:
-            news_id = item.get("id")
-            post_time = schedule_map.get(news_id)
-            if not post_time:
+
+        # Собираем «должные к публикации» id (время <= now, и ещё не отправлены)
+        due_ids = []
+        for sid, sched in by_id_sched.items():
+            if sid in sent:
+                continue
+            try:
+                # В schedule время локальное, парсим и локализуем
+                post_time = tz.localize(datetime.strptime(sched["time"], "%Y-%m-%d %H:%M"))
+            except Exception as e:
+                log.error(f"⚠️ Неверный формат времени у {sid}: {sched.get('time')}. Ошибка: {e}")
                 continue
 
-            if post_time.tzinfo is None:
-                post_time = tz.localize(post_time)
+            delta_min = (now - post_time).total_seconds() / 60.0
+            if delta_min >= 0:
+                # уже пора (или уже прошло)
+                # если прошло слишком много — пропускаем, чтобы не «строчить» старьё
+                if delta_min > GRACE_SKIP_MIN:
+                    log.info(f"⏭ Пропуск просроченного на {delta_min:.1f} мин: {by_id_news.get(sid, {}).get('title','(нет заголовка)')[:80]}")
+                    sent.add(sid)
+                else:
+                    due_ids.append(sid)
 
-            if news_id in sent:
-                continue
-
-            # Если текущее время >= времени поста
-            if now >= post_time:
+        # Публикуем всё, что «созрело» к этому тику
+        if due_ids:
+            # В разумном порядке: по времени из расписания
+            due_ids.sort(key=lambda x: by_id_sched[x]["time"])
+            for sid in due_ids:
+                news = by_id_news.get(sid)
+                if not news:
+                    # нет контента для этого id — считаем отправленным, чтобы не зациклиться
+                    sent.add(sid)
+                    continue
                 try:
-                    send_post(item)
-                    sent.add(news_id)
-                    save_json(SENT_FILE, list(sent))
-                    log.info(f"✅ Опубликовано: {item['title']}")
+                    send_post(news)
+                    sent.add(sid)
+                    log.info(f"✅ Опубликовано: {news.get('title', '')[:100]}")
                 except Exception as e:
-                    log.error(f"❌ Ошибка при публикации {item.get('title')}: {e}")
+                    log.error(f"❌ Ошибка постинга: {e}")
 
-        time.sleep(60)
+            _save_json(SENT_FILE, list(sent))
 
+        # Выход, если всё отправлено
+        if len(sent) >= len(by_id_sched):
+            log.info("🎉 Все публикации по расписанию завершены.")
+            break
+
+        # Для информации — когда ближайшая публикация
+        future_times = []
+        for sid, sched in by_id_sched.items():
+            if sid in sent:
+                continue
+            try:
+                t = tz.localize(datetime.strptime(sched["time"], "%Y-%m-%d %H:%M"))
+                if t > now:
+                    future_times.append(t)
+            except Exception:
+                pass
+        if future_times:
+            next_t = min(future_times)
+            wait_min = (next_t - now).total_seconds() / 60.0
+            log.info(f"⏳ Следующая проверка через {TICK_SECONDS}s. Ближайшая публикация в {next_t.strftime('%H:%M')} (через {wait_min:.1f} мин).")
+        else:
+            log.info(f"⏳ Следующая проверка через {TICK_SECONDS}s.")
+
+        time.sleep(TICK_SECONDS)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Post IT news according to schedule")
-    parser.add_argument("--instant", action="store_true", help="publish all posts immediately")
-    args = parser.parse_args()
-
-    post_next(instant=args.instant)
+    post_next()

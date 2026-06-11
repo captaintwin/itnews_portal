@@ -3,14 +3,9 @@ import json
 import random
 from datetime import datetime, timedelta, timezone, date
 from pathlib import Path
-import math
-
 from core.logger import log
 from sources.rss import fetch_rss
 from utils.helpers import generate_id, fetch_main_image, download_image
-
-
-
 
 # === НАСТРОЙКИ ===
 DATA_DIR = Path(os.getenv("DATA_DIR", "data"))
@@ -133,7 +128,6 @@ def collect_from_source(src):
 
     return collected
 
-
 def save_to_json(items):
     """Сохраняет результат в JSON с метаданными."""
     DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -152,20 +146,40 @@ def save_to_json(items):
 
 
 def collect_all():
-    """Основная функция: сбор только сегодняшних новостей."""
+    """Основная функция: сбор только свежих (сегодняшних) новостей без дублей."""
     log.info("🚀 Старт сбора новостей за сегодня")
+
     existing_ids = load_existing_ids()
     all_news = []
 
     for src in RSS_SOURCES:
         source_news = collect_from_source(src)
         for item in source_news:
-            if item["id"] not in existing_ids:
-                all_news.append(item)
-                existing_ids.add(item["id"])
+            # Пропускаем дубли по ID
+            if item["id"] in existing_ids:
+                continue
 
+            # Пропускаем старые публикации (не за сегодня)
+            try:
+                pub_date = datetime.fromisoformat(item["published_at"].replace("Z", "+00:00")).date()
+                if pub_date != date.today():
+                    continue
+            except Exception:
+                continue
+
+            all_news.append(item)
+            existing_ids.add(item["id"])
+
+    # Перемешиваем, чтобы источники чередовались
     random.shuffle(all_news)
-    log.info(f"✅ Итого собрано: {len(all_news)} новостей за сегодня")
+
+    # Логируем итоги
+    total = len(all_news)
+    log.info(f"📰 После фильтрации по дате и дублям осталось {total} свежих новостей.")
+
+    # Сохраняем и создаём расписание
     save_to_json(all_news)
-    build_schedule(len(all_news))
+    build_schedule(total)
+
+    log.info(f"✅ Сохранено {total} актуальных новостей и создано расписание.")
     return all_news

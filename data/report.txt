@@ -1,32 +1,48 @@
-🗓 План публикаций на 01.11.2025 10:26
-Всего статей: 9
+🗓 Отчёт о публикациях на 21.01.2026 18:04
+Всего статей: 25
 
-📚 MarkTechPost — 3 статей
- • How to Build an End-to-End Data Engineering and Machine Learning Pipeline with Apache Spark and PySpark
-   ⏰ 05:00 — 10177 знаков
- • Google AI Unveils Supervised Reinforcement Learning (SRL): A Step Wise Framework with Expert Trajectories to Teach Small Language Models to Reason through Hard Problems
-   ⏰ 06:53 — 9939 знаков
- • Anthropic’s New Research Shows Claude can Detect Injected Concepts, but only in Controlled Layers
-   ⏰ 08:46 — 9858 знаков
 
-📚 Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics — 2 статей
- • The best live TV streaming services to cut cable in 2025
-   ⏰ 10:40 — 47092 знаков
- • How to cancel Private Internet Access and get a refund
-   ⏰ 12:33 — 3603 знаков
+📚 TechCrunch (3 статей):
+ • We’re not nostalgic for 2016 — we’re nostalgic for the internet before all the slop — 2026-01-21 18:09 (https://techcrunch.com/2026/01/21/were-not-nostalgic-for-2016-were-nostalgic-for-the-internet-before-all-the-slop/)
+ • Amagi slides in India debut, as cloud TV software firm tests investor appetite — 2026-01-21 18:17 (https://techcrunch.com/2026/01/20/amagi-slides-in-india-debut-as-cloud-tv-software-firm-tests-investor-appetite/)
+ • Bolna nabs $6.3M from General Catalyst for its India-focused voice orchestration platform — 2026-01-21 18:26 (https://techcrunch.com/2026/01/20/bolna-nabs-6-3-million-from-general-catalyst-for-its-india-focused-voice-orchestration-platform/)
 
-📚 TechCrunch — 1 статей
- • What is Bending Spoons? Everything to know about AOL’s acquirer
-   ⏰ 14:26 — 9350 знаков
+📚 The Verge (3 статей):
+ • I tested a bunch of Switch 2 screen protectors, and these are the best — 2026-01-21 18:34 (https://www.theverge.com/reviews/694948/best-switch-2-glass-screen-protector-glossy-matte)
+ • Instagram’s top boss is missing the point about AI on the platform — 2026-01-21 18:43 (https://www.theverge.com/tech/864768/instagram-adam-mosseri-ai-content-algorithm)
+ • The US is fast-tracking permits for deep-sea mining — 2026-01-21 18:51 (https://www.theverge.com/news/864916/deep-sea-mining-trump-fast-track-permits-battery-minerals)
 
-📚 Ars Technica - All content — 1 статей
- • YouTube denies AI was involved with odd removals of tech tutorials
-   ⏰ 16:20 — 9627 знаков
+📚 WIRED (3 статей):
+ • ‘I’m Witnessing a Lot of Emptiness’: How ICE Uprooted Normal Life in Minneapolis — 2026-01-21 19:00 (https://www.wired.com/story/how-ice-uprooted-normal-life-in-minneapolis/)
+ • How to Fix Your Wi-Fi Problems (2026) — 2026-01-21 19:08 (https://www.wired.com/story/how-to-fix-wi-fi/)
+ • The AI Boom Will Increase US Carbon Emissions—but It Doesn’t Have To — 2026-01-21 19:17 (https://www.wired.com/story/the-ai-boom-will-increase-us-carbon-emissions-but-it-doesnt-have-to/)
 
-📚 VentureBeat — 1 статей
- • CrowdStrike & NVIDIA’s open source AI gives enterprises the edge against machine-speed attacks
-   ⏰ 18:13 — 7965 знаков
+📚 Engadget is a web magazine with obsessive daily coverage of everything new in gadgets and consumer electronics (3 статей):
+ • The best robot vacuum for 2026 — 2026-01-21 19:25 (https://www.engadget.com/home/smart-home/best-robot-vacuums-130010426.html?src=rss)
+ • The best winter tech for 2026 to help get you through the coldest months — 2026-01-21 19:34 (https://www.engadget.com/home/smart-home/the-best-winter-tech-for-2026-to-help-get-you-through-the-coldest-months-130009890.html?src=rss)
+ • How to check if your VPN is working — 2026-01-21 19:43 (https://www.engadget.com/cybersecurity/vpn/how-to-check-if-your-vpn-is-working-130000817.html?src=rss)
 
-📚 WIRED — 1 статей
- • Wireless Charging a 2026 Porsche Cayenne Electric
-   ⏰ 20:06 — 8699 знаков
+📚 Stack Overflow Blog (1 статей):
+ • Is that allowed? Authentication and authorization in Model Context Protocol — 2026-01-21 19:51 (https://stackoverflow.blog/2026/01/21/is-that-allowed-authentication-and-authorization-in-model-context-protocol/)
+
+📚 MarkTechPost (3 статей):
+ • Salesforce AI Introduces FOFPred: A Language-Driven Future Optical Flow Prediction Framework that Enables Improved Robot Control and Video Generation — 2026-01-21 20:00 (https://www.marktechpost.com/2026/01/21/salesforce-ai-introduces-fofpred-a-language-driven-future-optical-flow-prediction-framework-that-enables-improved-robot-control-and-video-generation/)
+ • What are Context Graphs? — 2026-01-21 20:08 (https://www.marktechpost.com/2026/01/20/what-are-context-graphs/)
+ • How AutoGluon Enables Modern AutoML Pipelines for Production-Grade Tabular Models with Ensembling and Distillation — 2026-01-21 20:17 (https://www.marktechpost.com/2026/01/21/how-autogluon-enables-modern-automl-pipelines-for-production-grade-tabular-models-with-ensembling-and-distillation/)
+
+📚 The New Stack (2 статей):
+ • How Rust does Async differently (and why it matters) — 2026-01-21 20:25 (https://thenewstack.io/how-rust-does-async-differently-and-why-it-matters/)
+ • Focus on ‘Don’ts’ to build systems that know when to say ‘No’ — 2026-01-21 20:34 (https://thenewstack.io/focus-on-donts-to-build-systems-that-know-when-to-say-no/)
+
+📚 The Hacker News (3 статей):
+ • Exposure Assessment Platforms Signal a Shift in Focus — 2026-01-21 20:42 (https://thehackernews.com/2026/01/exposure-assessment-platforms-signal.html)
+ • VoidLink Linux Malware Framework Built with AI Assistance Reaches 88,000 Lines of Code — 2026-01-21 20:51 (https://thehackernews.com/2026/01/voidlink-linux-malware-framework-built.html)
+ • Chainlit AI Framework Flaws Enable Data Theft via File Read and SSRF Bugs — None (https://thehackernews.com/2026/01/chainlit-ai-framework-flaws-enable-data.html)
+
+📚 Ars Technica - All content (3 статей):
+ • Has Gemini surpassed ChatGPT? We put the AI models to the test. — None (https://arstechnica.com/features/2026/01/has-gemini-surpassed-chatgpt-we-put-the-ai-models-to-the-test/)
+ • Zillow removed climate risk scores. This climate expert is restoring them. — None (https://arstechnica.com/science/2026/01/zillow-removed-climate-risk-scores-this-climate-expert-is-restoring-them/)
+ • Wikipedia volunteers spent years cataloging AI tells. Now there's a plugin to avoid them. — None (https://arstechnica.com/ai/2026/01/new-ai-plugin-uses-wikipedias-ai-writing-detection-rules-to-help-it-sound-human/)
+
+📚 VentureBeat (1 статей):
+ • TrueFoundry launches TrueFailover to automatically reroute enterprise AI traffic during model outages — None (https://venturebeat.com/infrastructure/truefoundry-launches-truefailover-to-automatically-reroute-enterprise-ai)
