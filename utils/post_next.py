@@ -12,6 +12,7 @@ DATA_DIR = Path("data")
 SELECTED_FILE = DATA_DIR / "selected.json"
 SCHEDULE_FILE = DATA_DIR / "schedule.json"
 SENT_FILE = DATA_DIR / "sent_news.json"
+POST_LOG_FILE = DATA_DIR / "post_log.json"
 
 tz = pytz.timezone("Europe/Belgrade")
 
@@ -40,6 +41,7 @@ def post_next():
     selected = _load_json(SELECTED_FILE, [])
     schedule = _load_json(SCHEDULE_FILE, [])
     sent = set(_load_json(SENT_FILE, []))
+    post_log = _load_json(POST_LOG_FILE, [])
 
     if not selected:
         log.warning("⚠️ selected.json пуст — нечего постить.")
@@ -57,6 +59,7 @@ def post_next():
 
     while True:
         now = datetime.now(tz)
+        changed = False
 
         # Собираем «должные к публикации» id (время <= now, и ещё не отправлены)
         due_ids = []
@@ -77,6 +80,13 @@ def post_next():
                 if delta_min > GRACE_SKIP_MIN:
                     log.info(f"⏭ Пропуск просроченного на {delta_min:.1f} мин: {by_id_news.get(sid, {}).get('title','(нет заголовка)')[:80]}")
                     sent.add(sid)
+                    post_log.append({
+                        "id": sid,
+                        "planned": sched["time"],
+                        "actual": None,
+                        "status": "skipped",
+                    })
+                    changed = True
                 else:
                     due_ids.append(sid)
 
@@ -89,15 +99,31 @@ def post_next():
                 if not news:
                     # нет контента для этого id — считаем отправленным, чтобы не зациклиться
                     sent.add(sid)
+                    post_log.append({
+                        "id": sid,
+                        "planned": by_id_sched[sid]["time"],
+                        "actual": None,
+                        "status": "skipped",
+                    })
+                    changed = True
                     continue
                 try:
                     send_post(news)
                     sent.add(sid)
+                    post_log.append({
+                        "id": sid,
+                        "planned": by_id_sched[sid]["time"],
+                        "actual": now.strftime("%Y-%m-%d %H:%M"),
+                        "status": "posted",
+                    })
+                    changed = True
                     log.info(f"✅ Опубликовано: {news.get('title', '')[:100]}")
                 except Exception as e:
                     log.error(f"❌ Ошибка постинга: {e}")
 
+        if changed:
             _save_json(SENT_FILE, list(sent))
+            _save_json(POST_LOG_FILE, post_log)
 
         # Выход, если всё отправлено
         if len(sent) >= len(by_id_sched):

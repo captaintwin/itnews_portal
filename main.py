@@ -1,7 +1,5 @@
 # main.py
-from datetime import datetime
 from pathlib import Path
-import pytz
 
 from core.logger import log
 from sources.collector import collect_all
@@ -10,21 +8,21 @@ from utils.analyzer import analyze_articles
 from utils.scheduler import build_schedule
 from utils.reporter import send_report
 from utils.post_next import post_next
+from utils.stats import archive_day
 
-
-tz = pytz.timezone("Europe/Belgrade")
 
 def main():
     log.info("=== Сбор и анализ новостей ===")
 
-    # === Сбрасываем историю отправленных постов ===
-    SENT_FILE = Path("data/sent_news.json")
-    if SENT_FILE.exists():
-        try:
-            SENT_FILE.unlink()
-            log.info("♻️ Сброшен список отправленных постов (sent_news.json).")
-        except Exception as e:
-            log.warning(f"⚠️ Не удалось удалить sent_news.json: {e}")
+    # === Сбрасываем историю отправленных постов и лог публикаций ===
+    for fname in ("data/sent_news.json", "data/post_log.json"):
+        f = Path(fname)
+        if f.exists():
+            try:
+                f.unlink()
+                log.info(f"♻️ Сброшен {f.name}.")
+            except Exception as e:
+                log.warning(f"⚠️ Не удалось удалить {f.name}: {e}")
 
     # 1️⃣ Сбор и анализ новостей
     collect_all()
@@ -33,6 +31,7 @@ def main():
 
     if not selected:
         log.warning("⚠️ Нет статей для публикации.")
+        archive_day()
         return
 
     # 2️⃣ Формирование расписания и отчёта
@@ -40,11 +39,13 @@ def main():
     send_report(selected)
 
     # 3️⃣ Запуск постинга по расписанию
-    now = datetime.now(tz)
     log.info("🕒 Запуск режима планового постинга.")
     post_next()
 
-    log.info("✅ Скрипт завершил подготовку и перешёл в фоновый режим постинга.")
+    # 4️⃣ Архивация итогов дня в SQLite (для дашборда)
+    archive_day()
+
+    log.info("✅ Скрипт завершил работу за день.")
 
 
 if __name__ == "__main__":

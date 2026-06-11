@@ -1,7 +1,7 @@
 import os
 import json
 import random
-from datetime import datetime, timedelta, timezone, date
+from datetime import datetime, timezone, date
 from pathlib import Path
 from core.logger import log
 from sources.rss import fetch_rss
@@ -11,7 +11,6 @@ from utils.helpers import generate_id, fetch_main_image, download_image
 DATA_DIR = Path(os.getenv("DATA_DIR", "data"))
 IMG_DIR = DATA_DIR / "images"
 NEWS_PATH = DATA_DIR / "news.json"
-SCHEDULE_FILE = Path("data/schedule.json")
 
 RSS_SOURCES = [
     "https://www.theverge.com/rss/index.xml",
@@ -31,21 +30,6 @@ RSS_SOURCES = [
     "https://openai.com/blog/rss",
 
 ]
-
-def build_schedule(news_count, start_hour=5, end_hour=22):
-    """Создаёт расписание постинга на день."""
-    start = datetime.combine(datetime.today(), datetime.min.time()).replace(hour=start_hour)
-    total_minutes = (end_hour - start_hour) * 60
-    if news_count == 0:
-        return []
-    interval = total_minutes / news_count
-
-    times = [start + timedelta(minutes=i * interval) for i in range(news_count)]
-    schedule = [t.strftime("%H:%M") for t in times]
-
-    SCHEDULE_FILE.write_text(json.dumps(schedule, indent=2), encoding="utf-8")
-    log.info(f"🕒 Сформировано расписание из {len(schedule)} публикаций каждые {interval:.1f} мин.")
-    return schedule
 
 def load_existing_ids():
     """Загружает уже собранные новости (для защиты от дублей)."""
@@ -177,9 +161,7 @@ def collect_all():
     total = len(all_news)
     log.info(f"📰 После фильтрации по дате и дублям осталось {total} свежих новостей.")
 
-    # Сохраняем и создаём расписание
     save_to_json(all_news)
-    build_schedule(total)
 
-    log.info(f"✅ Сохранено {total} актуальных новостей и создано расписание.")
+    log.info(f"✅ Сохранено {total} актуальных новостей.")
     return all_news

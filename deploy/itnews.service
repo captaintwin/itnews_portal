@@ -1,0 +1,19 @@
+[Unit]
+Description=ITNews Portal: daily news collection and Telegram posting
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=exec
+User=itnews
+Group=itnews
+WorkingDirectory=/opt/itnews_portal
+ExecStart=/opt/itnews_portal/venv/bin/python main.py
+# Restart намеренно отключён: при перезапуске main.py удаляет sent_news.json
+# и пересоздаёт расписание, что привело бы к дублям постов.
+Restart=no
+# Процесс живёт до последней публикации (~21:00), страховка на случай зависания:
+RuntimeMaxSec=16h
+
+[Install]
+WantedBy=multi-user.target

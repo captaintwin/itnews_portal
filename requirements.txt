@@ -1,5 +1,7 @@
 feedparser
 requests
 python-dotenv
-python-telegram-bot
+python-telegram-bot==13.15
 beautifulsoup4
+pytz
+flask

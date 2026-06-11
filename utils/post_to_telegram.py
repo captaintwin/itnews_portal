@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 # === Настройки окружения ===
 load_dotenv()
 BOT_TOKEN = os.getenv("TELEGRAM_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT")
+# Новости — в публичный канал; если он не задан, фолбэк на техчат
+CHAT_ID = os.getenv("TELEGRAM_CHANNEL") or os.getenv("TELEGRAM_CHAT")
 
 bot = Bot(token=BOT_TOKEN)
 

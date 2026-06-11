@@ -5,8 +5,12 @@ import os
 from datetime import datetime, timedelta
 from pathlib import Path
 import pytz
+from dotenv import load_dotenv
 from telegram import Bot
 from core.logger import log
+
+# .env должен быть загружен до чтения переменных ниже
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / ".env")
 
 
 # === Пути и конфигурация ===
@@ -81,6 +85,13 @@ def build_schedule(
 
     if now > start_time:
         start_time = now + timedelta(minutes=5)
+
+    if start_time >= end_time:
+        log.warning(
+            f"⚠️ Запуск вне окна постинга ({start_hour}:00–{end_hour}:00): "
+            f"сейчас {now.strftime('%H:%M')}, расписание не создано."
+        )
+        return []
 
     total_minutes = (end_time - start_time).total_seconds() / 60
     interval = total_minutes / news_count

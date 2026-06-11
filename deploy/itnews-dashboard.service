@@ -1,0 +1,16 @@
+[Unit]
+Description=ITNews Portal statistics dashboard
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=exec
+User=itnews
+Group=itnews
+WorkingDirectory=/opt/itnews_portal
+ExecStart=/opt/itnews_portal/venv/bin/python dashboard/app.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

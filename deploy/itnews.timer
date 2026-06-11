@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily start of ITNews Portal at 08:45 Europe/Belgrade
+
+[Timer]
+OnCalendar=*-*-* 08:45:00 Europe/Belgrade
+Persistent=true
+Unit=itnews.service
+
+[Install]
+WantedBy=timers.target
