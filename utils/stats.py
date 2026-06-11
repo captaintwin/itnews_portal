@@ -1,6 +1,7 @@
 # utils/stats.py — архивация дневной статистики в SQLite
 import json
 import sqlite3
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -60,6 +61,24 @@ def archive_day():
         _archive()
     except Exception as e:
         log.error(f"⚠️ Ошибка архивации статистики: {e}")
+
+
+def cleanup_old(days: int = 7):
+    """Удаляет тексты статей и картинки старше N дней (они нужны только в день постинга)."""
+    cutoff = time.time() - days * 86400
+    removed = 0
+    for d in (DATA_DIR / "articles", DATA_DIR / "images"):
+        if not d.exists():
+            continue
+        for f in d.iterdir():
+            try:
+                if f.is_file() and f.stat().st_mtime < cutoff:
+                    f.unlink()
+                    removed += 1
+            except Exception:
+                pass
+    if removed:
+        log.info(f"🧹 Очистка: удалено {removed} файлов старше {days} дн.")
 
 
 def _archive():

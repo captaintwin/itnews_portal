@@ -1,7 +1,8 @@
 from telegram import Bot
-from telegram.error import TelegramError
+from telegram.error import RetryAfter, TelegramError
 from pathlib import Path
 import os
+import time
 from html import unescape
 import re
 from urllib.parse import urlparse
@@ -34,9 +35,10 @@ def source_link(news_item: dict) -> str:
     return f'<a href="https://{netloc}">{name}</a>'
 
 # === Основная функция отправки поста ===
-def send_post(news_item: dict):
+def send_post(news_item: dict) -> bool:
     """
-    Отправляет пост в Telegram.
+    Отправляет пост в Telegram. Возвращает True при успехе.
+    При flood control (RetryAfter) ждёт и повторяет до 3 раз.
     Если указано image_path и файл существует — отправляет с фото.
     """
     title = news_item.get("title", "Без названия")
@@ -52,21 +54,28 @@ def send_post(news_item: dict):
         f"📰 {source_link(news_item)}"
     )
 
-    try:
-        if img_path and Path(img_path).exists():
-            # === Отправляем с изображением ===
-            with open(img_path, "rb") as photo:
-                bot.send_photo(
-                    chat_id=CHAT_ID,
-                    photo=photo,
-                    caption=text,
-                    parse_mode="HTML",
-                )
-            print(f"[OK] Sent with image: {title}")
-        else:
-            # === Если нет картинки — обычное сообщение ===
-            bot.send_message(chat_id=CHAT_ID, text=text, parse_mode="HTML")
-            print(f"[OK] Sent without image: {title}")
+    for attempt in range(3):
+        try:
+            if img_path and Path(img_path).exists():
+                with open(img_path, "rb") as photo:
+                    bot.send_photo(
+                        chat_id=CHAT_ID,
+                        photo=photo,
+                        caption=text,
+                        parse_mode="HTML",
+                    )
+                print(f"[OK] Sent with image: {title}")
+            else:
+                bot.send_message(chat_id=CHAT_ID, text=text, parse_mode="HTML")
+                print(f"[OK] Sent without image: {title}")
+            return True
 
-    except TelegramError as e:
-        print(f"[Telegram error] {e}")
+        except RetryAfter as e:
+            wait = int(getattr(e, "retry_after", 30)) + 1
+            print(f"[Flood control] Жду {wait}s (попытка {attempt + 1}/3): {title}")
+            time.sleep(wait)
+        except TelegramError as e:
+            print(f"[Telegram error] {e}")
+            return False
+
+    return False

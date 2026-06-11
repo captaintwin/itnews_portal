@@ -108,7 +108,12 @@ def post_next():
                     changed = True
                     continue
                 try:
-                    send_post(news)
+                    ok = send_post(news)
+                except Exception as e:
+                    log.error(f"❌ Ошибка постинга: {e}")
+                    ok = False
+
+                if ok:
                     sent.add(sid)
                     post_log.append({
                         "id": sid,
@@ -118,8 +123,10 @@ def post_next():
                     })
                     changed = True
                     log.info(f"✅ Опубликовано: {news.get('title', '')[:100]}")
-                except Exception as e:
-                    log.error(f"❌ Ошибка постинга: {e}")
+                else:
+                    # не помечаем отправленным — повторим на следующем тике,
+                    # через GRACE_SKIP_MIN пост будет пропущен автоматически
+                    log.error(f"❌ Не отправлено (повторим): {news.get('title', '')[:80]}")
 
         if changed:
             _save_json(SENT_FILE, list(sent))

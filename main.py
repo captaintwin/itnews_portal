@@ -8,7 +8,8 @@ from utils.analyzer import analyze_articles
 from utils.scheduler import build_schedule
 from utils.reporter import send_report
 from utils.post_next import post_next
-from utils.stats import archive_day
+from utils.stats import archive_day, cleanup_old
+from utils.alerts import alert
 
 
 def main():
@@ -30,23 +31,33 @@ def main():
     selected = analyze_articles()
 
     if not selected:
-        log.warning("⚠️ Нет статей для публикации.")
+        alert("После отбора 0 статей — сегодня публикаций не будет.")
         archive_day()
         return
 
     # 2️⃣ Формирование расписания и отчёта
-    build_schedule()
+    schedule = build_schedule()
+    if not schedule:
+        alert("Расписание не создано (запуск вне окна постинга?) — публикаций не будет.")
+        archive_day()
+        return
     send_report(selected)
 
     # 3️⃣ Запуск постинга по расписанию
     log.info("🕒 Запуск режима планового постинга.")
     post_next()
 
-    # 4️⃣ Архивация итогов дня в SQLite (для дашборда)
+    # 4️⃣ Архивация итогов дня и чистка старых файлов
     archive_day()
+    cleanup_old(days=7)
 
     log.info("✅ Скрипт завершил работу за день.")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        import traceback
+        alert(f"Прогон упал с ошибкой:\n{traceback.format_exc()[-1500:]}")
+        raise

@@ -10,7 +10,10 @@ DATA_DIR = Path("data")
 ARTICLES_DIR = DATA_DIR / "articles"
 DB_FILE = DATA_DIR / "stats.sqlite"
 
-TOP_WORDS = 300
+# Слова храним все с частотой >= MIN_WORD_COUNT (нужно для анализа распределения),
+# биграммы — только топ.
+MIN_WORD_COUNT = 2
+MAX_WORDS = 8000
 TOP_BIGRAMS = 150
 
 WORD_RE = re.compile(r"[a-z][a-z'\-]{2,}")
@@ -93,9 +96,14 @@ def _compute(run_date: str, items: list):
             "PRIMARY KEY (run_date, kind, term))"
         )
         con.execute("DELETE FROM word_stats WHERE run_date = ?", (run_date,))
+        word_rows = [
+            (run_date, "word", t, c)
+            for t, c in words.most_common(MAX_WORDS)
+            if c >= MIN_WORD_COUNT
+        ]
         con.executemany(
             "INSERT INTO word_stats VALUES (?,?,?,?)",
-            [(run_date, "word", t, c) for t, c in words.most_common(TOP_WORDS)]
+            word_rows
             + [(run_date, "bigram", t, c) for t, c in bigrams.most_common(TOP_BIGRAMS)],
         )
         con.commit()

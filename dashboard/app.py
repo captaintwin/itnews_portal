@@ -1,14 +1,19 @@
 # dashboard/app.py — веб-дашборд статистики itnews_portal
 import json
+import math
 import os
 import sqlite3
+import statistics
+from collections import Counter
 from datetime import datetime
 from functools import wraps
 from pathlib import Path
 
 import pytz
 from dotenv import load_dotenv
-from flask import Flask, Response, render_template, request
+from flask import Flask, Response, jsonify, make_response, render_template, request
+
+from i18n import METRIC_DESC, METRIC_KEYS, TRANSLATIONS, resolve_lang
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BASE_DIR / "data"
@@ -28,8 +33,9 @@ def protected(f):
         if PASSWORD:
             auth = request.authorization
             if not auth or auth.password != PASSWORD:
+                lang = resolve_lang(request)
                 return Response(
-                    "Требуется авторизация", 401,
+                    TRANSLATIONS[lang]["auth_required"], 401,
                     {"WWW-Authenticate": 'Basic realm="itnews dashboard"'},
                 )
         return f(*args, **kwargs)
@@ -135,6 +141,173 @@ def word_analytics():
     return top_words, top_bigrams, trends
 
 
+def _aggregated_words(days=7):
+    return query(
+        "SELECT term, SUM(cnt) AS cnt FROM word_stats WHERE kind = 'word' "
+        "AND run_date >= date('now', ? || ' day') "
+        "GROUP BY term ORDER BY cnt DESC",
+        (f"-{days}",),
+    )
+
+
+def _central_stats(freqs):
+    """Центральные тенденции и границы для фильтрации слов по метрикам."""
+    n = len(freqs)
+    mean = sum(freqs) / n
+    median = statistics.median(freqs)
+    mode_val, mode_n = Counter(freqs).most_common(1)[0]
+    std = statistics.stdev(freqs) if n > 1 else 0.0
+    if n >= 4:
+        qs = statistics.quantiles(freqs, n=4)
+        q1, q3 = qs[0], qs[2]
+    else:
+        q1, q3 = min(freqs), max(freqs)
+    iqr = q3 - q1
+    outlier_thr = q3 + 1.5 * iqr
+    return {
+        "mean": round(mean, 1),
+        "median": round(median, 1),
+        "mode": mode_val,
+        "mode_words": mode_n,
+        "std": round(std, 1),
+        "q1": round(q1, 1),
+        "q3": round(q3, 1),
+        "iqr": round(iqr, 1),
+        "outlier_thr": round(outlier_thr, 1),
+        "max": freqs[0],
+        # границы для API-фильтров
+        "mean_lo": max(2, int(mean - std)),
+        "mean_hi": max(2, int(mean + std)),
+        "median_lo": int(math.floor(median)),
+        "median_hi": int(math.ceil(median)),
+        "q3_lo": int(math.floor(q3)),
+        "q3_hi": int(math.floor(outlier_thr)),
+    }
+
+
+def word_distribution():
+    """Распределение частот слов за 7 дней: гистограмма, Ципф, центр. тенденции, полюса."""
+    rows = _aggregated_words()
+    if not rows:
+        return None
+
+    freqs = [r["cnt"] for r in rows]
+    n = len(freqs)
+    central = _central_stats(freqs)
+
+    buckets = [(2, 2), (3, 4), (5, 9), (10, 19), (20, 49),
+               (50, 99), (100, 199), (200, None)]
+    hist = []
+    for lo, hi in buckets:
+        cnt = sum(1 for f in freqs if f >= lo and (hi is None or f <= hi))
+        label = str(lo) if hi == lo else (f"{lo}–{hi}" if hi else f"{lo}+")
+        hist.append({"label": label, "count": cnt, "lo": lo, "hi": hi})
+
+    # Кривая Ципфа (ранг → частота), даунсэмплинг до ~150 точек
+    step = max(1, n // 150)
+    zipf = [
+        {"rank": i + 1, "freq": r["cnt"]}
+        for i, r in enumerate(rows)
+        if i % step == 0 or i == n - 1
+    ]
+
+    # Полюса: верхний (хаб-слова), нижний (хвост), выбросы (за пределами IQR)
+    high_pole = [{"term": r["term"], "cnt": r["cnt"]} for r in rows[:15]]
+    low_pole = [{"term": r["term"], "cnt": r["cnt"]} for r in reversed(rows) if r["cnt"] <= 3][:30]
+    outliers = [{"term": r["term"], "cnt": r["cnt"]} for r in rows if r["cnt"] > central["outlier_thr"]]
+
+    return {
+        "hist": hist,
+        "zipf": zipf,
+        "unique": n,
+        "total": sum(freqs),
+        "max": freqs[0],
+        "central": {k: central[k] for k in (
+            "mean", "median", "mode", "mode_words", "std",
+            "q1", "q3", "iqr", "outlier_thr",
+        )},
+        "poles": {
+            "high": high_pole,
+            "low": low_pole,
+            "outliers": outliers,
+        },
+    }
+
+
+@app.route("/api/words/metric")
+@protected
+def words_for_metric():
+    """Слова, соответствующие центральной метрике (клик по графику тенденций)."""
+    metric = request.args.get("metric", "")
+    days = request.args.get("days", default=7, type=int)
+    lang = resolve_lang(request)
+    t = TRANSLATIONS[lang]
+    if metric not in METRIC_KEYS:
+        return jsonify({"error": "unknown metric"}), 400
+
+    label = t[METRIC_KEYS[metric]]
+    rows = _aggregated_words(days)
+    if not rows:
+        return jsonify({"label": label, "words": [], "total": 0, "desc": ""})
+
+    freqs = [r["cnt"] for r in rows]
+    c = _central_stats(freqs)
+
+    if metric == "mode":
+        words = [r for r in rows if r["cnt"] == c["mode"]]
+        desc = METRIC_DESC[lang]["mode"].format(v=c["mode"])
+    elif metric == "median":
+        words = [r for r in rows if c["median_lo"] <= r["cnt"] <= c["median_hi"]]
+        desc = METRIC_DESC[lang]["median"].format(
+            lo=c["median_lo"], hi=c["median_hi"], v=c["median"],
+        )
+    elif metric == "mean":
+        words = [r for r in rows if c["mean_lo"] <= r["cnt"] <= c["mean_hi"]]
+        desc = METRIC_DESC[lang]["mean"].format(
+            lo=c["mean_lo"], hi=c["mean_hi"], mean=c["mean"], std=c["std"],
+        )
+    elif metric == "q3":
+        words = [r for r in rows if c["q3_lo"] <= r["cnt"] <= c["q3_hi"]]
+        desc = METRIC_DESC[lang]["q3"].format(lo=c["q3_lo"], hi=c["q3_hi"])
+    else:  # max
+        words = [r for r in rows if r["cnt"] == c["max"]]
+        desc = METRIC_DESC[lang]["max"].format(v=c["max"])
+
+    return jsonify({
+        "label": label,
+        "metric": metric,
+        "desc": desc,
+        "words": words[:500],
+        "total": len(words),
+    })
+
+
+@app.route("/api/words/bucket")
+@protected
+def words_in_bucket():
+    """Слова в выбранной корзине частот (клик по гистограмме)."""
+    lo = request.args.get("lo", type=int)
+    hi = request.args.get("hi", type=int)
+    days = request.args.get("days", default=7, type=int)
+    if lo is None:
+        return jsonify({"error": "lo required"}), 400
+
+    sql = (
+        "SELECT term, SUM(cnt) AS cnt FROM word_stats WHERE kind = 'word' "
+        "AND run_date >= date('now', ? || ' day') "
+        "GROUP BY term HAVING cnt >= ?"
+    )
+    args = [f"-{days}", lo]
+    if hi is not None:
+        sql += " AND cnt <= ?"
+        args.append(hi)
+    sql += " ORDER BY cnt DESC, term LIMIT 500"
+
+    words = query(sql, tuple(args))
+    label = str(lo) if hi == lo else (f"{lo}–{hi}" if hi else f"{lo}+")
+    return jsonify({"label": label, "lo": lo, "hi": hi, "words": words, "total": len(words)})
+
+
 @app.route("/")
 @protected
 def index():
@@ -164,8 +337,12 @@ def index():
     today_items = live_today()
     today_posted = sum(1 for i in today_items if i["status"] == "posted")
     top_words, top_bigrams, trends = word_analytics()
+    distribution = word_distribution()
 
-    return render_template(
+    lang = resolve_lang(request)
+    t = TRANSLATIONS[lang]
+
+    resp = make_response(render_template(
         "index.html",
         runs=runs,
         sources=sources,
@@ -177,9 +354,15 @@ def index():
         top_words=top_words,
         top_bigrams=top_bigrams,
         trends=trends,
+        distribution=distribution,
         now=datetime.now(tz).strftime("%d.%m.%Y %H:%M"),
         has_history=bool(runs),
-    )
+        t=t,
+        lang=lang,
+    ))
+    if request.args.get("lang") in TRANSLATIONS:
+        resp.set_cookie("lang", lang, max_age=365 * 24 * 3600)
+    return resp
 
 
 if __name__ == "__main__":

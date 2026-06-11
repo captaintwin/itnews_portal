@@ -1,0 +1,9 @@
+[Unit]
+Description=Run ITNews watchdog daily at 10:15 Europe/Belgrade
+
+[Timer]
+OnCalendar=*-*-* 10:15:00 Europe/Belgrade
+Unit=itnews-watchdog.service
+
+[Install]
+WantedBy=timers.target

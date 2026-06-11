@@ -64,6 +64,45 @@ NEWS_KEYWORDS = [
 _title_black = [re.compile(p, re.I) for p in TITLE_BLACKLIST]
 _url_black = [re.compile(p, re.I) for p in URL_BLACKLIST]
 
+_DEDUP_STOP = frozenset(
+    "the a an of to in on for and with is are at its his her how why what who "
+    "new says said will would after over more from has have was were be".split()
+)
+
+
+def _title_tokens(title: str) -> frozenset:
+    return frozenset(
+        w for w in re.findall(r"[a-z0-9']+", title.lower())
+        if len(w) > 2 and w not in _DEDUP_STOP
+    )
+
+
+def dedup_stories(items: list) -> list:
+    """
+    Убирает дубли одного сюжета от разных источников: если значимые слова
+    заголовков пересекаются более чем наполовину (containment >= 0.5),
+    остаётся статья с большим скором.
+    """
+    kept = []
+    kept_tokens = []
+    for n in sorted(items, key=lambda x: x.get("score", 0), reverse=True):
+        toks = _title_tokens(n.get("title", ""))
+        dup_of = None
+        if len(toks) >= 4:
+            for k, kt in zip(kept, kept_tokens):
+                if len(kt) >= 4 and len(toks & kt) / min(len(toks), len(kt)) >= 0.5:
+                    dup_of = k
+                    break
+        if dup_of:
+            log.info(
+                f"♻️ Дубль сюжета «{dup_of.get('title', '')[:55]}»: "
+                f"{n.get('title', '')[:70]}"
+            )
+            continue
+        kept.append(n)
+        kept_tokens.append(toks)
+    return kept
+
 
 def is_blacklisted(item: dict) -> str | None:
     """Возвращает причину бана или None."""
@@ -138,6 +177,9 @@ def analyze_articles(top_n=3, min_score=2.0):
             continue
 
         scored.append(n)
+
+    # Дедупликация: один сюжет — одна статья (остаётся версия с лучшим скором)
+    scored = dedup_stories(scored)
 
     # Группировка по источнику, top_n лучших по скору
     grouped = defaultdict(list)
