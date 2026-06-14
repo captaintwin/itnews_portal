@@ -10,17 +10,17 @@
 {% if has_history %}
 <div class="panel">
   <h2>{{ t.chart_days }}</h2>
-  <canvas id="chartDays"></canvas>
+  <div class="chart-box"><canvas id="chartDays"></canvas></div>
 </div>
 
 <div class="grid2">
   <div class="panel">
     <h2>{{ t.chart_funnel }}</h2>
-    <canvas id="chartFunnel"></canvas>
+    <div class="chart-box chart-box--tall" id="chartFunnelWrap"><canvas id="chartFunnel"></canvas></div>
   </div>
   <div class="panel">
     <h2>{{ t.chart_posted_src }}</h2>
-    <canvas id="chartPosted"></canvas>
+    <div class="chart-box chart-box--tall" id="chartPostedWrap"><canvas id="chartPosted"></canvas></div>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
   <div class="panel">
     <h2>{{ t.top_words }}</h2>
     {% if top_words %}
-    <canvas id="chartWords" style="max-height:480px"></canvas>
+    <div class="chart-box chart-box--words" id="chartWordsWrap"><canvas id="chartWords"></canvas></div>
     {% else %}
     <div class="empty">{{ t.top_words_empty }}</div>
     {% endif %}
@@ -36,28 +36,43 @@
   <div class="panel">
     <h2>{{ t.trends }}</h2>
     {% if trends %}
-    <table>
-      <tr><th>{{ t.col_term }}</th><th>{{ t.col_today }}</th><th>{{ t.col_avg7 }}</th><th>{{ t.col_growth }}</th></tr>
-      {% for tr in trends %}
-      <tr>
-        <td>{{ tr.term }}</td>
-        <td>{{ tr.today }}</td>
-        <td class="muted">{{ tr.prev_avg }}</td>
-        <td><span class="badge b-posted">×{{ tr.growth }}</span></td>
-      </tr>
-      {% endfor %}
-    </table>
+    <div class="table-wrap">
+      <table class="rtable">
+        <thead>
+          <tr><th>{{ t.col_term }}</th><th>{{ t.col_today }}</th><th>{{ t.col_avg7 }}</th><th>{{ t.col_growth }}</th></tr>
+        </thead>
+        <tbody>
+        {% for tr in trends %}
+        <tr>
+          <td data-label="{{ t.col_term }}">{{ tr.term }}</td>
+          <td data-label="{{ t.col_today }}">{{ tr.today }}</td>
+          <td class="muted" data-label="{{ t.col_avg7 }}">{{ tr.prev_avg }}</td>
+          <td data-label="{{ t.col_growth }}"><span class="badge b-posted">×{{ tr.growth }}</span></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
     {% else %}
     <div class="empty">{{ t.trends_empty }}</div>
     {% endif %}
     {% if top_bigrams %}
     <h2 style="margin-top:20px">{{ t.top_bigrams }}</h2>
-    <table>
-      <tr><th>{{ t.col_bigram }}</th><th style="width:80px">{{ t.col_freq }}</th></tr>
-      {% for b in top_bigrams %}
-      <tr><td>{{ b.term }}</td><td>{{ b.cnt }}</td></tr>
-      {% endfor %}
-    </table>
+    <div class="table-wrap">
+      <table class="rtable">
+        <thead>
+          <tr><th>{{ t.col_bigram }}</th><th>{{ t.col_freq }}</th></tr>
+        </thead>
+        <tbody>
+        {% for b in top_bigrams %}
+        <tr>
+          <td data-label="{{ t.col_bigram }}">{{ b.term }}</td>
+          <td data-label="{{ t.col_freq }}">{{ b.cnt }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
     {% endif %}
   </div>
 </div>
@@ -65,7 +80,7 @@
 {% if distribution %}
 <div class="panel">
   <h2>{{ t.central_title }}</h2>
-  <div class="muted" style="font-size:12px;margin-bottom:14px">
+  <div class="muted stats-line">
     {{ distribution.unique }} {{ t.words_unique }} · {{ distribution.total }} {{ t.occurrences }} · {{ t.max_label }} {{ distribution.max }}
   </div>
   <div class="central-grid">
@@ -79,7 +94,7 @@
     </table>
     <div>
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
-      <canvas id="chartCentral"></canvas>
+      <div class="chart-box"><canvas id="chartCentral"></canvas></div>
       <div class="click-hint">{{ t.click_metric }}</div>
       <div id="centralPanel"><h3 id="centralTitle"></h3><div id="centralWords" class="word-grid"></div></div>
     </div>
@@ -107,13 +122,13 @@
   <div class="grid2">
     <div>
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.hist_title }}</div>
-      <canvas id="chartHist"></canvas>
+      <div class="chart-box"><canvas id="chartHist"></canvas></div>
       <div class="click-hint">{{ t.click_bucket }}</div>
       <div id="bucketPanel"><h3 id="bucketTitle"></h3><div id="bucketWords" class="word-grid"></div></div>
     </div>
     <div>
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.zipf_title }}</div>
-      <canvas id="chartZipf"></canvas>
+      <div class="chart-box"><canvas id="chartZipf"></canvas></div>
     </div>
   </div>
 </div>
@@ -131,6 +146,37 @@ const distribution = {{ distribution | tojson }};
 Chart.defaults.color = '#8b98a5';
 Chart.defaults.borderColor = '#2a3441';
 
+const isMobile = window.matchMedia('(max-width: 640px)').matches;
+const tickSize = isMobile ? 10 : 11;
+const legendSize = isMobile ? 10 : 11;
+const chartFont = { size: tickSize };
+const barTouch = { intersect: true, mode: 'nearest' };
+
+function setBarChartHeight(wrapId, count, rowH) {
+  const wrap = document.getElementById(wrapId);
+  if (!wrap) return;
+  const h = Math.max(isMobile ? 220 : 280, count * rowH + 48);
+  wrap.style.height = h + 'px';
+}
+
+function baseChartOpts(extra = {}) {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    interaction: barTouch,
+    plugins: {
+      legend: {
+        labels: { font: { size: legendSize }, boxWidth: isMobile ? 10 : 12, padding: isMobile ? 10 : 12 },
+      },
+    },
+    ...extra,
+  };
+}
+
+setBarChartHeight('chartFunnelWrap', sources.length, isMobile ? 28 : 24);
+setBarChartHeight('chartPostedWrap', postsBySource.length, isMobile ? 28 : 24);
+if (topWords.length) setBarChartHeight('chartWordsWrap', topWords.length, isMobile ? 22 : 18);
+
 new Chart(document.getElementById('chartDays'), {
   type: 'bar',
   data: {
@@ -141,7 +187,13 @@ new Chart(document.getElementById('chartDays'), {
       { label: i18n.lbl_collected, data: runs.map(r => r.collected), type: 'line', borderColor: '#4da3ff', yAxisID: 'y1', tension: .3 },
     ]
   },
-  options: { scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true }, y1: { position: 'right', beginAtZero: true, grid: { drawOnChartArea: false } } } }
+  options: baseChartOpts({
+    scales: {
+      x: { stacked: true, ticks: { font: chartFont, maxRotation: isMobile ? 45 : 0 } },
+      y: { stacked: true, beginAtZero: true, ticks: { font: chartFont } },
+      y1: { position: 'right', beginAtZero: true, grid: { drawOnChartArea: false }, ticks: { font: chartFont } },
+    },
+  }),
 });
 
 new Chart(document.getElementById('chartFunnel'), {
@@ -153,14 +205,27 @@ new Chart(document.getElementById('chartFunnel'), {
       { label: i18n.lbl_selected, data: sources.map(s => s.selected), backgroundColor: '#3fb950' },
     ]
   },
-  options: { indexAxis: 'y', scales: { x: { beginAtZero: true } } }
+  options: baseChartOpts({
+    indexAxis: 'y',
+    scales: {
+      x: { beginAtZero: true, ticks: { font: chartFont } },
+      y: { ticks: { font: chartFont, autoSkip: false } },
+    },
+  }),
 });
 
 if (topWords.length) {
   new Chart(document.getElementById('chartWords'), {
     type: 'bar',
     data: { labels: topWords.map(w => w.term), datasets: [{ label: i18n.lbl_mentions, data: topWords.map(w => w.cnt), backgroundColor: '#4da3ff' }] },
-    options: { indexAxis: 'y', scales: { x: { beginAtZero: true } }, plugins: { legend: { display: false } } }
+    options: baseChartOpts({
+      indexAxis: 'y',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { beginAtZero: true, ticks: { font: chartFont } },
+        y: { ticks: { font: chartFont, autoSkip: false } },
+      },
+    }),
   });
 }
 
@@ -207,11 +272,14 @@ if (distribution) {
       labels: [i18n.chart_mode, i18n.chart_median, i18n.chart_mean, i18n.chart_q3, i18n.chart_max],
       datasets: [{ data: [cen.mode, cen.median, cen.mean, cen.q3, distribution.max], backgroundColor: ['#8b98a5', '#f85149', '#3fb950', '#4da3ff', '#d29922'] }]
     },
-    options: {
+    options: baseChartOpts({
       plugins: { legend: { display: false } },
       onClick: (_evt, elements) => { if (elements.length) loadMetricWords(metricKeys[elements[0].index]); },
-      scales: { y: { beginAtZero: true, title: { display: true, text: i18n.lbl_frequency } } }
-    }
+      scales: {
+        x: { ticks: { font: chartFont, maxRotation: isMobile ? 35 : 0 } },
+        y: { beginAtZero: true, title: { display: !isMobile, text: i18n.lbl_frequency }, ticks: { font: chartFont } },
+      },
+    }),
   });
 
   new Chart(document.getElementById('chartHist'), {
@@ -220,14 +288,14 @@ if (distribution) {
       labels: distribution.hist.map(b => b.label),
       datasets: [{ label: i18n.lbl_words_in_bucket, data: distribution.hist.map(b => b.count), backgroundColor: '#d29922' }]
     },
-    options: {
+    options: baseChartOpts({
       plugins: { legend: { display: false } },
       onClick: (_evt, elements) => { if (elements.length) loadBucketWords(distribution.hist[elements[0].index]); },
       scales: {
-        x: { title: { display: true, text: i18n.lbl_word_freq } },
-        y: { beginAtZero: true, title: { display: true, text: i18n.lbl_word_count } }
-      }
-    }
+        x: { title: { display: !isMobile, text: i18n.lbl_word_freq }, ticks: { font: chartFont } },
+        y: { beginAtZero: true, title: { display: !isMobile, text: i18n.lbl_word_count }, ticks: { font: chartFont } },
+      },
+    }),
   });
 
   const maxRank = distribution.zipf[distribution.zipf.length - 1].rank;
@@ -240,13 +308,13 @@ if (distribution) {
         { label: i18n.chart_median_line.replace('{v}', cen.median), data: [{ x: 1, y: cen.median }, { x: maxRank, y: cen.median }], borderColor: '#f85149', borderDash: [6, 4], pointRadius: 0, order: 1 },
       ]
     },
-    options: {
-      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+    options: baseChartOpts({
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: legendSize } } } },
       scales: {
-        x: { type: 'logarithmic', title: { display: true, text: i18n.lbl_rank } },
-        y: { type: 'logarithmic', title: { display: true, text: i18n.lbl_frequency } }
-      }
-    }
+        x: { type: 'logarithmic', title: { display: !isMobile, text: i18n.lbl_rank }, ticks: { font: chartFont } },
+        y: { type: 'logarithmic', title: { display: !isMobile, text: i18n.lbl_frequency }, ticks: { font: chartFont } },
+      },
+    }),
   });
 }
 
@@ -259,7 +327,13 @@ new Chart(document.getElementById('chartPosted'), {
       { label: i18n.lbl_skipped, data: postsBySource.map(s => s.skipped), backgroundColor: '#f85149' },
     ]
   },
-  options: { indexAxis: 'y', scales: { x: { beginAtZero: true, stacked: true }, y: { stacked: true } } }
+  options: baseChartOpts({
+    indexAxis: 'y',
+    scales: {
+      x: { beginAtZero: true, stacked: true, ticks: { font: chartFont } },
+      y: { stacked: true, ticks: { font: chartFont, autoSkip: false } },
+    },
+  }),
 });
 </script>
 {% else %}

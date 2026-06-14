@@ -11,22 +11,28 @@
 <div class="panel">
   <h2>{{ t.schedule_today }}</h2>
   {% if today_items %}
-  <table>
-    <tr><th style="width:60px">{{ t.col_time }}</th><th>{{ t.col_title }}</th><th style="width:200px">{{ t.col_source }}</th><th style="width:110px">{{ t.col_status }}</th></tr>
-    {% for i in today_items %}
-    <tr>
-      <td>{{ i.time }}</td>
-      <td>{% if i.url %}<a href="{{ i.url }}" target="_blank">{{ i.title }}</a>{% else %}{{ i.title }}{% endif %}</td>
-      <td class="muted">{{ i.source }}</td>
-      <td>
-        {% if i.status == 'posted' %}<span class="badge b-posted">{{ t.status_posted }}</span>
-        {% elif i.status == 'pending' %}<span class="badge b-pending">{{ t.status_pending }}</span>
-        {% elif i.status == 'skipped' %}<span class="badge b-skipped">{{ t.status_skipped }}</span>
-        {% else %}<span class="badge b-unknown">{{ i.status }}</span>{% endif %}
-      </td>
-    </tr>
-    {% endfor %}
-  </table>
+  <div class="table-wrap">
+    <table class="rtable rtable--schedule">
+      <thead>
+        <tr><th>{{ t.col_time }}</th><th>{{ t.col_title }}</th><th>{{ t.col_source }}</th><th>{{ t.col_status }}</th></tr>
+      </thead>
+      <tbody>
+      {% for i in today_items %}
+      <tr>
+        <td data-label="{{ t.col_time }}">{{ i.time }}</td>
+        <td class="cell-title" data-label="{{ t.col_title }}">{% if i.url %}<a href="{{ i.url }}" target="_blank" rel="noopener">{{ i.title }}</a>{% else %}{{ i.title }}{% endif %}</td>
+        <td class="muted" data-label="{{ t.col_source }}">{{ i.source }}</td>
+        <td data-label="{{ t.col_status }}">
+          {% if i.status == 'posted' %}<span class="badge b-posted">{{ t.status_posted }}</span>
+          {% elif i.status == 'pending' %}<span class="badge b-pending">{{ t.status_pending }}</span>
+          {% elif i.status == 'skipped' %}<span class="badge b-skipped">{{ t.status_skipped }}</span>
+          {% else %}<span class="badge b-unknown">{{ i.status }}</span>{% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
   {% else %}
   <div class="empty">{{ t.no_schedule }}</div>
   {% endif %}
@@ -35,17 +41,23 @@
 <div class="panel">
   <h2>{{ t.recent_posts }}</h2>
   {% if recent_posts %}
-  <table>
-    <tr><th style="width:90px">{{ t.col_date }}</th><th style="width:60px">{{ t.col_time }}</th><th>{{ t.col_title }}</th><th style="width:180px">{{ t.col_source }}</th></tr>
-    {% for p in recent_posts %}
-    <tr>
-      <td class="muted">{{ p.run_date }}</td>
-      <td>{{ (p.actual_time or p.planned_time).split(' ')[1] if (p.actual_time or p.planned_time) else '' }}</td>
-      <td>{% if p.url %}<a href="{{ p.url }}" target="_blank">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</td>
-      <td class="muted">{{ p.source }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+  <div class="table-wrap">
+    <table class="rtable">
+      <thead>
+        <tr><th>{{ t.col_date }}</th><th>{{ t.col_time }}</th><th>{{ t.col_title }}</th><th>{{ t.col_source }}</th></tr>
+      </thead>
+      <tbody>
+      {% for p in recent_posts %}
+      <tr>
+        <td class="muted" data-label="{{ t.col_date }}">{{ p.run_date }}</td>
+        <td data-label="{{ t.col_time }}">{{ (p.actual_time or p.planned_time).split(' ')[1] if (p.actual_time or p.planned_time) else '' }}</td>
+        <td class="cell-title" data-label="{{ t.col_title }}">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</td>
+        <td class="muted" data-label="{{ t.col_source }}">{{ p.source }}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
   {% else %}
   <div class="empty">{{ t.recent_posts_empty }}</div>
   {% endif %}
