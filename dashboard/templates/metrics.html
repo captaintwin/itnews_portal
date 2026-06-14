@@ -37,17 +37,17 @@
     <h2>{{ t.trends }}</h2>
     {% if trends %}
     <div class="table-wrap">
-      <table class="rtable">
+      <table class="data-table">
         <thead>
-          <tr><th>{{ t.col_term }}</th><th>{{ t.col_today }}</th><th>{{ t.col_avg7 }}</th><th>{{ t.col_growth }}</th></tr>
+          <tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_today }}</th><th class="num">{{ t.col_avg7 }}</th><th class="col-status">{{ t.col_growth }}</th></tr>
         </thead>
         <tbody>
         {% for tr in trends %}
         <tr>
-          <td data-label="{{ t.col_term }}">{{ tr.term }}</td>
-          <td data-label="{{ t.col_today }}">{{ tr.today }}</td>
-          <td class="muted" data-label="{{ t.col_avg7 }}">{{ tr.prev_avg }}</td>
-          <td data-label="{{ t.col_growth }}"><span class="badge b-posted">×{{ tr.growth }}</span></td>
+          <td>{{ tr.term }}</td>
+          <td class="num">{{ tr.today }}</td>
+          <td class="num muted">{{ tr.prev_avg }}</td>
+          <td class="col-status"><span class="badge b-posted">×{{ tr.growth }}</span></td>
         </tr>
         {% endfor %}
         </tbody>
@@ -59,15 +59,15 @@
     {% if top_bigrams %}
     <h2 style="margin-top:20px">{{ t.top_bigrams }}</h2>
     <div class="table-wrap">
-      <table class="rtable">
+      <table class="data-table word-table">
         <thead>
-          <tr><th>{{ t.col_bigram }}</th><th>{{ t.col_freq }}</th></tr>
+          <tr><th>{{ t.col_bigram }}</th><th class="num">{{ t.col_freq }}</th></tr>
         </thead>
         <tbody>
         {% for b in top_bigrams %}
         <tr>
-          <td data-label="{{ t.col_bigram }}">{{ b.term }}</td>
-          <td data-label="{{ t.col_freq }}">{{ b.cnt }}</td>
+          <td>{{ b.term }}</td>
+          <td class="num">{{ b.cnt }}</td>
         </tr>
         {% endfor %}
         </tbody>
@@ -105,7 +105,7 @@
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
       <div class="chart-box chart-box--central"><canvas id="chartCentral"></canvas></div>
       <div class="click-hint">{{ t.click_metric }}</div>
-      <div id="centralPanel"><h3 id="centralTitle"></h3><div id="centralWords" class="word-grid"></div></div>
+      <div id="centralPanel"><h3 id="centralTitle"></h3><div class="table-wrap" id="centralWordsWrap"><table class="data-table word-table" id="centralWords"><tbody></tbody></table></div></div>
     </div>
   </div>
 </div>
@@ -115,17 +115,32 @@
   <div class="grid2" style="margin-bottom:16px">
     <div>
       <div class="pole-title">{{ t.pole_high }}</div>
-      <div class="word-grid pole-high">{% for w in distribution.poles.high %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+      <div class="table-wrap">
+        <table class="data-table word-table pole-high">
+          <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
+          <tbody>{% for w in distribution.poles.high %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
+        </table>
+      </div>
     </div>
     <div>
       <div class="pole-title">{{ t.pole_low }}</div>
-      <div class="word-grid pole-low">{% for w in distribution.poles.low %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+      <div class="table-wrap">
+        <table class="data-table word-table pole-low">
+          <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
+          <tbody>{% for w in distribution.poles.low %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
+        </table>
+      </div>
     </div>
   </div>
   {% if distribution.poles.outliers %}
   <div style="margin-bottom:16px">
     <div class="pole-title">{{ t.pole_outliers.replace('{n}', distribution.poles.outliers|length|string) }}</div>
-    <div class="word-grid pole-out">{% for w in distribution.poles.outliers %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+    <div class="table-wrap">
+      <table class="data-table word-table pole-out">
+        <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
+        <tbody>{% for w in distribution.poles.outliers %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
   </div>
   {% endif %}
   <div class="grid2">
@@ -133,7 +148,7 @@
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.hist_title }}</div>
       <div class="chart-box"><canvas id="chartHist"></canvas></div>
       <div class="click-hint">{{ t.click_bucket }}</div>
-      <div id="bucketPanel"><h3 id="bucketTitle"></h3><div id="bucketWords" class="word-grid"></div></div>
+      <div id="bucketPanel"><h3 id="bucketTitle"></h3><div class="table-wrap" id="bucketWordsWrap"><table class="data-table word-table" id="bucketWords"><tbody></tbody></table></div></div>
     </div>
     <div>
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.zipf_title }}</div>
@@ -238,28 +253,28 @@ if (topWords.length) {
   });
 }
 
-function renderWordGrid(grid, words) {
-  grid.innerHTML = words.map(w => `<div class="word-chip"><span>${w.term}</span><span class="cnt">${w.cnt}</span></div>`).join('');
+function renderWordTable(tbody, words) {
+  tbody.innerHTML = words.map(w => `<tr><td>${w.term}</td><td class="num">${w.cnt}</td></tr>`).join('');
 }
 
 async function loadMetricWords(metric) {
   const panel = document.getElementById('centralPanel');
   const title = document.getElementById('centralTitle');
-  const grid = document.getElementById('centralWords');
+  const grid = document.querySelector('#centralWords tbody');
   panel.classList.add('open');
   title.textContent = i18n.loading;
   grid.innerHTML = '';
   const res = await fetch('/api/words/metric?metric=' + metric + '&lang=' + lang, { credentials: 'same-origin' });
   const data = await res.json();
   title.textContent = `${data.label}: ${i18n.words_count.replace('{n}', data.total)} (${data.desc})`;
-  renderWordGrid(grid, data.words);
+  renderWordTable(grid, data.words);
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
 async function loadBucketWords(bucket) {
   const panel = document.getElementById('bucketPanel');
   const title = document.getElementById('bucketTitle');
-  const grid = document.getElementById('bucketWords');
+  const grid = document.querySelector('#bucketWords tbody');
   panel.classList.add('open');
   title.textContent = i18n.bucket_title.replace('{label}', bucket.label) + ': ' + i18n.loading;
   grid.innerHTML = '';
@@ -268,7 +283,7 @@ async function loadBucketWords(bucket) {
   const res = await fetch('/api/words/bucket?' + params, { credentials: 'same-origin' });
   const data = await res.json();
   title.textContent = i18n.bucket_title.replace('{label}', data.label) + ': ' + i18n.words_count.replace('{n}', data.total);
-  renderWordGrid(grid, data.words);
+  renderWordTable(grid, data.words);
   panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
