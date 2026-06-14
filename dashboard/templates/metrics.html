@@ -84,6 +84,7 @@
     {{ distribution.unique }} {{ t.words_unique }} · {{ distribution.total }} {{ t.occurrences }} · {{ t.max_label }} {{ distribution.max }}
   </div>
   <div class="central-grid">
+    <div class="central-metrics">
     <table class="central-table">
       <tr><td>{{ t.mean_label }}</td><td>{{ distribution.central.mean }}<div class="hint">{{ t.mean_hint }}</div></td></tr>
       <tr><td>{{ t.median_label }}</td><td>{{ distribution.central.median }}<div class="hint">{{ t.median_hint }}</div></td></tr>
@@ -92,9 +93,10 @@
       <tr><td>{{ t.iqr_label }}</td><td>{{ distribution.central.q1 }} — {{ distribution.central.q3 }}<div class="hint">{{ t.iqr_hint.replace('{iqr}', distribution.central.iqr|string) }}</div></td></tr>
       <tr><td>{{ t.outlier_label }}</td><td>&gt; {{ distribution.central.outlier_thr }}<div class="hint">{{ t.outlier_hint.replace('{n}', distribution.poles.outliers|length|string) }}</div></td></tr>
     </table>
-    <div>
+    </div>
+    <div class="central-chart-col">
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
-      <div class="chart-box"><canvas id="chartCentral"></canvas></div>
+      <div class="chart-box chart-box--central"><canvas id="chartCentral"></canvas></div>
       <div class="click-hint">{{ t.click_metric }}</div>
       <div id="centralPanel"><h3 id="centralTitle"></h3><div id="centralWords" class="word-grid"></div></div>
     </div>
@@ -266,18 +268,26 @@ async function loadBucketWords(bucket) {
 if (distribution) {
   const cen = distribution.central;
   const metricKeys = ['mode', 'median', 'mean', 'q3', 'max'];
+  const centralLabels = isMobile
+    ? [i18n.chart_mode, i18n.chart_median, 'μ', 'Q3', i18n.chart_max]
+    : [i18n.chart_mode, i18n.chart_median, i18n.chart_mean, i18n.chart_q3, i18n.chart_max];
   new Chart(document.getElementById('chartCentral'), {
     type: 'bar',
     data: {
-      labels: [i18n.chart_mode, i18n.chart_median, i18n.chart_mean, i18n.chart_q3, i18n.chart_max],
+      labels: centralLabels,
       datasets: [{ data: [cen.mode, cen.median, cen.mean, cen.q3, distribution.max], backgroundColor: ['#8b98a5', '#f85149', '#3fb950', '#4da3ff', '#d29922'] }]
     },
     options: baseChartOpts({
+      indexAxis: isMobile ? 'y' : 'x',
+      layout: { padding: isMobile ? { left: 2, right: 6 } : 0 },
       plugins: { legend: { display: false } },
       onClick: (_evt, elements) => { if (elements.length) loadMetricWords(metricKeys[elements[0].index]); },
-      scales: {
-        x: { ticks: { font: chartFont, maxRotation: isMobile ? 35 : 0 } },
-        y: { beginAtZero: true, title: { display: !isMobile, text: i18n.lbl_frequency }, ticks: { font: chartFont } },
+      scales: isMobile ? {
+        x: { beginAtZero: true, ticks: { font: chartFont, maxTicksLimit: 6 } },
+        y: { ticks: { font: chartFont, autoSkip: false } },
+      } : {
+        x: { ticks: { font: chartFont } },
+        y: { beginAtZero: true, title: { display: true, text: i18n.lbl_frequency }, ticks: { font: chartFont } },
       },
     }),
   });
