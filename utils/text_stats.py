@@ -44,6 +44,59 @@ skip content menu search open close show hide view trending latest popular
 """.split())
 
 
+# Рекламный/коммерческий мусор — не попадает в частотную статистику
+COMMERCE_WORDS = frozenset("""
+promo coupon coupons discount discounts giveaway giveaways sweepstakes
+cashback rebate voucher vouchers affiliate sponsored msrp deal deals
+shipping clearance sale sales flash retailer retailers checkout cart
+sweepstake voucher redeem redemption promocode
+""".split())
+
+COMMERCE_BIGRAMS = frozenset({
+    "promo code", "promo codes",
+    "coupon code", "coupon codes",
+    "discount code", "discount codes",
+    "free shipping", "free delivery",
+    "code save", "codes save",
+    "use code", "shop now", "buy now",
+    "deal price", "list price", "retail price", "check price",
+    "save money", "save big", "daily deal", "best deal", "top deals",
+    "gift guide", "buying guide", "holiday guide",
+    "limited time", "earn commission", "affiliate link", "affiliate commission",
+    "deal day", "add cart", "free trial", "click here",
+    "deal week", "prime day", "black friday", "cyber monday",
+})
+
+_COMMERCE_BIGRAM_RE = [
+    re.compile(r"^(promo|coupon|coupons|discount|discounts|deal|deals|use|retail|list|check|gift|buying|holiday)\s+(code|codes|price|guide|day|week)$"),
+    re.compile(r"^(code|codes)\s+(save|saves|off)$"),
+    re.compile(r"^free\s+(shipping|delivery|trial)$"),
+    re.compile(r"^(shop|buy)\s+(now|today)$"),
+    re.compile(r"^(save|saves)\s+(up|money|big|now)$"),
+    re.compile(r"^(earn|affiliate|partner)\s+\w+"),
+    re.compile(r"^\d+\s+off$"),
+]
+
+
+def is_commerce_word(term: str) -> bool:
+    return term.lower() in COMMERCE_WORDS
+
+
+def is_commerce_bigram(term: str) -> bool:
+    t = term.lower()
+    if t in COMMERCE_BIGRAMS:
+        return True
+    return any(rx.match(t) for rx in _COMMERCE_BIGRAM_RE)
+
+
+def is_commerce_term(kind: str, term: str) -> bool:
+    if kind == "word":
+        return is_commerce_word(term)
+    if kind == "bigram":
+        return is_commerce_bigram(term)
+    return False
+
+
 def _tokens(text: str):
     return [w for w in WORD_RE.findall(text.lower()) if w not in STOPWORDS]
 
@@ -75,14 +128,15 @@ def _compute(run_date: str, items: list):
             except Exception:
                 pass
 
-        toks = _tokens("\n".join(parts))
+        toks = [t for t in _tokens("\n".join(parts)) if not is_commerce_word(t)]
         if not toks:
             continue
         analyzed += 1
         words.update(toks)
-        bigrams.update(
-            f"{a} {b}" for a, b in zip(toks, toks[1:])
-        )
+        for a, b in zip(toks, toks[1:]):
+            bg = f"{a} {b}"
+            if not is_commerce_bigram(bg):
+                bigrams[bg] += 1
 
     if not analyzed:
         log.warning("⚠️ Нет текстов для частотного анализа.")

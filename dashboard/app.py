@@ -4,6 +4,7 @@ import math
 import os
 import sqlite3
 import statistics
+import sys
 from collections import Counter
 from datetime import datetime
 from functools import wraps
@@ -16,6 +17,9 @@ from flask import Flask, Response, jsonify, make_response, render_template, requ
 from i18n import METRIC_DESC, METRIC_KEYS, TRANSLATIONS, resolve_lang
 
 BASE_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(BASE_DIR))
+from utils.text_stats import is_commerce_bigram, is_commerce_word
+
 DATA_DIR = BASE_DIR / "data"
 DB_FILE = DATA_DIR / "stats.sqlite"
 
@@ -96,18 +100,28 @@ def live_today():
     return items
 
 
+def _filter_words(rows, limit=None):
+    out = [r for r in rows if not is_commerce_word(r["term"])]
+    return out[:limit] if limit else out
+
+
+def _filter_bigrams(rows, limit=None):
+    out = [r for r in rows if not is_commerce_bigram(r["term"])]
+    return out[:limit] if limit else out
+
+
 def word_analytics():
     """Топ слов/биграмм за 7 дней и растущие термины (последний день vs предыдущие)."""
-    top_words = query(
+    top_words = _filter_words(query(
         "SELECT term, SUM(cnt) AS cnt FROM word_stats WHERE kind = 'word' "
         "AND run_date >= date('now', '-7 day') "
-        "GROUP BY term ORDER BY cnt DESC LIMIT 25"
-    )
-    top_bigrams = query(
+        "GROUP BY term ORDER BY cnt DESC LIMIT 200"
+    ), 25)
+    top_bigrams = _filter_bigrams(query(
         "SELECT term, SUM(cnt) AS cnt FROM word_stats WHERE kind = 'bigram' "
         "AND run_date >= date('now', '-7 day') "
-        "GROUP BY term ORDER BY cnt DESC LIMIT 15"
-    )
+        "GROUP BY term ORDER BY cnt DESC LIMIT 80"
+    ), 15)
 
     # Тренды: частота в последний день против среднего за предыдущие 7 дней
     trends = []
@@ -127,7 +141,7 @@ def word_analytics():
             tuple(prev),
         )}
         for term, cnt in cur.items():
-            if cnt < 3:
+            if cnt < 3 or is_commerce_word(term):
                 continue
             base = old.get(term, 0)
             growth = cnt / (base + 1)
@@ -142,12 +156,12 @@ def word_analytics():
 
 
 def _aggregated_words(days=7):
-    return query(
+    return _filter_words(query(
         "SELECT term, SUM(cnt) AS cnt FROM word_stats WHERE kind = 'word' "
         "AND run_date >= date('now', ? || ' day') "
         "GROUP BY term ORDER BY cnt DESC",
         (f"-{days}",),
-    )
+    ))
 
 
 def _central_stats(freqs):
@@ -303,7 +317,7 @@ def words_in_bucket():
         args.append(hi)
     sql += " ORDER BY cnt DESC, term LIMIT 500"
 
-    words = query(sql, tuple(args))
+    words = _filter_words(query(sql, tuple(args)))
     label = str(lo) if hi == lo else (f"{lo}–{hi}" if hi else f"{lo}+")
     return jsonify({"label": label, "lo": lo, "hi": hi, "words": words, "total": len(words)})
 

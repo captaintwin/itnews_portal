@@ -9,18 +9,44 @@
 {% block content %}
 {% if has_history %}
 <div class="panel">
-  <h2>{{ t.chart_days }}</h2>
-  <div class="chart-box"><canvas id="chartDays"></canvas></div>
-</div>
+  <h2>{{ t.section_posting }}</h2>
 
-<div class="grid2">
-  <div class="panel">
-    <h2>{{ t.chart_funnel }}</h2>
-    <div class="chart-box chart-box--tall" id="chartFunnelWrap"><canvas id="chartFunnel"></canvas></div>
+  <div class="chart-block">
+    <h3 class="subsection-title">{{ t.chart_days }}</h3>
+    <div class="chart-box"><canvas id="chartDays"></canvas></div>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="col-time">{{ t.col_date }}</th>
+            <th class="num">{{ t.lbl_posted }}</th>
+            <th class="num">{{ t.lbl_skipped }}</th>
+            <th class="num">{{ t.lbl_collected }}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for r in runs|reverse %}
+        <tr>
+          <td class="col-time muted">{{ r.run_date }}</td>
+          <td class="num">{{ r.posted or 0 }}</td>
+          <td class="num">{{ r.skipped or 0 }}</td>
+          <td class="num">{{ r.collected or 0 }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="panel">
-    <h2>{{ t.chart_posted_src }}</h2>
-    <div class="chart-box chart-box--tall" id="chartPostedWrap"><canvas id="chartPosted"></canvas></div>
+
+  <div class="grid2">
+    <div class="chart-block">
+      <h3 class="subsection-title">{{ t.chart_funnel }}</h3>
+      <div class="chart-box chart-box--tall" id="chartFunnelWrap"><canvas id="chartFunnel"></canvas></div>
+    </div>
+    <div class="chart-block">
+      <h3 class="subsection-title">{{ t.chart_posted_src }}</h3>
+      <div class="chart-box chart-box--tall" id="chartPostedWrap"><canvas id="chartPosted"></canvas></div>
+    </div>
   </div>
 </div>
 
@@ -57,7 +83,7 @@
     <div class="empty">{{ t.trends_empty }}</div>
     {% endif %}
     {% if top_bigrams %}
-    <h2 style="margin-top:20px">{{ t.top_bigrams }}</h2>
+    <h3 class="subsection-title subsection-title--spaced">{{ t.top_bigrams }}</h3>
     <div class="table-wrap">
       <table class="data-table word-table">
         <thead>
@@ -84,48 +110,53 @@
     {{ distribution.unique }} {{ t.words_unique }} · {{ distribution.total }} {{ t.occurrences }} · {{ t.max_label }} {{ distribution.max }}
   </div>
   <div class="central-grid">
-    <div class="central-metrics">
-    <div class="table-wrap">
-    <table class="central-table">
-      <thead>
-        <tr><th>{{ t.col_metric }}</th><th>{{ t.col_value }}</th></tr>
-      </thead>
-      <tbody>
-      <tr><td>{{ t.mean_label }}</td><td>{{ distribution.central.mean }}<div class="hint">{{ t.mean_hint }}</div></td></tr>
-      <tr><td>{{ t.median_label }}</td><td>{{ distribution.central.median }}<div class="hint">{{ t.median_hint }}</div></td></tr>
-      <tr><td>{{ t.mode_label }}</td><td>{{ distribution.central.mode }}<div class="hint">{{ t.mode_hint.replace('{n}', distribution.central.mode_words|string) }}</div></td></tr>
-      <tr><td>{{ t.std_label }}</td><td>{{ distribution.central.std }}<div class="hint">{{ t.std_hint }}</div></td></tr>
-      <tr><td>{{ t.iqr_label }}</td><td>{{ distribution.central.q1 }} — {{ distribution.central.q3 }}<div class="hint">{{ t.iqr_hint.replace('{iqr}', distribution.central.iqr|string) }}</div></td></tr>
-      <tr><td>{{ t.outlier_label }}</td><td>&gt; {{ distribution.central.outlier_thr }}<div class="hint">{{ t.outlier_hint.replace('{n}', distribution.poles.outliers|length|string) }}</div></td></tr>
-      </tbody>
-    </table>
+    <div class="chart-block">
+      <div class="table-wrap">
+        <table class="data-table compact">
+          <thead>
+            <tr><th>{{ t.col_metric }}</th><th class="num">{{ t.col_value }}</th></tr>
+          </thead>
+          <tbody>
+          <tr><td>{{ t.mean_label }}</td><td class="num">{{ distribution.central.mean }}</td></tr>
+          <tr><td>{{ t.median_label }}</td><td class="num">{{ distribution.central.median }}</td></tr>
+          <tr><td>{{ t.mode_label }}</td><td class="num">{{ distribution.central.mode }}</td></tr>
+          <tr><td>{{ t.std_label }}</td><td class="num">{{ distribution.central.std }}</td></tr>
+          <tr><td>{{ t.iqr_label }}</td><td class="num">{{ distribution.central.q1 }} — {{ distribution.central.q3 }}</td></tr>
+          <tr><td>{{ t.outlier_label }}</td><td class="num">&gt; {{ distribution.central.outlier_thr }}</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    </div>
-    <div class="central-chart-col">
-      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
+    <div class="chart-block">
+      <h3 class="subsection-title">{{ t.central_chart }}</h3>
       <div class="chart-box chart-box--central"><canvas id="chartCentral"></canvas></div>
       <div class="click-hint">{{ t.click_metric }}</div>
-      <div id="centralPanel"><h3 id="centralTitle"></h3><div class="table-wrap" id="centralWordsWrap"><table class="data-table word-table" id="centralWords"><tbody></tbody></table></div></div>
+      <div id="detailPanel" class="detail-panel">
+        <h3 id="centralTitle"></h3>
+        <div class="table-wrap detail-scroll">
+          <table class="data-table word-table" id="centralWords"><tbody></tbody></table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="panel">
   <h2>{{ t.distribution_title }}</h2>
-  <div class="grid2" style="margin-bottom:16px">
+  <div class="grid2 chart-block">
     <div>
-      <div class="pole-title">{{ t.pole_high }}</div>
+      <h3 class="subsection-title">{{ t.pole_high }}</h3>
       <div class="table-wrap">
-        <table class="data-table word-table pole-high">
+        <table class="data-table word-table">
           <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
           <tbody>{% for w in distribution.poles.high %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
         </table>
       </div>
     </div>
     <div>
-      <div class="pole-title">{{ t.pole_low }}</div>
+      <h3 class="subsection-title">{{ t.pole_low }}</h3>
       <div class="table-wrap">
-        <table class="data-table word-table pole-low">
+        <table class="data-table word-table">
           <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
           <tbody>{% for w in distribution.poles.low %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
         </table>
@@ -133,10 +164,10 @@
     </div>
   </div>
   {% if distribution.poles.outliers %}
-  <div style="margin-bottom:16px">
-    <div class="pole-title">{{ t.pole_outliers.replace('{n}', distribution.poles.outliers|length|string) }}</div>
+  <div class="chart-block">
+    <h3 class="subsection-title">{{ t.pole_outliers.replace('{n}', distribution.poles.outliers|length|string) }}</h3>
     <div class="table-wrap">
-      <table class="data-table word-table pole-out">
+      <table class="data-table word-table">
         <thead><tr><th>{{ t.col_term }}</th><th class="num">{{ t.col_freq }}</th></tr></thead>
         <tbody>{% for w in distribution.poles.outliers %}<tr><td>{{ w.term }}</td><td class="num">{{ w.cnt }}</td></tr>{% endfor %}</tbody>
       </table>
@@ -144,14 +175,19 @@
   </div>
   {% endif %}
   <div class="grid2">
-    <div>
-      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.hist_title }}</div>
+    <div class="chart-block">
+      <h3 class="subsection-title">{{ t.hist_title }}</h3>
       <div class="chart-box"><canvas id="chartHist"></canvas></div>
       <div class="click-hint">{{ t.click_bucket }}</div>
-      <div id="bucketPanel"><h3 id="bucketTitle"></h3><div class="table-wrap" id="bucketWordsWrap"><table class="data-table word-table" id="bucketWords"><tbody></tbody></table></div></div>
+      <div id="detailPanel--bucket" class="detail-panel">
+        <h3 id="bucketTitle"></h3>
+        <div class="table-wrap detail-scroll">
+          <table class="data-table word-table" id="bucketWords"><tbody></tbody></table>
+        </div>
+      </div>
     </div>
-    <div>
-      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.zipf_title }}</div>
+    <div class="chart-block">
+      <h3 class="subsection-title">{{ t.zipf_title }}</h3>
       <div class="chart-box"><canvas id="chartZipf"></canvas></div>
     </div>
   </div>
@@ -258,7 +294,7 @@ function renderWordTable(tbody, words) {
 }
 
 async function loadMetricWords(metric) {
-  const panel = document.getElementById('centralPanel');
+  const panel = document.getElementById('detailPanel');
   const title = document.getElementById('centralTitle');
   const grid = document.querySelector('#centralWords tbody');
   panel.classList.add('open');
@@ -272,7 +308,7 @@ async function loadMetricWords(metric) {
 }
 
 async function loadBucketWords(bucket) {
-  const panel = document.getElementById('bucketPanel');
+  const panel = document.getElementById('detailPanel--bucket');
   const title = document.getElementById('bucketTitle');
   const grid = document.querySelector('#bucketWords tbody');
   panel.classList.add('open');
