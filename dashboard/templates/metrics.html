@@ -85,14 +85,21 @@
   </div>
   <div class="central-grid">
     <div class="central-metrics">
+    <div class="table-wrap">
     <table class="central-table">
+      <thead>
+        <tr><th>{{ t.col_metric }}</th><th>{{ t.col_value }}</th></tr>
+      </thead>
+      <tbody>
       <tr><td>{{ t.mean_label }}</td><td>{{ distribution.central.mean }}<div class="hint">{{ t.mean_hint }}</div></td></tr>
       <tr><td>{{ t.median_label }}</td><td>{{ distribution.central.median }}<div class="hint">{{ t.median_hint }}</div></td></tr>
       <tr><td>{{ t.mode_label }}</td><td>{{ distribution.central.mode }}<div class="hint">{{ t.mode_hint.replace('{n}', distribution.central.mode_words|string) }}</div></td></tr>
       <tr><td>{{ t.std_label }}</td><td>{{ distribution.central.std }}<div class="hint">{{ t.std_hint }}</div></td></tr>
       <tr><td>{{ t.iqr_label }}</td><td>{{ distribution.central.q1 }} — {{ distribution.central.q3 }}<div class="hint">{{ t.iqr_hint.replace('{iqr}', distribution.central.iqr|string) }}</div></td></tr>
       <tr><td>{{ t.outlier_label }}</td><td>&gt; {{ distribution.central.outlier_thr }}<div class="hint">{{ t.outlier_hint.replace('{n}', distribution.poles.outliers|length|string) }}</div></td></tr>
+      </tbody>
     </table>
+    </div>
     </div>
     <div class="central-chart-col">
       <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
