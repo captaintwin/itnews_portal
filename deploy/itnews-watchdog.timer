@@ -1,8 +1,12 @@
 [Unit]
-Description=Run ITNews watchdog daily at 10:15 Europe/Belgrade
+Description=ITNews watchdog: recover on boot and alert if still no posts
 
 [Timer]
+# После перезагрузки — проверить и догнать пропущенный постинг
+OnBootSec=3min
+# Дополнительная проверка утром (если recover не помог)
 OnCalendar=*-*-* 10:15:00 Europe/Belgrade
+Persistent=true
 Unit=itnews-watchdog.service
 
 [Install]

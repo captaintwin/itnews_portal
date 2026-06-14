@@ -48,8 +48,10 @@ sudo chmod 600 /opt/itnews_portal/.env
 ```bash
 sudo cp /opt/itnews_portal/deploy/itnews.service /etc/systemd/system/
 sudo cp /opt/itnews_portal/deploy/itnews.timer /etc/systemd/system/
+sudo cp /opt/itnews_portal/deploy/itnews-watchdog.service /etc/systemd/system/
+sudo cp /opt/itnews_portal/deploy/itnews-watchdog.timer /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl enable --now itnews.timer
+sudo systemctl enable --now itnews.timer itnews-watchdog.timer
 ```
 
 ## 5. Проверка
@@ -82,6 +84,11 @@ sudo venv/bin/pip install -r requirements.txt
 - `Persistent=true` у таймера: если сервер был выключен в 08:45, запуск
   произойдёт сразу после загрузки (расписание корректно строится в любое
   время внутри окна 9:00–21:00).
+- **Watchdog** (`itnews-watchdog.timer`): через 3 мин после перезагрузки
+  проверяет, был ли постинг сегодня; если нет и сейчас 08:50–21:00 —
+  автоматически запускает `itnews.service`. В 10:15 — повторная проверка
+  и алерт в техчат, если постов всё ещё нет. Авторестарт не срабатывает,
+  если часть постов уже ушла (чтобы не было дублей).
 - После успешного запуска на VPS отключите задачу Windows
   «Telegram Auto Poster» на старой машине, чтобы не было двойного постинга:
 

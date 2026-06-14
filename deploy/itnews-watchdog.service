@@ -1,9 +1,8 @@
 [Unit]
-Description=ITNews watchdog: alert if nothing was posted today
+Description=ITNews watchdog: recover missed posting run
 
 [Service]
 Type=oneshot
-User=itnews
-Group=itnews
 WorkingDirectory=/opt/itnews_portal
+# root нужен для systemctl start itnews.service
 ExecStart=/opt/itnews_portal/venv/bin/python -m utils.watchdog
