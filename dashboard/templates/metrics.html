@@ -14,28 +14,6 @@
   <div class="chart-block">
     <h3 class="subsection-title">{{ t.chart_days }}</h3>
     <div class="chart-box"><canvas id="chartDays"></canvas></div>
-    <div class="table-wrap">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th class="col-time">{{ t.col_date }}</th>
-            <th class="num">{{ t.lbl_posted }}</th>
-            <th class="num">{{ t.lbl_skipped }}</th>
-            <th class="num">{{ t.lbl_collected }}</th>
-          </tr>
-        </thead>
-        <tbody>
-        {% for r in runs|reverse %}
-        <tr>
-          <td class="col-time muted">{{ r.run_date }}</td>
-          <td class="num">{{ r.posted or 0 }}</td>
-          <td class="num">{{ r.skipped or 0 }}</td>
-          <td class="num">{{ r.collected or 0 }}</td>
-        </tr>
-        {% endfor %}
-        </tbody>
-      </table>
-    </div>
   </div>
 
   <div class="grid2">
@@ -242,16 +220,15 @@ new Chart(document.getElementById('chartDays'), {
   data: {
     labels: runs.map(r => r.run_date.slice(5)),
     datasets: [
-      { label: i18n.lbl_posted, data: runs.map(r => r.posted), backgroundColor: '#3fb950' },
-      { label: i18n.lbl_skipped, data: runs.map(r => r.skipped), backgroundColor: '#f85149' },
-      { label: i18n.lbl_collected, data: runs.map(r => r.collected), type: 'line', borderColor: '#4da3ff', yAxisID: 'y1', tension: .3 },
+      { label: i18n.lbl_posted, data: runs.map(r => r.posted), backgroundColor: '#3fb950', stack: 'posts' },
+      { label: i18n.lbl_skipped, data: runs.map(r => r.skipped), backgroundColor: '#f85149', stack: 'posts' },
+      { label: i18n.lbl_collected, data: runs.map(r => r.collected), backgroundColor: '#4da3ff', stack: 'collected' },
     ]
   },
   options: baseChartOpts({
     scales: {
       x: { stacked: true, ticks: { font: chartFont, maxRotation: isMobile ? 45 : 0 } },
       y: { stacked: true, beginAtZero: true, ticks: { font: chartFont } },
-      y1: { position: 'right', beginAtZero: true, grid: { drawOnChartArea: false }, ticks: { font: chartFont } },
     },
   }),
 });
