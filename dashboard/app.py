@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytz
 from dotenv import load_dotenv
-from flask import Flask, Response, jsonify, make_response, render_template, request
+from flask import Flask, Response, jsonify, make_response, render_template, request, url_for
 
 from i18n import METRIC_DESC, METRIC_KEYS, TRANSLATIONS, resolve_lang
 
@@ -308,10 +308,63 @@ def words_in_bucket():
     return jsonify({"label": label, "lo": lo, "hi": hi, "words": words, "total": len(words)})
 
 
+def _nav_url(lang):
+    endpoint = request.endpoint or "index"
+    return url_for(endpoint, lang=lang)
+
+
+def _render(template, active_nav, **kwargs):
+    lang = resolve_lang(request)
+    t = TRANSLATIONS[lang]
+    resp = make_response(render_template(
+        template,
+        active_nav=active_nav,
+        now=datetime.now(tz).strftime("%d.%m.%Y %H:%M"),
+        t=t,
+        lang=lang,
+        nav_url=_nav_url,
+        **kwargs,
+    ))
+    if request.args.get("lang") in TRANSLATIONS:
+        resp.set_cookie("lang", lang, max_age=365 * 24 * 3600)
+    return resp
+
+
+def _run_totals():
+    runs = query("SELECT * FROM runs ORDER BY run_date DESC LIMIT 30")
+    return runs, {
+        "days": len(runs),
+        "posted": sum(r["posted"] or 0 for r in runs),
+        "skipped": sum(r["skipped"] or 0 for r in runs),
+        "collected": sum(r["collected"] or 0 for r in runs),
+    }
+
+
 @app.route("/")
 @protected
 def index():
-    runs = query("SELECT * FROM runs ORDER BY run_date DESC LIMIT 30")[::-1]
+    runs, totals = _run_totals()
+    recent_posts = query(
+        "SELECT * FROM posts WHERE status = 'posted' "
+        "ORDER BY run_date DESC, planned_time DESC LIMIT 50"
+    )
+    today_items = live_today()
+    today_posted = sum(1 for i in today_items if i["status"] == "posted")
+    return _render(
+        "index.html",
+        "overview",
+        totals=totals,
+        today_items=today_items,
+        today_posted=today_posted,
+        recent_posts=recent_posts,
+    )
+
+
+@app.route("/metrics")
+@protected
+def metrics():
+    runs, _ = _run_totals()
+    runs = runs[::-1]
     sources = query(
         "SELECT source, SUM(collected) AS collected, SUM(selected) AS selected "
         "FROM source_stats GROUP BY source ORDER BY collected DESC"
@@ -322,47 +375,20 @@ def index():
         "SUM(status = 'skipped') AS skipped "
         "FROM posts GROUP BY source ORDER BY posted DESC"
     )
-    recent_posts = query(
-        "SELECT * FROM posts WHERE status = 'posted' "
-        "ORDER BY run_date DESC, planned_time DESC LIMIT 50"
-    )
-
-    totals = {
-        "days": len(runs),
-        "posted": sum(r["posted"] or 0 for r in runs),
-        "skipped": sum(r["skipped"] or 0 for r in runs),
-        "collected": sum(r["collected"] or 0 for r in runs),
-    }
-
-    today_items = live_today()
-    today_posted = sum(1 for i in today_items if i["status"] == "posted")
     top_words, top_bigrams, trends = word_analytics()
     distribution = word_distribution()
-
-    lang = resolve_lang(request)
-    t = TRANSLATIONS[lang]
-
-    resp = make_response(render_template(
-        "index.html",
+    return _render(
+        "metrics.html",
+        "metrics",
         runs=runs,
         sources=sources,
         posts_by_source=posts_by_source,
-        recent_posts=recent_posts,
-        totals=totals,
-        today_items=today_items,
-        today_posted=today_posted,
         top_words=top_words,
         top_bigrams=top_bigrams,
         trends=trends,
         distribution=distribution,
-        now=datetime.now(tz).strftime("%d.%m.%Y %H:%M"),
         has_history=bool(runs),
-        t=t,
-        lang=lang,
-    ))
-    if request.args.get("lang") in TRANSLATIONS:
-        resp.set_cookie("lang", lang, max_age=365 * 24 * 3600)
-    return resp
+    )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,271 @@
+{% extends "base.html" %}
+
+{% block title %}{{ t.metrics_page_title }}{% endblock %}
+
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+{% if has_history %}
+<div class="panel">
+  <h2>{{ t.chart_days }}</h2>
+  <canvas id="chartDays"></canvas>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>{{ t.chart_funnel }}</h2>
+    <canvas id="chartFunnel"></canvas>
+  </div>
+  <div class="panel">
+    <h2>{{ t.chart_posted_src }}</h2>
+    <canvas id="chartPosted"></canvas>
+  </div>
+</div>
+
+<div class="grid2">
+  <div class="panel">
+    <h2>{{ t.top_words }}</h2>
+    {% if top_words %}
+    <canvas id="chartWords" style="max-height:480px"></canvas>
+    {% else %}
+    <div class="empty">{{ t.top_words_empty }}</div>
+    {% endif %}
+  </div>
+  <div class="panel">
+    <h2>{{ t.trends }}</h2>
+    {% if trends %}
+    <table>
+      <tr><th>{{ t.col_term }}</th><th>{{ t.col_today }}</th><th>{{ t.col_avg7 }}</th><th>{{ t.col_growth }}</th></tr>
+      {% for tr in trends %}
+      <tr>
+        <td>{{ tr.term }}</td>
+        <td>{{ tr.today }}</td>
+        <td class="muted">{{ tr.prev_avg }}</td>
+        <td><span class="badge b-posted">×{{ tr.growth }}</span></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <div class="empty">{{ t.trends_empty }}</div>
+    {% endif %}
+    {% if top_bigrams %}
+    <h2 style="margin-top:20px">{{ t.top_bigrams }}</h2>
+    <table>
+      <tr><th>{{ t.col_bigram }}</th><th style="width:80px">{{ t.col_freq }}</th></tr>
+      {% for b in top_bigrams %}
+      <tr><td>{{ b.term }}</td><td>{{ b.cnt }}</td></tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+  </div>
+</div>
+
+{% if distribution %}
+<div class="panel">
+  <h2>{{ t.central_title }}</h2>
+  <div class="muted" style="font-size:12px;margin-bottom:14px">
+    {{ distribution.unique }} {{ t.words_unique }} · {{ distribution.total }} {{ t.occurrences }} · {{ t.max_label }} {{ distribution.max }}
+  </div>
+  <div class="central-grid">
+    <table class="central-table">
+      <tr><td>{{ t.mean_label }}</td><td>{{ distribution.central.mean }}<div class="hint">{{ t.mean_hint }}</div></td></tr>
+      <tr><td>{{ t.median_label }}</td><td>{{ distribution.central.median }}<div class="hint">{{ t.median_hint }}</div></td></tr>
+      <tr><td>{{ t.mode_label }}</td><td>{{ distribution.central.mode }}<div class="hint">{{ t.mode_hint.replace('{n}', distribution.central.mode_words|string) }}</div></td></tr>
+      <tr><td>{{ t.std_label }}</td><td>{{ distribution.central.std }}<div class="hint">{{ t.std_hint }}</div></td></tr>
+      <tr><td>{{ t.iqr_label }}</td><td>{{ distribution.central.q1 }} — {{ distribution.central.q3 }}<div class="hint">{{ t.iqr_hint.replace('{iqr}', distribution.central.iqr|string) }}</div></td></tr>
+      <tr><td>{{ t.outlier_label }}</td><td>&gt; {{ distribution.central.outlier_thr }}<div class="hint">{{ t.outlier_hint.replace('{n}', distribution.poles.outliers|length|string) }}</div></td></tr>
+    </table>
+    <div>
+      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.central_chart }}</div>
+      <canvas id="chartCentral"></canvas>
+      <div class="click-hint">{{ t.click_metric }}</div>
+      <div id="centralPanel"><h3 id="centralTitle"></h3><div id="centralWords" class="word-grid"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>{{ t.distribution_title }}</h2>
+  <div class="grid2" style="margin-bottom:16px">
+    <div>
+      <div class="pole-title">{{ t.pole_high }}</div>
+      <div class="word-grid pole-high">{% for w in distribution.poles.high %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+    </div>
+    <div>
+      <div class="pole-title">{{ t.pole_low }}</div>
+      <div class="word-grid pole-low">{% for w in distribution.poles.low %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+    </div>
+  </div>
+  {% if distribution.poles.outliers %}
+  <div style="margin-bottom:16px">
+    <div class="pole-title">{{ t.pole_outliers.replace('{n}', distribution.poles.outliers|length|string) }}</div>
+    <div class="word-grid pole-out">{% for w in distribution.poles.outliers %}<div class="word-chip"><span>{{ w.term }}</span><span class="cnt">{{ w.cnt }}</span></div>{% endfor %}</div>
+  </div>
+  {% endif %}
+  <div class="grid2">
+    <div>
+      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.hist_title }}</div>
+      <canvas id="chartHist"></canvas>
+      <div class="click-hint">{{ t.click_bucket }}</div>
+      <div id="bucketPanel"><h3 id="bucketTitle"></h3><div id="bucketWords" class="word-grid"></div></div>
+    </div>
+    <div>
+      <div class="muted" style="font-size:12px;margin-bottom:8px">{{ t.zipf_title }}</div>
+      <canvas id="chartZipf"></canvas>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<script>
+const i18n = {{ t | tojson }};
+const lang = {{ lang | tojson }};
+const runs = {{ runs | tojson }};
+const sources = {{ sources | tojson }};
+const postsBySource = {{ posts_by_source | tojson }};
+const topWords = {{ top_words | tojson }};
+const distribution = {{ distribution | tojson }};
+
+Chart.defaults.color = '#8b98a5';
+Chart.defaults.borderColor = '#2a3441';
+
+new Chart(document.getElementById('chartDays'), {
+  type: 'bar',
+  data: {
+    labels: runs.map(r => r.run_date.slice(5)),
+    datasets: [
+      { label: i18n.lbl_posted, data: runs.map(r => r.posted), backgroundColor: '#3fb950' },
+      { label: i18n.lbl_skipped, data: runs.map(r => r.skipped), backgroundColor: '#f85149' },
+      { label: i18n.lbl_collected, data: runs.map(r => r.collected), type: 'line', borderColor: '#4da3ff', yAxisID: 'y1', tension: .3 },
+    ]
+  },
+  options: { scales: { x: { stacked: true }, y: { stacked: true, beginAtZero: true }, y1: { position: 'right', beginAtZero: true, grid: { drawOnChartArea: false } } } }
+});
+
+new Chart(document.getElementById('chartFunnel'), {
+  type: 'bar',
+  data: {
+    labels: sources.map(s => s.source),
+    datasets: [
+      { label: i18n.lbl_collected, data: sources.map(s => s.collected), backgroundColor: '#4da3ff' },
+      { label: i18n.lbl_selected, data: sources.map(s => s.selected), backgroundColor: '#3fb950' },
+    ]
+  },
+  options: { indexAxis: 'y', scales: { x: { beginAtZero: true } } }
+});
+
+if (topWords.length) {
+  new Chart(document.getElementById('chartWords'), {
+    type: 'bar',
+    data: { labels: topWords.map(w => w.term), datasets: [{ label: i18n.lbl_mentions, data: topWords.map(w => w.cnt), backgroundColor: '#4da3ff' }] },
+    options: { indexAxis: 'y', scales: { x: { beginAtZero: true } }, plugins: { legend: { display: false } } }
+  });
+}
+
+function renderWordGrid(grid, words) {
+  grid.innerHTML = words.map(w => `<div class="word-chip"><span>${w.term}</span><span class="cnt">${w.cnt}</span></div>`).join('');
+}
+
+async function loadMetricWords(metric) {
+  const panel = document.getElementById('centralPanel');
+  const title = document.getElementById('centralTitle');
+  const grid = document.getElementById('centralWords');
+  panel.classList.add('open');
+  title.textContent = i18n.loading;
+  grid.innerHTML = '';
+  const res = await fetch('/api/words/metric?metric=' + metric + '&lang=' + lang, { credentials: 'same-origin' });
+  const data = await res.json();
+  title.textContent = `${data.label}: ${i18n.words_count.replace('{n}', data.total)} (${data.desc})`;
+  renderWordGrid(grid, data.words);
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+async function loadBucketWords(bucket) {
+  const panel = document.getElementById('bucketPanel');
+  const title = document.getElementById('bucketTitle');
+  const grid = document.getElementById('bucketWords');
+  panel.classList.add('open');
+  title.textContent = i18n.bucket_title.replace('{label}', bucket.label) + ': ' + i18n.loading;
+  grid.innerHTML = '';
+  const params = new URLSearchParams({ lo: bucket.lo, lang: lang });
+  if (bucket.hi != null) params.set('hi', bucket.hi);
+  const res = await fetch('/api/words/bucket?' + params, { credentials: 'same-origin' });
+  const data = await res.json();
+  title.textContent = i18n.bucket_title.replace('{label}', data.label) + ': ' + i18n.words_count.replace('{n}', data.total);
+  renderWordGrid(grid, data.words);
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+if (distribution) {
+  const cen = distribution.central;
+  const metricKeys = ['mode', 'median', 'mean', 'q3', 'max'];
+  new Chart(document.getElementById('chartCentral'), {
+    type: 'bar',
+    data: {
+      labels: [i18n.chart_mode, i18n.chart_median, i18n.chart_mean, i18n.chart_q3, i18n.chart_max],
+      datasets: [{ data: [cen.mode, cen.median, cen.mean, cen.q3, distribution.max], backgroundColor: ['#8b98a5', '#f85149', '#3fb950', '#4da3ff', '#d29922'] }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      onClick: (_evt, elements) => { if (elements.length) loadMetricWords(metricKeys[elements[0].index]); },
+      scales: { y: { beginAtZero: true, title: { display: true, text: i18n.lbl_frequency } } }
+    }
+  });
+
+  new Chart(document.getElementById('chartHist'), {
+    type: 'bar',
+    data: {
+      labels: distribution.hist.map(b => b.label),
+      datasets: [{ label: i18n.lbl_words_in_bucket, data: distribution.hist.map(b => b.count), backgroundColor: '#d29922' }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      onClick: (_evt, elements) => { if (elements.length) loadBucketWords(distribution.hist[elements[0].index]); },
+      scales: {
+        x: { title: { display: true, text: i18n.lbl_word_freq } },
+        y: { beginAtZero: true, title: { display: true, text: i18n.lbl_word_count } }
+      }
+    }
+  });
+
+  const maxRank = distribution.zipf[distribution.zipf.length - 1].rank;
+  new Chart(document.getElementById('chartZipf'), {
+    type: 'line',
+    data: {
+      datasets: [
+        { label: i18n.lbl_frequency, data: distribution.zipf.map(p => ({ x: p.rank, y: p.freq })), borderColor: '#4da3ff', pointRadius: 0, tension: .2, order: 2 },
+        { label: `μ = ${cen.mean}`, data: [{ x: 1, y: cen.mean }, { x: maxRank, y: cen.mean }], borderColor: '#3fb950', borderDash: [6, 4], pointRadius: 0, order: 1 },
+        { label: i18n.chart_median_line.replace('{v}', cen.median), data: [{ x: 1, y: cen.median }, { x: maxRank, y: cen.median }], borderColor: '#f85149', borderDash: [6, 4], pointRadius: 0, order: 1 },
+      ]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+      scales: {
+        x: { type: 'logarithmic', title: { display: true, text: i18n.lbl_rank } },
+        y: { type: 'logarithmic', title: { display: true, text: i18n.lbl_frequency } }
+      }
+    }
+  });
+}
+
+new Chart(document.getElementById('chartPosted'), {
+  type: 'bar',
+  data: {
+    labels: postsBySource.map(s => s.source),
+    datasets: [
+      { label: i18n.lbl_posted, data: postsBySource.map(s => s.posted), backgroundColor: '#3fb950' },
+      { label: i18n.lbl_skipped, data: postsBySource.map(s => s.skipped), backgroundColor: '#f85149' },
+    ]
+  },
+  options: { indexAxis: 'y', scales: { x: { beginAtZero: true, stacked: true }, y: { stacked: true } } }
+});
+</script>
+{% else %}
+<div class="panel">
+  <h2>{{ t.history_title }}</h2>
+  <div class="empty">{{ t.history_empty }}</div>
+</div>
+{% endif %}
+{% endblock %}
